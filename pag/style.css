@@ -1,0 +1,66 @@
+.Logo img{
+    height: 125px;
+    
+}
+
+header{
+    margin: 10px 0px 10px 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between
+    
+}
+.navegacion{
+    vertical-align: center;
+}
+nav{
+    padding-left: 50px;
+}
+.categorias{
+    color: antiquewhite;
+}
+.propia{
+    margin-right: 50px;
+}
+.propia1{
+    margin-right: 125px;
+}
+.navegacionSecundaria{
+    height: 50px;
+}
+.moduloEmprendedores{
+    height: 100px;
+    
+}
+.propia2{
+    margin-right: 50px;
+    margin-top: 5px;
+    
+}
+.propia3{
+    margin-right: 250px;
+    margin-top: 35px;
+    
+}
+.bannerPropio{
+    height: 300px;
+    width: 100%;
+}
+.contactos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.politicas{
+    text-align: center;
+    color: aquamarine;
+}
+footer{
+    background-color: rgb(7, 7, 34);
+    color: white;
+}
+.seleccionado{
+    color: rgb(3, 21, 182);
+    background-color: rgb(202, 202, 221);
+    border-radius: 10px;
+}
