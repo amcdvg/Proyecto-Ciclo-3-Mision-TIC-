@@ -1,0 +1,20 @@
+body {
+    background:  powderblue;
+}
+
+.contenido {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    color: white;
+}
+
+.contenido h1 {
+    text-align: center;
+}
+
+.contenido p {
+    text-align: justify;
+}
+
+

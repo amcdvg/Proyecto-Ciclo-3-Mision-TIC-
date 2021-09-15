@@ -1,0 +1,62 @@
+body {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+#cabe {
+    text-align: center;
+    color: green;
+    background: rgb(160, 160, 85);
+    line-height: 100px;
+    margin: 0;
+}
+
+#body {
+    text-align: center;
+    color: red;
+    background: rgb(139, 139, 110);
+    line-height: 100px;
+    margin: 0;
+}
+
+/* Style the footer */
+.baseContacto {
+    background-color: lightBlue;
+    padding: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.baseContacto address {
+    padding: 10px;
+    margin: 10px;
+}
+
+.baseContacto p a img {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+
+.baseDerechos {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 18px;
+    background: #273b47;
+    padding: 10px 32px;
+}
+
+.baseDerechos p a {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+}
+
