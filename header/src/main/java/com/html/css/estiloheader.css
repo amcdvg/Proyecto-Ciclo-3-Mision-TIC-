@@ -2,14 +2,14 @@ body{
 	background: url(../Imagenes/fondo.jpg);
 	background-size: cover;
 }
-.contendor_login{
+.main-section{
 	margin:0 auto ;
 	margin-top: 25%;
 	padding: 0%;
 }
 
 .modal-content{
-	background-color: rgb(62, 69, 78);
+	background-color: #3b4652;
 	opacity: .95;
 	padding: 0 20px;
 	box-shadow: 0px 0px 3px #7f8ee7 ;
@@ -39,13 +39,13 @@ body{
 
 }
 .form-group::before{
-	font-family: "Font Awesome \ S Free";
+	font-family: "Font Awesome\ 5 Free";
 	position: absolute;
 	left: 28px;
 	font-size: 22px;
 	padding-top: 4px;
 
-}s
+}
 
 .form-group#user-group::before{
 	content: "\f007";
