@@ -1,0 +1,326 @@
+.fondo-claro{
+    background-color: rgb(222, 228, 236);
+}
+.Logo img{
+    height: 125px;
+    
+}
+
+header{
+    margin: 10px 0px 10px 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.navegacion{
+    vertical-align: center;
+}
+nav{
+    padding-left: 50px;
+}
+.categorias{
+    color: antiquewhite;
+}
+.propia{
+    margin-right: 50px;
+}
+.propia1{
+    margin-right: 125px;
+}
+.navegacionSecundaria{
+    height: 50px;
+}
+.moduloEmprendedores{
+    height: 100px;
+    
+}
+.propia2{
+    margin-right: 50px;
+    margin-top: 5px;
+    
+}
+.propia3{
+    margin-right: 250px;
+    margin-top: 35px;
+    
+}
+.bannerPropio{
+    height: 300px;
+    width: 100%;
+}
+.contactos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.politicas{
+    text-align: center;
+    color: aquamarine;
+}
+footer{
+    background-color: rgb(7, 7, 34);
+    color: white;
+}
+.seleccionado{
+    color: rgb(3, 21, 182);
+    background-color: rgb(202, 202, 221);
+    border-radius: 10px;
+}
+.navegacion-tienda{
+    width: 250px;
+}
+.caja-banner{
+    border-radius: 25px;
+    background-color: blue;
+    opacity: 75%;
+}
+.tienda{
+    max-height: 100%;
+    width: 100%;
+}
+.barra-tienda{
+    width: 250px;
+}
+.boton-tienda{
+    width: 130px;
+}
+.busqueda{
+    left: 39%;
+}
+.gallery {
+    width: 100%;
+  }
+  
+  .gallery-container {
+    align-items: center;
+    display: flex;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+  }
+  
+  .gallery-item {
+    height: 150px;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 150px;
+    z-index: 0;
+  }
+  .card-img{
+    height: 150px;
+    
+    width: 150px;
+   
+  }
+  
+  .gallery-item-1 {
+    left: 15%;
+    opacity: .4;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-item-2,
+  .gallery-item-4 {
+    height: 200px;
+    opacity: 1;
+    width: 200px;
+    z-index: 1;
+  }
+  
+  .gallery-item-2 {
+    left: 30%;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-item-3 {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    height: 300px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 2;
+  }
+  
+  .gallery-item-4 {
+    left: 70%;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-item-5 {
+    left: 85%;
+    opacity: .4;
+    transform: translateX(-50%);
+  }
+  
+  .gallery-controls {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  
+  .gallery-controls button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 20px;
+    padding: 0 12px;
+    text-transform: capitalize;
+  }
+  
+  .gallery-controls button:focus {
+    outline: none;
+  }
+  
+  .gallery-controls-previous {
+    position: relative;
+  }
+  
+  .gallery-controls-previous::before {
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    left: -10px;
+    padding: 2px;
+    position: absolute;
+    top: 0;
+    transform: rotate(135deg) translateY(-50%);
+    transition: left 0.15s ease-in-out;
+    width: 4px;
+  }
+  
+  .gallery-controls-previous:hover::before {
+    left: -18px;
+  }
+  
+  .gallery-controls-next {
+    position: relative;
+  }
+  
+  .gallery-controls-next::before {
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    content: '';
+    display: inline-block;
+    height: 4px;
+    padding: 2px;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.15s ease-in-out;
+    width: 4px;
+  }
+  
+  .gallery-controls-next:hover::before {
+    right: -18px;
+  }
+  
+  .gallery-nav {
+    bottom: -15px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .gallery-nav li {
+    background: #ccc;
+    border-radius: 50%;
+    height: 10px;
+    margin: 0 16px;
+    width: 10px;
+  }
+  
+  .gallery-nav li.gallery-item-selected {
+    background: #555;
+  }
+  .baseContacto{
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-evenly;
+  }
+  .baseDerechos {
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    vertical-align: middle;
+    background: #273b47;
+    padding: 10px 0 10px 0;
+}
+.bannerAcerca{
+    height: 200px;
+    width: 90%;
+    margin: 15px 60px;
+    
+}
+.acerca-de h1{
+    text-align: center;
+}
+.acerca-de{
+    margin: 15px 60px;
+}
+.iniciar-sesion{
+    width: 400px;
+}
+.caja-registro{
+    background-color: #3469b857;
+    padding: 35px;
+    border-radius: 5px;
+    
+}
+.login-registro{
+	display: flex;
+    flex-direction: row;
+	justify-content: center;
+	width: 500px;
+    border-color: #46a2fd solid 3px;
+
+}
+
+.login-registro form{
+	background: white;
+	border-radius: 20px;
+}
+
+.login-registro h2{
+	font-size: 30px;
+	text-align: center;
+	margin: 20px;
+	color: #46a2fd;
+}
+
+.login-registro form input{
+	width: 100%;
+	margin-top: 10px;
+	padding: 20px;
+	border: none;
+	background: #f2f2f2 ;
+	font-size: 16px;
+}
+
+.login-registro form button{
+	padding: 10px 40px;
+	margin-top: 40px;
+	border: none;
+	font-size: 14px;
+	background:#46a2fd ;
+	color: white;
+}
+.fondo-registro{
+    background-color: #1d7ece85;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 25px;
+}
+.tarjetas{
+    height: 200px;
+}
