@@ -22,12 +22,20 @@ nav{
 .categorias{
     color: antiquewhite;
 }
-.propia{
+.boton-barra{
     margin-right: 50px;
+    margin-top: 5px;
 }
-.propia1{
+.barra-oculta{
     margin-right: 125px;
+    background-color: #0e1622 !important;
 }
+.barra-oculta a{
+  color: #46a2fd;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .navegacionSecundaria{
     height: 50px;
 }
@@ -72,12 +80,13 @@ footer{
 }
 .caja-banner{
     border-radius: 25px;
-    background-color: blue;
+    background-color: rgb(19, 26, 46);
     opacity: 75%;
+    gradient
 }
 .tienda{
-    max-height: 100%;
-    width: 100%;
+  max-height: 100%;
+  width: 100%;
 }
 .barra-tienda{
     width: 250px;
@@ -323,4 +332,44 @@ footer{
 }
 .tarjetas{
     height: 200px;
+}
+nav ul{
+  margin: 0px;
+  padding: 0px;
+  
+}
+nav li{
+   
+  border-radius: 0px;
+  
+}
+
+nav li a{
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(174, 199, 228) !important;
+}
+.barra-navegacion{
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #112035 !important;
+
+}
+.nav-pills .nav-link {
+  border-radius: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.nav-pills .nav-link.active{
+  background-color: rgb(157, 188, 233);
+  color: rgb(5, 18, 34) !important;
+}
+.desplegable{
+  font-size: 18px;
+  background-color: #112035 !important;
+}
+.desplegable li a{
+  font-size: 18px;
+  background-color: #112035 !important;
 }
