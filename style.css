@@ -1,17 +1,23 @@
 .fondo-claro{
-    background-color: rgb(222, 228, 236);
+    background-color: rgb(243, 243, 243) !important;
 }
+
 .Logo img{
+  margin: 10px 0px 10px 50px;
     height: 125px;
     
 }
 
 header{
-    margin: 10px 0px 10px 50px;
+    
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #ecf3ff !important;
     
+}
+footer{
+  background-color: #d4e2f3 !important;
 }
 .navegacion{
     vertical-align: center;
@@ -20,7 +26,7 @@ nav{
     padding-left: 50px;
 }
 .categorias{
-    color: antiquewhite;
+    padding: 5px 26px 5px 26px;
 }
 .boton-barra{
     margin-right: 50px;
@@ -28,48 +34,100 @@ nav{
 }
 .barra-oculta{
     margin-right: 125px;
-    background-color: #0e1622 !important;
+    background-color: #0d121a !important;
+}
+.banner{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .barra-oculta a{
-  color: #46a2fd;
-  padding-left: 15px;
-  padding-right: 15px;
+  color: #81baf3;
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+  border-left: solid #a3b9da00  2px !important;
+  border-right: solid #a3b9da00  2px !important;
+  font-size: 22px;
+  font-weight: 300;
+  
+}
+.barra-oculta a:hover{
+  color: #e5e9f0 !important;
+  border-left: solid #a3b9da  2px !important;
+  border-right: solid #a3b9da  2px !important;
+  background-color: rgb(30, 39, 59);
+  
 }
 
 .navegacionSecundaria{
     height: 50px;
 }
-.moduloEmprendedores{
-    height: 100px;
-    
+.modulo-emprendedores{
+    height: 125px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-right: 10px;
+    margin-right: 25px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
-.propia2{
-    margin-right: 50px;
-    margin-top: 5px;
-    
+.emprendedores-flecha{
+  margin-right: -15px !important;
+  margin-top: 10px;
+  width: 50px;
+  height: 50px;
+  fill: #0d2647;
 }
-.propia3{
-    margin-right: 250px;
-    margin-top: 35px;
-    
+
+.emprendedores-flecha:hover{
+  margin-right: -20px !important;
+  width: 65px;
+height: 65px;
+fill: #174583;
+
 }
-.bannerPropio{
+.barra-emprendedores{
+  margin-top: 60px;
+  padding: 0 25px 0 25px;
+  background-color: #d6e3f5;
+  margin-right: 235px;
+  border-radius: 25px;
+  
+}
+.barra-emprendedores a{
+  font-size: 18px;
+  font-weight: 600 !important;
+  margin: 0 5px 0 5px;
+  padding: 15px 15px 15px 15px;  
+  color: #081c35;
+  border-left: solid #a3b9da00  2px !important;
+  border-right: solid #a3b9da00  2px !important;
+}
+.barra-emprendedores a:hover{
+  margin: 0 5px 0 5px;
+  padding: 15px 15px 15px 15px;
+  background-color: #81a7e4;
+  color: rgb(9, 15, 20);
+  border-left: solid #2e5794  2px !important;
+  border-right: solid #2e5794 2px !important;
+  
+}
+.navbar-toggler:focus{
+  box-shadow: 0 0 0 0 !important;
+}
+
+.banner-inicio{
     height: 300px;
-    width: 100%;
+    width: 96%;
+    margin: 20px 30px;
+    border-radius: 35px;
+    box-shadow: 0px 3px 3px 0px rgba(23, 73, 121, 0.219);
 }
 .contactos{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.politicas{
-    text-align: center;
-    color: aquamarine;
-}
-footer{
-    background-color: rgb(7, 7, 34);
-    color: white;
-}
+
 .seleccionado{
     color: rgb(3, 21, 182);
     background-color: rgb(202, 202, 221);
@@ -82,11 +140,6 @@ footer{
     border-radius: 25px;
     background-color: rgb(19, 26, 46);
     opacity: 75%;
-    gradient
-}
-.tienda{
-  max-height: 100%;
-  width: 100%;
 }
 .barra-tienda{
     width: 250px;
@@ -94,8 +147,9 @@ footer{
 .boton-tienda{
     width: 130px;
 }
-.busqueda{
-    left: 39%;
+.buscar{
+  margin-top: 15px !important;
+    left: 42%;
 }
 .gallery {
     width: 100%;
@@ -252,24 +306,52 @@ footer{
   .gallery-nav li.gallery-item-selected {
     background: #555;
   }
-  .baseContacto{
-      padding-top: 25px;
-      display: flex;
-      justify-content: space-evenly;
-  }
+  
   .baseDerechos {
     text-align: center;
     color: white;
-    font-size: 12px;
+    font-size: 15px;
     vertical-align: middle;
     background: #273b47;
     padding: 10px 0 10px 0;
 }
-.bannerAcerca{
+.baseDerechos a{
+  text-decoration: none;
+  color: #accdf8;
+}
+.baseDerechos a:hover{
+  color: #4f9bff;
+}
+.cajas-footer{
+  justify-content: center;
+}
+.logos-footer{
+  text-decoration: none;
+  margin: 0px 20px 10px 0px;
+  padding-top: 10px;
+}
+.logo-footer-acerca{
+  height: 70px;
+  margin: 0px 10px 0px 0px;
+  text-decoration: none;
+}
+.iconos-footer{
+  margin: 0px 20px 10px 0px;
+  padding-top: 10px;
+  width: 45px;
+  height: 45px;
+  fill: #091a2e;
+  text-decoration: none;
+}
+.seccion-noticias{
+  justify-content: center;
+  height: 150px;
+  margin: 25px;
+}
+.banner-acerca{
     height: 200px;
     width: 90%;
     margin: 15px 60px;
-    
 }
 .acerca-de h1{
     text-align: center;
@@ -347,7 +429,13 @@ nav li{
 nav li a{
   font-size: 22px;
   font-weight: bold;
-  color: rgb(174, 199, 228) !important;
+  color: rgb(219, 227, 235) !important;
+  
+}
+nav li a:hover{
+  background-color: #314c74 !important;
+  color: #9ec5ff !important;
+  
 }
 .barra-navegacion{
   margin: 0px;
@@ -360,16 +448,60 @@ nav li a{
   border-radius: 0;
   padding-left: 30px;
   padding-right: 30px;
+  
 }
 .nav-pills .nav-link.active{
-  background-color: rgb(157, 188, 233);
-  color: rgb(5, 18, 34) !important;
+  background-color: rgb(157, 188, 233)!important;
+  color: rgb(21, 37, 58) !important;
+}
+.nav-pills .nav-link.active:hover{
+  background-color: rgb(60, 120, 209)!important;
+  color: rgb(1, 10, 20) !important;
+  
+  
 }
 .desplegable{
   font-size: 18px;
   background-color: #112035 !important;
+  top: 45px !important;
 }
 .desplegable li a{
   font-size: 18px;
   background-color: #112035 !important;
+}
+.buscar-formulario{
+  border: 1px solid #a2d0ff;
+}
+.buscar-boton{
+    color: #0a3875 !important;
+    border-color: #0a3875 !important;
+}
+.buscar-boton:hover{
+  color: #c6d6eb !important;
+  border-color: #00060e !important;
+  background-color: #183153;
+}
+.politicas{
+  height: 350px;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+.navegacion-politicas-item:link{
+  color: rgb(200, 255, 0) !important;
+  background-color: #000;
+}
+.navegacion-politicas-item:active{
+  color: red !important;
+  background-color: rgb(245, 50, 50);
+}
+.politicas-main{
+  
+  justify-content: center;
+  margin: 0 125px 50px 125px;
+  padding: 0 50px 0 50px;
+}
+.politicas-titulos{
+  font-size: 20px;
+  font-weight: bold;
 }
