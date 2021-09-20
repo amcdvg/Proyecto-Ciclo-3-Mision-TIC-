@@ -1,146 +1,165 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="clases.css">
-    
-    <title>Colombia Emprende</title>
-</head>
-<body>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="bootstrap.css">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="clases.css">
+      
+      <title>Colombia Emprende</title>
+  </head>
+  <body>
     <header>
-        <div class="Logo">
-        <img src="logo-colombia-emprende.jpg" alt="Logo Colombia Emprende">
-    </div>
-    <div class="h-25">
-      <form class="busqueda d-flex position-absolute top-0 m-1">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-  </div>
-    <div class="navegacion">
-      <div class="propia3 collapse position-absolute top-0 end-0" id="navbarToggleExternalContent1">
-        <div class=" bg-light p-2 mt-3">
-          <div class="d-flex ">
-            <a class="seleccionado m-1 p-1 text-decoration-none" href="iniciar_sesion.html">iniciar Sesión</a>
-            <a class="m-1 p-1 text-decoration-none" href="registrarse.html">Registra tu Emprendimiento</a>
+      <div class="Logo">
+        <img src="logo-colombia-emprende.png" alt="Logo Colombia Emprende">
+      </div>
+      <div class="h-25">
+        <form class="buscar d-flex position-absolute top-0 m-1">
+          <input class="buscar-formulario form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="buscar-boton btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+      <div>
+        <div class="collapse position-absolute top-0 end-0" id="navbarToggleExternalContent1">
+          <div class="barra-emprendedores">
+            <div class="d-flex ">
+              <a class="text-decoration-none registro-seleccionado" href="iniciar_sesion.html">iniciar Sesión</a>
+              <a class="text-decoration-none" href="registrarse.html">Registra tu Emprendimiento</a>
+            </div>
           </div>
         </div>
-      </div>
-      
-        <button class="propia2 navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <img class="moduloEmprendedores" src="emprende.jpg" alt="">
+        <button class="navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="emprendedores">
+            <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            <img class="modulo-emprendedores" src="modulo-emprendedores.png" alt="">
+          </span>
         </button>
-        <div class=""></div>
-    </header>   
-    <nav class="position-relative navbar navbar-dark bg-dark">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
-          <ul class="nav-dark bg-dark dropdown-menu">
-            <li><a class="categorias dropdown-item" href="#">Ropa</a></li>
-            <li><a class="categorias dropdown-item" href="#">Calzado</a></li>
-            <li><a class="categorias dropdown-item" href="#">Artesanias</a></li>
-            <li><a class="categorias dropdown-item" href="#">Tecnología</a></li>
-            <li><a class="categorias dropdown-item" href="#">Comida</a></li>
-            <li><a class="categorias dropdown-item" href="#">Misc.</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
+      </header>    
+      <!--Inicio de Barra de Navegación--> 
+      <nav class="barra-navegacion position-relative navbar navbar-dark bg-dark">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="tienda.html">Tienda</a>
-        </li>
-        
-        <div class="propia1 collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
-            <div class=" bg-dark p-2">
-              <span class="text-muted">
-                <a class="d-inline-block nav-link disabled " href="">Modo Noche</a>
-                <a class="m-3 text-decoration-none" href="acerca.html">Acerca de</a>
-                <a class="m-3 text-decoration-none" href="mapa.html">Mapa del sitio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
+            <ul class="desplegable dropdown-menu">
+              <li><a class="categorias dropdown-item" href="#">Moda</a></li>
+              <li><a class="categorias dropdown-item" href="#">Artesanias</a></li>
+              <li><a class="categorias dropdown-item" href="#">Tecnología</a></li>
+              <li><a class="categorias dropdown-item" href="#">Comida</a></li>
+              <li><a class="categorias dropdown-item" href="#">Belleza</a></li>
+              <li><a class="categorias dropdown-item" href="#">Salud y Bienestar</a></li>
+              <li><a class="categorias dropdown-item" href="#">Niños y Bebes</a></li>
+              <li><a class="categorias dropdown-item" href="#">Deportes</a></li>
+              <li><a class="categorias dropdown-item" href="#">Hogar</a></li>
+              <li><a class="categorias dropdown-item" href="#">Servicios</a></li>
+              <li><a class="categorias dropdown-item" href="#">Otros...</a></li>
+            </ul>
+          </li>
+          <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
+            <div class="barra-oculta bg-dark">
+              <span>
+                <a class="d-inline-block nav-link text-decoration-none" href="acerca.html">Acerca de</a>
+                <a class="d-inline-block nav-link text-decoration-none" href="mapa.html">Mapa del sitio</a>
               </span>
             </div>
           </div>
-          
-            <button class="propia navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      </ul>
-    </nav>
-    <main class="fondo-claro">
-      <div class="modal-dialog-centered text-center d-flex justify-content-evenly p-4">
-        <div class="iniciar-sesion modal-content">  
-          <form class="col-12 p-2">
-            <div class="form-group m-2" id="user-group">
-              <input type="text" class="form-control"  id="user-group" placeholder="Usuario">
-            </div>
-  
-            
-            <div class="form-group m-2" id="contraseña-group">
-            <input type="password" class="form-control" placeholder="contraseña">
-            </div>
-            
-            <button type="submit" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button>
-  
-            <div class="col-12 forgot mt-2">
-              <a href="a"> Recordar contraseña</a>
-            </div>
-          </form>
-            
-        </div>
-        <div class="caja-registro">
-					<h3>¿Aún no tienes una cuenta? </h3>
-					<p>Registrate para que puedas inicar Sesión </p>
-          <button class="btn btn-outline-primary" id="btn__registrar">Registrarse</button>
-				</div>
-      </div>
-    </main>
+          <button class="boton-barra navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </ul>
+      </nav>
+      <!--Final de Barra de Navegación--> 
+      <main class="fondo-claro">
+        <div class="modal-dialog-centered text-center d-flex justify-content-evenly p-4">
+          <div class="iniciar-sesion modal-content">  
+            <form class="col-12 p-2">
+              <div class="form-group m-2" id="user-group">
+                <input type="text" class="form-control"  id="user-group" placeholder="Usuario">
+              </div>
     
-  
-
-    <footer>
-      <div class="baseContacto">
-           <div>
-              <address>
-                  Teléfono: 312 1456789<br>
-                  Contacto: Carlos Mario Hoyos<br>
-                  Calle 1 # 1-1<br>
-                  Box 564, Disneyland<br>
-                  Colombia
-              </address>
+              
+              <div class="form-group m-2" id="contraseña-group">
+              <input type="password" class="form-control" placeholder="contraseña">
+              </div>
+              
+              <button type="submit" class="btn btn-outline-primary"><i class="fas fa-sign-in-alt"></i>  Ingresar</button>
+    
+              <div class="col-12 forgot mt-2">
+                <a href="a"> Recordar contraseña</a>
+              </div>
+            </form>
+              
           </div>
-          <div>
-              <address>
-                  Teléfono: (572) 6594521<br>
-                  Contacto: Maria Fernanda Pelaez<br>
-                  Calle 1 # 1-1<br>
-                  Box 564, Disneyland<br>
-                  1981 Landins Drive<br>
-                  USA
-              </address>
+          <div class="caja-registro">
+            <h3>¿Aún no tienes una cuenta? </h3>
+            <p>Registrate para que puedas inicar Sesión </p>
+            <button class="btn btn-outline-primary" id="btn__registrar">Registrarse</button>
           </div>
-          <div>
-              <address>
-                  Teléfono: 312 1456789<br>
-                  Contacto: Carlos Mario Hoyos<br>
-                  Calle 1 # 1-1<br>
-                  Box 564, Disneyland<br>
-                  Colombia
-              </address>
-          </div>           
-      </div>
+        </div>
+      </main>
+      
+    
 
-      <div class=baseDerechos>
-          <div>Copyright &copy 2021 | Todos los derechos reservados HALMA TEAM | | <a href="politicas.html"
-                  target="_blank"  id="politica"> Política de Tratamiento de Datos Personales</a> </div>
-      </div>
-  </footer>
-  <script src="bootstrap.js"></script>
-  <script src="main.js"></script>
+      <footer>
+        <div class="cajas-footer d-flex flex-row">
+          <div class="col-4 m-2 p-3">
+            <h5>En colaboración con:</h5>
+            <span>
+              <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="logo-mintic.png" alt=""></a>
+              <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="logo-mision.png" alt=""></a>
+              <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="logo-utp.png" alt=""></a>
+            </span> 
+          </div>
+          <div class="col-3 m-2 p-3">
+            <h5>Siguenos en:</h5>
+            <div class="d-flex flex-row">
+              <a href="https://www.facebook.com/Colombia-Emprende-109565371475068" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="iconos-footer bi bi-facebook" viewBox="0 0 16 16">
+                  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/colombiaemprende5/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="iconos-footer bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                </svg>
+              </a>  
+              <a href="https://twitter.com/ColombiaEmpren5" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="iconos-footer bi bi-twitter" viewBox="0 0 16 16">
+                  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/channel/UCjNR0g-WdYRHMZZBRtl5JUA" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg"  class="iconos-footer bi bi-youtube" viewBox="0 0 16 16">
+                  <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                </svg>
+              </a>
+            </div> 
+          </div>
+          <div class="col-3 m-2 p-3">
+            <h5>Acerca de:</h5>
+            <span>
+              <a href="acerca.html" target="_blank"><img class="logo-footer-acerca" src="logo-colombia-emprende.png" alt=""></a>
+              <a href="halma.html" target="_blank"><img class="logo-footer-acerca" src="logo-halma.png" alt=""></a>
+            </span> 
+          </div>   
+        </div>
+        <div class=baseDerechos>
+          <div>Copyright &copy 2021 | Todos los derechos reservados <a href="halma.html">HALMA TEAM</a> | | 
+            <a href="politicas.html" target="_blank"  id="politica"> Política de Tratamiento de Datos Personales</a>
+          </div>
+        </div>
+      </footer>
+    <script src="bootstrap.js"></script>
+    <script src="main.js"></script>
   </body>
-  </html>
+</html>

@@ -1,6 +1,6 @@
 const galleryContainer = document.querySelector('.gallery-container');
 const galleryControlsContainer = document.querySelector('.gallery-controls');
-const galleryControls = ['previous', 'next'];//['previous', 'add', 'next'];
+const galleryControls = ['anterior', 'siguiente'];//['previous', 'add', 'next'];
 const galleryItems = document.querySelectorAll('.gallery-item');
 
 class Carousel {
@@ -28,7 +28,7 @@ class Carousel {
   // Update the current order of the carouselArray and gallery
   setCurrentState(direction) {
 
-    if (direction.className == 'gallery-controls-previous') {
+    if (direction.className == 'gallery-controls-anterior') {
       this.carouselArray.unshift(this.carouselArray.pop());
     } else {
       this.carouselArray.push(this.carouselArray.shift());
@@ -37,17 +37,7 @@ class Carousel {
     this.updateGallery();
   }
 
-  // Construct the carousel navigation
-  // setNav() {
-    // galleryContainer.appendChild(document.createElement('ul')).className = 'gallery-nav';
-
-    // this.carouselArray.forEach(item => {
-    //   const nav = galleryContainer.lastElementChild;
-    //   nav.appendChild(document.createElement('li'));
-    // }); 
-  // }s
-
-  // Construct the carousel controls
+  
   setControls() {
     this.carouselControls.forEach(control => {
       galleryControlsContainer.appendChild(document.createElement('button')).className = `gallery-controls-${control}`;
@@ -69,14 +59,6 @@ class Carousel {
           const latestItem = this.carouselArray.length;
           const latestIndex = this.carouselArray.findIndex(item => item.getAttribute('data-index') == this.carouselArray.length)+1;
 
-          // Assign the necessary properties for new gallery item
-          Object.assign(newItem,{
-            className: 'gallery-item',
-            src: `http://fakeimg.pl/300/?text=${this.carouselArray.length+1}`
-          });
-          newItem.setAttribute('data-index', this.carouselArray.length+1);
-
-          // Then add it to the carouselArray and update the gallery
           this.carouselArray.splice(latestIndex, 0, newItem);
           document.querySelector(`[data-index="${latestItem}"]`).after(newItem);
           this.updateGallery();
@@ -90,8 +72,7 @@ class Carousel {
   }
 }
 
-const exampleCarousel = new Carousel(galleryContainer, galleryItems, galleryControls);
+const categoriasCarousel = new Carousel(galleryContainer, galleryItems, galleryControls);
 
-exampleCarousel.setControls();
-// exampleCarousel.setNav();
-exampleCarousel.useControls();
+categoriasCarousel.setControls();
+categoriasCarousel.useControls();
