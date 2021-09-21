@@ -3,8 +3,8 @@
 }
 
 .Logo img{
-  margin: 10px 0px 10px 50px;
-    height: 125px;
+  margin: 15px 0px 10px 50px;
+    height: 70px;
     
 }
 
@@ -12,7 +12,6 @@ header{
     
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
     background-color: #ecf3ff !important;
     
 }
@@ -31,30 +30,33 @@ nav{
 }
 .boton-barra{
     margin-right: 50px;
-    margin-top: 5px;
+    margin-top: 4px;
+    border: solid 2px rgb(205 228 255 / 50%) !important;
 }
+.boton-barra:hover{
+  margin-right: 49px;
+  margin-top: 3px;
+  border: solid 3px #3a81f3a4 !important;
+}
+
 .barra-oculta{
     margin-right: 125px;
-    background-color: #0d121a !important;
+    background-color: #2f5ca0 !important;
 }
 .banner{
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .barra-oculta a{
-  color: #81baf3;
+  color: #eef4f7;
   padding-left: 35px !important;
   padding-right: 35px !important;
-  border-left: solid #a3b9da00  2px !important;
-  border-right: solid #a3b9da00  2px !important;
   font-size: 22px;
   
   
 }
 .barra-oculta a:hover{
-  color: #e5e9f0 !important;
-  border-left: solid #a3b9da  2px !important;
-  border-right: solid #a3b9da  2px !important;
-  background-color: rgb(30, 39, 59);
+  color: #76abff !important;
+  background-color: rgb(9, 19, 43);
   
 }
 
@@ -62,64 +64,79 @@ nav{
     height: 50px;
 }
 .modulo-emprendedores{
-    height: 125px;
-    margin-left: 0px;
+    height: 50px;
+    margin: 20px 0 10px 25px;
     padding-left: 0px;
     padding-right: 10px;
-    margin-right: 25px;
-    margin-bottom: 15px;
     border-radius: 10px;
-    margin-top: 15px;
 }
 .emprendedores-flecha{
-  margin-right: -15px !important;
+  margin-right: -45px !important;
   margin-top: 10px;
   width: 50px;
   height: 50px;
   fill: #0d2647;
 }
-
-.emprendedores-flecha:hover{
-  margin-right: -20px !important;
+.emprendedores:hover .modulo-emprendedores{
+    height: 54px;
+    margin: 17px 0 5px 25px;
+    padding-left: 0px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.emprendedores:hover .emprendedores-flecha{
+  margin-right: -45px !important;
   width: 65px;
 height: 65px;
 fill: #174583;
 
 }
 .barra-emprendedores{
-  margin-top: 60px;
-  padding: 0 25px 0 25px;
+  left: -90px !important;
   background-color: #d6e3f5;
-  margin-right: 235px;
-  border-radius: 25px;
+  position: relative;
+  border-radius: 10px;
   
 }
-.barra-emprendedores a{
+.caja-barra-emprendedores{
+  margin: 10px -20px 10px 30px;
+  
+}
+.caja-barra-emprendedores:hover{
+  margin: 10px -20px 10px 30px;
+  
+  
+}
+.caja-barra-emprendedores svg{
+  width: 20px;
+  height: 20px;
+  margin: -5px 10px 0 0;
+  
+}
+.caja-barra-emprendedores:hover svg{
+  
+  fill: rgb(0, 140, 255);
+  
+}
+.caja-barra-emprendedores a{
   font-size: 18px;
   font-weight: 600 !important;
-  margin: 0 5px 0 5px;
-  padding: 15px 15px 15px 15px;  
   color: #081c35;
-  border-left: solid #a3b9da00  2px !important;
-  border-right: solid #a3b9da00  2px !important;
+  
+  margin-top: 2px;
 }
-.barra-emprendedores a:hover{
-  margin: 0 5px 0 5px;
-  padding: 15px 15px 15px 15px;
-  background-color: #81a7e4;
-  color: rgb(9, 15, 20);
-  border-left: solid #2e5794  2px !important;
-  border-right: solid #2e5794 2px !important;
+.caja-barra-emprendedores:hover a{
+  color: rgb(0, 140, 255);
+  
   
 }
 .navbar-toggler:focus{
   box-shadow: 0 0 0 0 !important;
 }
-
 .banner-inicio{
-    height: 300px;
-    width: 96%;
-    margin: 20px 30px;
+    height: 250px;
+    width: 90%;
+    margin: 10px 70px 0 70px;
     border-radius: 35px;
     box-shadow: 0px 3px 3px 0px rgba(23, 73, 121, 0.219);
 }
@@ -155,7 +172,9 @@ fill: #174583;
 }
 .buscar{
   margin-top: 15px !important;
-    left: 42%;
+    left: 33%;
+    width: 400px;
+    height: 35px;
 }
 
   
@@ -204,9 +223,11 @@ fill: #174583;
   border-radius: 25px;
 }
 .banner-acerca{
-    height: 200px;
-    width: 90%;
-    margin: 15px 60px;
+  height: 200px;
+  width: 90%;
+  margin: 20px 70px;
+  border-radius: 35px;
+  box-shadow: 0px 3px 3px 0px rgba(23, 73, 121, 0.219);
 }
 .acerca-de h1{
     text-align: center;
@@ -406,7 +427,8 @@ nav li a:hover{
   margin: 0px;
   padding-top: 0px;
   padding-bottom: 0px;
-  background-color: #112035 !important;
+  background: linear-gradient(180deg,#294672, #122542);
+  padding-left: 35px;
 
 }
 .nav-pills .nav-link {
@@ -416,13 +438,13 @@ nav li a:hover{
   
 }
 .nav-pills .nav-link.active{
-  background-color: rgb(157, 188, 233)!important;
-  color: rgb(21, 37, 58) !important;
+  background-color: rgba(157, 196, 255, 0.884)!important;
+  color: rgb(7, 30, 59) !important;
   font-weight: bold;
 }
 .nav-pills .nav-link.active:hover{
-  background-color: rgb(60, 120, 209)!important;
-  color: rgb(1, 10, 20) !important;
+  background-color: rgba(38, 121, 255, 0.822)!important;
+  color: rgb(129, 215, 255) !important;
   
   
 }
@@ -439,12 +461,15 @@ nav li a:hover{
   border: 1px solid #a2d0ff;
 }
 .buscar-boton{
-    color: #0a3875 !important;
-    border-color: #0a3875 !important;
+    font-size: 18px;
+    font-weight: 300;
+    color: #3977c9 !important;
+    border-color: #72cbff !important;
+    padding: 0 15px;
 }
 .buscar-boton:hover{
   color: #c6d6eb !important;
-  border-color: #00060e !important;
+  border-color: #121a24 !important;
   background-color: #183153;
 }
 .politicas{
@@ -489,7 +514,6 @@ nav li a:hover{
   height: 150px;
   opacity: 0;
   position: absolute;
-  transition: all 0.3s ease-in-out;
   width: 150px;
   z-index: 0;
   border-radius: 25px !important;
@@ -511,7 +535,8 @@ nav li a:hover{
   height: 150px;
   width: 250px;
   left: 10%;
-  opacity: .4;
+  z-index: 0;
+  opacity: .3;
   transform: translateX(-50%);
   bottom:25px;
 }
@@ -520,7 +545,7 @@ nav li a:hover{
 
 .gallery-item-2 {
   height: 150px;
-  opacity: 1;
+  opacity: .6;
   width: 300px;
   z-index: 1;
   left: 30%;
@@ -540,7 +565,7 @@ nav li a:hover{
 
 .gallery-item-4 {
   height: 150px;
-  opacity: 1;
+  opacity: .6;
   width: 300px;
   z-index: 1;
   left: 70%;
@@ -552,7 +577,8 @@ nav li a:hover{
   height: 150px;
   width: 250px;
   left: 90%;
-  opacity: .4;
+  z-index: 0;
+  opacity: .3;
   transform: translateX(-50%);
   bottom:25px;
 }

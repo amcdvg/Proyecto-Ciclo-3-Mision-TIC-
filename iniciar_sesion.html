@@ -14,37 +14,48 @@
   <body>
     <header>
       <div class="Logo">
-        <img src="logo-colombia-emprende.png" alt="Logo Colombia Emprende">
+        <img src="logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
-      <div class="h-25">
-        <form class="buscar d-flex position-absolute top-0 m-1">
-          <input class="buscar-formulario form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="buscar-boton btn btn-outline-success" type="submit">Search</button>
+      <div class="h-25 position-relative">
+        <form class="buscar d-flex position-relative top-0 m-1">
+          <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+          <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
         </form>
       </div>
       <div>
-        <div class="collapse position-absolute top-0 end-0" id="navbarToggleExternalContent1">
-          <div class="barra-emprendedores">
-            <div class="d-flex ">
-              <a class="text-decoration-none registro-seleccionado" href="iniciar_sesion.html">iniciar Sesión</a>
-              <a class="text-decoration-none" href="registrarse.html">Registra tu Emprendimiento</a>
+        <div class="collapse position-absolute" id="navbarToggleExternalContent1">
+          <div class="barra-emprendedores w-75">
+            <div class="row ml-2 pl-2">
+              <span class="caja-barra-emprendedores">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                </svg>
+                <a class="text-decoration-none registro-seleccionado" href="iniciar_sesion.html">Iniciar Sesión</a>
+              </span>
+              <span class="caja-barra-emprendedores">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
+                  <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+                </svg>
+                <a class="text-decoration-none" href="registrarse.html">Registra tu Emprendimiento</a>
+              </span>
             </div>
           </div>
         </div>
-        <button class="navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="emprendedores">
+        <button class="emprendedores navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span>
             <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
             </svg>
             <img class="modulo-emprendedores" src="modulo-emprendedores.png" alt="">
           </span>
         </button>
-      </header>    
+      </header>  
       <!--Inicio de Barra de Navegación--> 
-      <nav class="barra-navegacion position-relative navbar navbar-dark bg-dark">
+      <nav class="barra-navegacion position-relative navbar navbar-dark">
         <ul class="nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="tienda.html">Tienda</a>
