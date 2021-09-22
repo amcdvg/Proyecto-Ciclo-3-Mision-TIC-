@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="clases.css">
-    
-    <title>Colombia Emprende</title>
-</head>
-<body>
-  <header>
-    <div class="Logo">
-      <img src="logo-colombia.png" alt="Logo Colombia Emprende">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Colombia Emprende - Tienda</title>
+  </head>
+  <body>
+   <!--Inicio del Header-->
+   <header>
+    <!--Logo Colombia Emprende-->
+    <div class="logo">
+      <img src="../img/logo-colombia.png" alt="Logo Colombia Emprende">
     </div>
-    <div class="h-25 position-relative">
+    <!--Barra de Busqueda-->
+    <div class="position-relative">
       <form class="buscar d-flex position-relative top-0 m-1">
         <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
         <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
       </form>
     </div>
+    <!--Módulo Registro-IniciarSesion-->
     <div>
       <div class="collapse position-absolute" id="navbarToggleExternalContent1">
         <div class="barra-emprendedores w-75">
@@ -31,65 +33,117 @@
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
               </svg>
-              <a class="text-decoration-none" href="iniciar_sesion.html">Iniciar Sesión</a>
+              <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none">Iniciar Sesión</a>
             </span>
             <span class="caja-barra-emprendedores">
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
                 <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
               </svg>
-              <a class="text-decoration-none" href="registrarse.html">Registra tu Emprendimiento</a>
+              <a class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</a>
             </span>
           </div>
         </div>
       </div>
-      <button class="emprendedores navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-          </svg>
-          <img class="modulo-emprendedores" src="modulo-emprendedores.png" alt="">
-        </span>
-      </button>
-    </header>  
-    <!--Inicio de Barra de Navegación--> 
-    <nav class="barra-navegacion position-relative navbar navbar-dark">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="tienda.html">Tienda</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
-          <ul class="desplegable dropdown-menu">
-            <li><a class="categorias dropdown-item" href="#">Moda</a></li>
-            <li><a class="categorias dropdown-item" href="#">Artesanias</a></li>
-            <li><a class="categorias dropdown-item" href="#">Tecnología</a></li>
-            <li><a class="categorias dropdown-item" href="#">Comida</a></li>
-            <li><a class="categorias dropdown-item" href="#">Belleza</a></li>
-            <li><a class="categorias dropdown-item" href="#">Salud y Bienestar</a></li>
-            <li><a class="categorias dropdown-item" href="#">Niños y Bebes</a></li>
-            <li><a class="categorias dropdown-item" href="#">Deportes</a></li>
-            <li><a class="categorias dropdown-item" href="#">Hogar</a></li>
-            <li><a class="categorias dropdown-item" href="#">Servicios</a></li>
-            <li><a class="categorias dropdown-item" href="#">Otros...</a></li>
-          </ul>
-        </li>
-        <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
-          <div class="barra-oculta bg-dark">
-            <span>
-              <a class="d-inline-block nav-link text-decoration-none" href="acerca.html">Acerca de</a>
-              <a class="d-inline-block nav-link text-decoration-none" href="mapa.html">Mapa del sitio</a>
-            </span>
+    </div>
+    <!--Boton-Modulo-Emprendedores-->
+    <button class="emprendedores navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+        <img class="modulo-emprendedores" src="../img/modulo-emprendedores.png" alt="">
+      </span>
+    </button>
+    <!-- Modulo de Iniciar Sesión-->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="col-12 p-2">
+              <div class="form-group m-2" id="user-group">
+                <input type="text" class="form-control"  id="user-group" placeholder="Usuario">
+              </div>
+              <div class="form-group m-2" id="contraseña-group">
+                <input type="password" class="form-control" placeholder="contraseña">
+              </div>
+              <div class="col-12 forgot mt-2">
+                <a href="a"> Recordar contraseña</a>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary">Acceder</button>
           </div>
         </div>
-        <button class="boton-barra navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </ul>
-    </nav>
-    <!--Final de Barra de Navegación-->  
+      </div>
+    </div>
+    <!--Modulo de Registro-->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Registrarse</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="d-flex flex-row justify-content-center">
+          <div class="fondo-registro login-registro">
+            <form class="p-3">
+              <h2>Registrarse</h2>
+              <input id="nombreUsuario" type="text" placeholder="Nombre ">
+              <input type="text" placeholder="Apellidos">
+              <input type="text" placeholder="CC">
+              <input type="text" placeholder="Correo">
+              <input type="text" placeholder="Direccion">
+              <input type="text" placeholder="Telefono">
+              <div class="d-flex flex-row justify-content-center justify-content-center"><button type="button" class="btn btn-primary ">Siguiente</button></div><br>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>  
+  <!--Inicio de Barra de Navegación--> 
+  <nav class="barra-navegacion position-relative navbar navbar-dark">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="tienda.html">Tienda</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
+        <ul class="desplegable dropdown-menu">
+          <li><a class="categorias dropdown-item" href="#">Moda</a></li>
+          <li><a class="categorias dropdown-item" href="#">Artesanias</a></li>
+          <li><a class="categorias dropdown-item" href="#">Tecnología</a></li>
+          <li><a class="categorias dropdown-item" href="#">Comida</a></li>
+          <li><a class="categorias dropdown-item" href="#">Belleza</a></li>
+          <li><a class="categorias dropdown-item" href="#">Salud y Bienestar</a></li>
+          <li><a class="categorias dropdown-item" href="#">Niños y Bebes</a></li>
+          <li><a class="categorias dropdown-item" href="#">Deportes</a></li>
+          <li><a class="categorias dropdown-item" href="#">Hogar</a></li>
+          <li><a class="categorias dropdown-item" href="#">Servicios</a></li>
+          <li><a class="categorias dropdown-item" href="#">Otros...</a></li>
+        </ul>
+      </li>
+      <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
+        <div class="barra-oculta bg-dark">
+          <span>
+            <a class="d-inline-block nav-link text-decoration-none" href="acerca.html">Acerca de</a>
+            <a class="d-inline-block nav-link text-decoration-none" href="mapa.html">Mapa del sitio</a>
+          </span>
+        </div>
+      </div>
+      <button class="boton-barra navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </ul>
+  </nav>
 
     <div class="text-center">
   <br>
@@ -259,14 +313,15 @@
 
 </main>
 
+<!--Inicio del Footer--> 
 <footer>
   <div class="cajas-footer d-flex flex-row">
     <div class="col-4 m-2 p-3">
       <h5>En colaboración con:</h5>
       <span>
-        <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="logo-mintic.png" alt=""></a>
-        <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="logo-mision.png" alt=""></a>
-        <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="logo-utp.png" alt=""></a>
+        <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="../img/logo-mintic.png" alt=""></a>
+        <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="../img/logo-mision.png" alt=""></a>
+        <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="../img/logo-utp.png" alt=""></a>
       </span> 
     </div>
     <div class="col-3 m-2 p-3">
@@ -297,8 +352,8 @@
     <div class="col-3 m-2 p-3">
       <h5>Acerca de:</h5>
       <span>
-        <a href="acerca.html" target="_blank"><img class="logo-footer-acerca" src="logo-colombia-emprende.png" alt=""></a>
-        <a href="halma.html" target="_blank"><img class="logo-footer-acerca" src="logo-halma.png" alt=""></a>
+        <a href="acerca.html" target="_blank"><img class="logo-footer-acerca" src="../img/logo-colombia-emprende.png" alt=""></a>
+        <a href="halma.html" target="_blank"><img class="logo-footer-acerca" src="../img/logo-halma.png" alt=""></a>
       </span> 
     </div>   
   </div>
