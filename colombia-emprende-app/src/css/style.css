@@ -582,12 +582,6 @@ footer{
   margin: 15px 60px;
 }
 /*Estilo Pestaña Politicas*/
-.politicas{
-  height: 350px;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  overflow-x: hidden;
-}
 .navegacion-politicas-item:link{
   color: rgb(200, 255, 0) !important;
   background-color: #000;
@@ -596,12 +590,10 @@ footer{
   color: red !important;
   background-color: rgb(245, 50, 50);
 }
-.politicas-main{
-  justify-content: center;
-  margin: 0 125px 50px 125px;
-  padding: 0 50px 0 50px;
-}
 .politicas-titulos{
   font-size: 20px;
   font-weight: bold;
+}
+.modal-politicas{
+  max-width: 1100px;
 }
