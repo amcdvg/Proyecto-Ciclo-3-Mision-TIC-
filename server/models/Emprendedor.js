@@ -11,7 +11,19 @@ let emprendedorSchema = new Schema({
         type: String,
     },
     phone: {
-        type: Number,
+        type: String,
+    },
+    emprendimientoName: {
+        type: String,
+    },
+    emprendimientoEmail: {
+        type: String,
+    },
+    emprendimientoCiudad: {
+        type: String,
+    },
+    emprendimientoPhone: {
+        type: String,
     },
 },
 {

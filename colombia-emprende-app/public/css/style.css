@@ -12,6 +12,9 @@ header{
   margin: 15px 0px 10px 50px;
   height: 70px;
 }
+.modulo-usuario{
+  margin: 15px 50px 15px 0px;
+}
 .buscar{
   margin-top: 15px !important;
   left: 33%;
@@ -559,11 +562,13 @@ footer{
   width: 250px;
 }
 .barra-tienda{
-  width: 250px;
+  width: 300px;
 }
+
 .boton-tienda{
-  width: 130px;
+  
 }
+
 /*Estilo Pestaña Acerca de*/
 .banner-acerca{
   height: 200px;
@@ -601,4 +606,147 @@ footer{
 .politicas-titulos{
   font-size: 20px;
   font-weight: bold;
+}
+/*Estilo Pestaña Admin*/
+.header-admin{
+  display:flex;
+  flex-direction: row;
+  background-color: #ffffff !important; 
+}
+.header-admin-contenedor{
+  background-color: #e5eaf0 !important; 
+}
+.logo-admin img{
+  margin: 15px 42px 0px 43px;
+  height: 70px;
+}
+.logo-admin{
+  border-right: solid 3px rgb(154, 190, 219) !important;
+}
+.barra-oculta-admin a{
+  color: #eef4f7;
+  padding-left: 35px !important;
+  padding-right: 35px !important;
+  font-size: 16px;
+}
+.barra-oculta-admin a:hover{
+  color: #76abff !important;
+  background-color: rgb(9, 19, 43);
+}
+.barra-oculta-admin{
+  margin-right: 110px;
+  background-color: #2f5ca0 !important;
+}
+.barra-admin{
+  height: 40px;
+}
+.boton-barra-admin{
+  padding: 0px;
+  margin: 0px 45px 0 0;
+  border-color: rgba(255, 255, 255, 0) !important;
+}
+.crud-admin{
+  padding: 15px 0 15px 0;
+  border-right: solid 3px rgb(102, 166, 219) !important;
+  min-height: 455px;
+}
+.boton-crud{
+  font-size: 23px;
+  font-weight: 600;
+  color: #f7f8f8;
+  padding: 15px 30px!important;
+  margin: 15px 0px;
+  border-radius: 25px 0px;
+  border-top: solid 2px #6cb8ff00 !important;;
+  border-left: solid 2px #6cb8ff00 !important;;
+  border-right: solid 2px #6cb8ff !important;
+  border-bottom: solid 2px #6cb8ff !important;
+  background-color: #ffffff00;
+}
+.boton-crud:hover{
+  color: #1cb7ff;
+  border-right: solid 2px #ffffff;
+  border-bottom: solid 2px #ffffff;
+  
+}
+.boton-crud-eliminar{
+  
+  color: #ff8181;
+  border-top: solid 2px #6cb8ff00 !important;;
+  border-left: solid 2px #6cb8ff00 !important;;
+  border-right: solid 2px #ffbcbc !important;
+  border-bottom: solid 2px #ffbcbc !important;
+  background-color: #ffffff00 !important;
+}
+.boton-crud-eliminar:hover{
+  color: #f8f8f2;
+  border-top: solid 2px #6cb8ff00 !important;;
+  border-left: solid 2px #6cb8ff00 !important;;
+  border-right: solid 2px #ff3636ce !important;
+  border-bottom: solid 2px #ff3636ce !important;
+  background-color: #ff3636ce !important;
+  
+}
+.perfil{
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 15px;
+  border-radius: 20px 0px 0px 20px;
+  color: #9bcfff !important;
+}
+.perfil:hover{
+  color: #e7ebf1 !important;
+}
+.baseDerechos-admin {
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  vertical-align: middle;
+  background: #273b47;
+  padding: 10px 0 10px 0;
+  margin-top: 10px;
+}
+.baseDerechos a{
+  text-decoration: none;
+  color: #accdf8;
+}
+.baseDerechos a:hover{
+  color: #4f9bff;
+}
+.cerrar-sesion{
+  position: absolute;
+  top: 520px;
+  left: 90px;
+}
+.cerrar-sesion:hover .boton-cerrar-sesion{
+  fill: #0095ff;
+}
+.cerrar:hover{
+  color: #0095ff;
+}
+.boton-cerrar-sesion {
+  height: 25px;
+  width: 25px;
+  fill: #b8cfdf;
+}
+.cerrar-sesion:hover .cerrar{
+  color: #0095ff;
+}
+.cerrar{
+  vertical-align: middle;
+  font-size: 22px;
+  font-weight: 400;
+  color: #b8cfdf;
+  text-decoration: none;
+}
+.navegacion-crud{
+  padding-left: 70px !important;
+}
+.nombre-emprendimiento{
+  background-color: #0095ff00;
+  color: #081a36;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  font-size: 25px;
+  font-weight: 700;
 }
