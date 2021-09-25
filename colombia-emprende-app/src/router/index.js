@@ -53,6 +53,11 @@ const routes = [
         name: "editar-emprendimiento",
         component: () => import("../components/admin/editar-emprendimiento.vue"),
     },
+    {
+        path: "/admin/eliminar-cuenta/:id",
+        name: "eliminar-cuenta",
+        component: () => import("../components/admin/eliminar-cuenta.vue"),
+    },
     ];
 const router = new VueRouter({
     mode: "history",

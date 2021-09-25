@@ -77,9 +77,9 @@
                         </div>
                     </div>
                     <div class="">
-                      <button class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <router-link :to="{ name: 'eliminar-cuenta', params: { id: emprendedor._id } }" class="boton-crud boton-crud-eliminar p-2" type="button">
                         Eliminar Mi Cuenta
-                      </button>
+                      </router-link>
                   </div>
                   <span class="cerrar-sesion" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="m-1 boton-cerrar-sesion bi bi-x-circle-fill" viewBox="0 0 16 16">

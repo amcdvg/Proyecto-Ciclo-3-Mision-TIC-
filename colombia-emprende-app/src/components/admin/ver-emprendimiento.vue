@@ -98,6 +98,7 @@
                      <div>{{ emprendedor.emprendimientoEmail }}</div>
                      <div>{{ emprendedor.emprendimientoPhone }}</div>
                      <div>{{ emprendedor.emprendimientoCiudad }}</div>
+                     <div>{{ emprendedor.emprendimientoDireccion }}</div>
                         </tr>
                     </div>
                         </div>

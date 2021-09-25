@@ -19,6 +19,14 @@
  />
  </div>
  <div class="form-group">
+ <label>Direccion del Emprendimiento</label>
+ <input
+ type="text"
+ class="form-control"
+ v-model="emprendedor.emprendimientoDireccion"
+ />
+ </div>
+ <div class="form-group">
  <label>E-mail del Emprendimiento</label>
  <input
  type="email"

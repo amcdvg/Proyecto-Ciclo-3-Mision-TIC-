@@ -600,6 +600,15 @@
 <script>
     import axios from "axios";
     export default {
+  mounted() {
+    const plugin = document.createElement("script");
+    plugin.setAttribute(
+      "src",
+      "../assets/js/scripts.js"
+    );
+    plugin.async = true;
+    document.body.appendChild(plugin);
+  },
         data() {
             return {
                 emprendedor: {
@@ -616,7 +625,6 @@
                 axios
                 .post(apiURL, this.emprendedor)
                 .then(() => {
-                    this.$router.push("/");
                     this.emprendedor = {
                         name: "",
                         email: "",
