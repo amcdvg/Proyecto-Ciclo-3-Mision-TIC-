@@ -221,7 +221,7 @@
                 <div class="gallery-item gallery-item-1 " id="galeria-item-1">
                     <div class="row">
                         <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img" src="img/moda.jpeg" data-index="1">
+                            <img class="imagen-categorias card-img" src="" data-index="1">
                             <div class="texto-categorias card-img-overlay">
                             <a href="">Moda</a>
                             </div>
