@@ -5,12 +5,12 @@
           <img src="../../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
         </div>
         
-        <div class="header-admin-contenedor w-100">
+         <div class="header-admin-contenedor w-100">
           <div class="nombre-emprendimiento">
           {{emprendedor.emprendimientoName}}
         </div>
           <div class="modulo-usuario text-end">
-            <h3>{{emprendedor.name}}</h3>
+            <h3>{{emprendedor.name}} {{emprendedor.apellido}}</h3>
             <h5>{{emprendedor.email}}</h5>
           </div>
         </div>
@@ -41,9 +41,9 @@
       <div>
         <div class="d-flex">
             <div class="crud-admin text-start bg-dark col">
-                <nav class="nav-bar navegacion-crud">
+               <nav class="nav-bar navegacion-crud">
                     <div class="">
-                        <button class="boton-crud navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mi-perfil" aria-controls="mi-perfil" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="boton-crud-seleccionado boton-crud navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mi-perfil" aria-controls="mi-perfil" aria-expanded="false" aria-label="Toggle navigation">
                         Mi Perfil
                         </button>
                     </div>
@@ -53,8 +53,8 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
                                 </li>
-                                <li class="nav-item active">
-                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Perfil</router-link>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil-seleccionado perfil nav-link active" href="#">Editar Perfil</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -77,9 +77,9 @@
                         </div>
                     </div>
                     <div class="">
-                      <button class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <router-link :to="{ name: 'eliminar-cuenta', params: { id: emprendedor._id } }" class="boton-crud boton-crud-eliminar p-2" type="button">
                         Eliminar Mi Cuenta
-                      </button>
+                      </router-link>
                   </div>
                   <span class="cerrar-sesion" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="m-1 boton-cerrar-sesion bi bi-x-circle-fill" viewBox="0 0 16 16">
@@ -91,38 +91,66 @@
             </div>
             <div class="fondo-claro col-8 d-flex">
                 
-        <div class="col w-100">
+        <div class="col w-100"><br>
  <h3 class="text-center">Editar mis Datos</h3>
- <form @submit.prevent="handleUpdateForm">
- <div class="form-group">
- <label>Name</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.name"
- required
- />
- </div>
- <div class="form-group">
- <label>Email</label>
- <input
- type="email"
- class="form-control"
- v-model="emprendedor.email"
- required
- />
- </div>
- <div class="form-group">
- <label>Phone</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.phone"
- required
- />
- </div>
- <div class="form-group">
- <button class="btn btn-danger btn-block">Update</button>
+ <form @submit.prevent="handleUpdateForm" class="mt-4">
+ <div class="form-group actualizar-registro">
+ <label>Nombre: </label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.name"
+                  required
+                  />
+                </div>
+                <div class="form-group actualizar-registro">
+                  <label>Apellido: </label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.apellido"
+                  required
+                  />
+                </div>
+                <div class="form-group actualizar-registro">
+                  <label>E-mail: </label>
+                  <input
+                  type="email"
+                  class="form-control"
+                  v-model="emprendedor.email"
+                  required
+                  />
+                </div>
+                <div class="form-group actualizar-registro">
+                  <label>Contraseña: </label>
+                  <input
+                  type="password"
+                  class="form-control"
+                  v-model="emprendedor.password"
+                  required
+                  />
+                </div>
+              
+                <div class="form-group actualizar-registro">
+                  <label>Ciudad de Residencia: </label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.ciudad"
+                  required
+                  />
+                </div>
+                <div class="form-group actualizar-registro">
+                  <label>Celular: </label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.phone"
+                  required
+                  />
+                </div>
+ <div class="form-group d-flex justify-content-center m-2 p-2">
+ <button class="btn boton-actualizar-registro btn-block">Guardar Cambios</button>
  </div>
  </form>
  </div>

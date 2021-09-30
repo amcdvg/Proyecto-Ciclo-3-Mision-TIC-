@@ -5,12 +5,12 @@
           <img src="../../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
         </div>
         
-        <div class="header-admin-contenedor w-100">
+         <div class="header-admin-contenedor w-100">
           <div class="nombre-emprendimiento">
           {{emprendedor.emprendimientoName}}
         </div>
           <div class="modulo-usuario text-end">
-            <h3>{{emprendedor.name}}</h3>
+            <h3>{{emprendedor.name}} {{emprendedor.apellido}}</h3>
             <h5>{{emprendedor.email}}</h5>
           </div>
         </div>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="">
-                      <button class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <button class="boton-crud boton-crud-eliminar-seleccionado p-2" type="button">
                         Eliminar Mi Cuenta
                       </button>
                   </div>
@@ -92,15 +92,15 @@
             <div class="fondo-claro col-8 d-flex">
                 <div class="m-3 card flex-row">
         <div class="">
-                <div class="card-body text-center">
-                        <h2 class="card-title">!Advertencia¡</h2>
-                        <p class="card-text">{{emprendedor.name}}, estas a punto de eliminar 
-                            todos los datos asociados a tu cuenta {{emprendedor.email}}, eso incluye
-                            todos los datos de tu emprendimiento {{emprendedor.emprendimientoName}}.
-                        </p>
+                <div class="card-body text-center"><br>
+                        <h1 class="card-title">¡Advertencia!</h1><br>
+                        <h5 class="card-text m-3"><b>{{emprendedor.name}} {{emprendedor.apellido}}</b>, estas a punto de eliminar 
+                            todos los datos asociados a tu cuenta <b>{{emprendedor.email}}</b>, eso incluye
+                            todos los datos de tu emprendimiento <b>{{emprendedor.emprendimientoName}}</b>.
+                        </h5><br>
                          <button
  @click.prevent="borrarCuenta(emprendedor._id)"
- class="btn btn-danger"
+ class="btn btn-danger boton-eliminar-cuenta"
  >
  Eliminar Definitivamente
  </button>

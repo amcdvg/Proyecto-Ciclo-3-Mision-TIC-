@@ -9,13 +9,28 @@ const routes = [
         component: () => import("../components/index-component"),
     },
     {
+        path: "/emprendimientos",
+        name: "emprendimientos",
+        component: () => import("../components/list-component"),
+     },
+     {
+        path: "/validar",
+        name: "validar",
+        component: () => import("../components/validar"),
+     },
+     {
+        path: "/registrarse",
+        name: "registrarse",
+        component: () => import("../components/modulo-registro"),
+     },
+    {
         path: "/registro-emprendimiento/:id",
         name: "registro-emprendimiento",
         component: () => import("../components/registro-emprendimiento"),
     },
     {
-        path: "/emprendimientos",
-        name: "emprendimientos",
+        path: "/emprendimientos-1",
+        name: "emprendimientos-1",
         component: () => import("../components/emprendimientos-component"),
     },  
     {

@@ -1,71 +1,120 @@
 <template>
 <div>
       <!--Logo Colombia Emprende-->
-      <div class="logo">
-        <img src="img/logo-colombia.png" alt="Logo Colombia Emprende">
+      <div class="text-center logo-registro-emprendimiento">
+        <img src="../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
           <!--Body del modulo Registro-->
           <div class="row justify-content-center">
- <div class="col m-3">
- <h3 class="text-center">Registra tu Emprendimiento</h3><br>
- <form @submit.prevent="handleUpdateForm">
- <div class="form-group">
- <label>Nombre del Emprendimiento</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.emprendimientoName"
- required
- />
- </div>
- <div class="form-group">
- <label>Direccion del Emprendimiento</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.emprendimientoDireccion"
- />
- </div>
- <div class="form-group">
- <label>E-mail del Emprendimiento</label>
- <input
- type="email"
- class="form-control"
- v-model="emprendedor.emprendimientoEmail"
- required
- />
- </div>
- <div class="form-group">
- <label>Ciudad</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.emprendimientoCiudad"
- required
- />
- </div>
- <div class="form-group">
- <label>Telefono del Emprendimiento</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.emprendimientoPhone"
- required
- />
- </div>
- <div class="form-group d-flex justify-content-end">
- <button class="btn btn-primary btn-block m-2">Registrar Emprendimiento</button>
- </div>
- </form>
- </div>
- </div>
+            <div class="text-center col">
+              <h3 class="titulo-formulario-registro-emprendimiento">Registra tu Emprendimiento</h3><br>
+              <form @submit.prevent="handleUpdateForm" class="row justify-content-center"> 
+                <div class="col-4">
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Nombre del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoName"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Direccion del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoDireccion"
+                    />
+                  </div>
+                  
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>E-mail del Emprendimiento</label>
+                    <input
+                    type="email"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoEmail"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Ciudad</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoCiudad"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Tags</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoTags"
+                    required
+                    />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Telefono del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoPhone"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Facebook del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoRedesSocial"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label class="">Seleccionar Categoria</label>
+                    <select class="form-select" name="Categorias" v-model="emprendedor.emprendimientoCategoria"
+                    required>
+                      <option value="Moda">Moda</option> 
+                      <option value="Tecnologia">Tecnología</option> 
+                      <option value="Belleza">Belleza</option>
+                      <option value="Hogar">Hogar</option> 
+                      <option value="Deportes">Deportes</option> 
+                      <option value="Artesanias">Artesanias</option>
+                      <option value="Salud y Bienestar">Salud y Bienestar</option> 
+                      <option value="Comida">Comida</option> 
+                      <option value="Servicios">Servicios</option> 
+                      <option value="Niños y Bebes">Niños y Bebes</option> 
+                      <option value="Otros...">Otros...</option>  
+                    </select>
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Descripción</label>
+                    <textarea
+                    type="text-field"
+                    class="form-control descripcion-emprendimiento"
+                    v-model="emprendedor.emprendimientoDescription"
+                    required
+                    />
+                  </div>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                  <button class="btn boton-formulario-registro-emprendimiento btn-block m-4">Registrar Emprendimiento</button>
+                </div>
+              </form>
+            </div>
+          </div>
  
 
 
          
 
     <footer>
-      <div class=baseDerechos>
+      <div class="baseDerechos mt-3">
         <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
         </div>
@@ -256,6 +305,12 @@ emprendedor: {
  emprendimientoEmail: "",
  emprendimientoCiudad: "",
  emprendimientoPhone: "",
+ emprendimientoDireccion: "",
+ emprendimientoDescription: "",
+ emprendimientoRedesSocial: "",
+ emprendimientoCategoria: "",
+ emprendimientoTags: "",
+ 
  },
  };
  },

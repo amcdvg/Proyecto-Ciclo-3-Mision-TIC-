@@ -5,12 +5,12 @@
           <img src="../../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
         </div>
         
-        <div class="header-admin-contenedor w-100">
+         <div class="header-admin-contenedor w-100">
           <div class="nombre-emprendimiento">
           {{emprendedor.emprendimientoName}}
         </div>
           <div class="modulo-usuario text-end">
-            <h3>{{emprendedor.name}}</h3>
+            <h3>{{emprendedor.name}} {{emprendedor.apellido}}</h3>
             <h5>{{emprendedor.email}}</h5>
           </div>
         </div>
@@ -54,13 +54,13 @@
                                     <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link active" href="#">Editar Perfil</router-link>
+                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Perfil</router-link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="">
-                        <button class="boton-crud navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mi-emprendimiento" aria-controls="mi-emprendimiento" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="boton-crud-seleccionado boton-crud navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mi-emprendimiento" aria-controls="mi-emprendimiento" aria-expanded="false" aria-label="Toggle navigation">
                           Mi Emprendimiento
                         </button>
                     </div>
@@ -70,16 +70,16 @@
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'ver-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Mi Emprendimiento</router-link>
                                 </li>
-                                <li class="nav-item active">
-                                    <router-link :to="{ name: 'editar-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Mi Emprendimiento</router-link>
-                                </li>  
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'editar-emprendimiento', params: { id: emprendedor._id } }" class="perfil-seleccionado perfil nav-link active" href="#">Editar Mi Emprendimiento</router-link>
+                                </li> 
                             </ul>
                         </div>
                     </div>
                     <div class="">
-                      <button class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <router-link :to="{ name: 'eliminar-cuenta', params: { id: emprendedor._id } }" class="boton-crud boton-crud-eliminar p-2" type="button">
                         Eliminar Mi Cuenta
-                      </button>
+                      </router-link>
                   </div>
                   <span class="cerrar-sesion" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="m-1 boton-cerrar-sesion bi bi-x-circle-fill" viewBox="0 0 16 16">
@@ -93,47 +93,104 @@
                 
         <div class="col w-100">
  <h3 class="text-center">Editar mi Emprendimiento</h3>
-<form @submit.prevent="handleUpdateForm">
- <div class="form-group">
- <label>Nombre del Emprendimiento</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.emprendimientoName"
- required
- />
- </div>
- <div class="form-group">
- <label>E-mail del Emprendimiento</label>
- <input
- type="email"
- class="form-control"
- v-model="emprendedor.emprendimientoEmail"
- required
- />
- </div>
- <div class="form-group">
- <label>Ciudad</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.emprendimientoCiudad"
- required
- />
- </div>
- <div class="form-group">
- <label>Telefono del Emprendimiento</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.emprendimientoPhone"
- required
- />
- </div>
- <div class="form-group d-flex justify-content-end">
- <button class="btn btn-primary btn-block m-2">Guardar Cambios</button>
- </div>
- </form>
+<form @submit.prevent="handleUpdateForm" class="row justify-content-center"> 
+                <div class="col-4">
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Nombre del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoName"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Direccion del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoDireccion"
+                    />
+                  </div>
+                  
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>E-mail del Emprendimiento</label>
+                    <input
+                    type="email"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoEmail"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Ciudad</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoCiudad"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Tags</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoTags"
+                    required
+                    />
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Telefono del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoPhone"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Facebook del Emprendimiento</label>
+                    <input
+                    type="text"
+                    class="form-control"
+                    v-model="emprendedor.emprendimientoRedesSocial"
+                    required
+                    />
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label class="">Seleccionar Categoria</label>
+                    <select class="form-select" name="Categorias" v-model="emprendedor.emprendimientoCategoria"
+                    required>
+                      <option value="Moda">Moda</option> 
+                      <option value="Tecnologia">Tecnología</option> 
+                      <option value="Belleza">Belleza</option>
+                      <option value="Hogar">Hogar</option> 
+                      <option value="Deportes">Deportes</option> 
+                      <option value="Artesanias">Artesanias</option>
+                      <option value="Salud y Bienestar">Salud y Bienestar</option> 
+                      <option value="Comida">Comida</option> 
+                      <option value="Servicios">Servicios</option> 
+                      <option value="Niños y Bebes">Niños y Bebes</option> 
+                      <option value="Otros...">Otros...</option>  
+                    </select>
+                  </div>
+                  <div class="form-group formulario-registro-emprendimiento">
+                    <label>Descripción</label>
+                    <textarea
+                    type="text-field"
+                    class="form-control descripcion-emprendimiento"
+                    v-model="emprendedor.emprendimientoDescription"
+                    required
+                    />
+                  </div>
+                </div>
+                <div class="form-group d-flex justify-content-center">
+                  <button class="btn boton-formulario-registro-emprendimiento btn-block m-4">Guardar Cambios</button>
+                </div>
+              </form>
  </div>
                 
             </div>

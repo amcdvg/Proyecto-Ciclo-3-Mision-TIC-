@@ -4,12 +4,12 @@
         <div class="logo-admin">
           <img src="../../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
         </div>
-        <div class="header-admin-contenedor w-100">
+         <div class="header-admin-contenedor w-100">
           <div class="nombre-emprendimiento">
           {{emprendedor.emprendimientoName}}
         </div>
           <div class="modulo-usuario text-end">
-            <h3>{{emprendedor.name}}</h3>
+            <h3>{{emprendedor.name}} {{emprendedor.apellido}}</h3>
             <h5>{{emprendedor.email}}</h5>
           </div>
         </div>
@@ -42,7 +42,7 @@
             <div class="crud-admin text-start bg-dark col">
                 <nav class="nav-bar navegacion-crud">
                     <div class="">
-                        <button class="boton-crud navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mi-perfil" aria-controls="mi-perfil" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="boton-crud boton-crud-seleccionado navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mi-perfil" aria-controls="mi-perfil" aria-expanded="false" aria-label="Toggle navigation">
                         Mi Perfil
                         </button>
                     </div>
@@ -50,10 +50,10 @@
                         <div class="sub-navegacion-crud">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link >
+                                    <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil-seleccionado perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Perfil</router-link >
+                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Perfil</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -71,14 +71,14 @@
                                 </li>
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'editar-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Mi Emprendimiento</router-link>
-                                </li>  
+                                </li> 
                             </ul>
                         </div>
                     </div>
                     <div class="">
-                      <button class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <router-link :to="{ name: 'eliminar-cuenta', params: { id: emprendedor._id } }" class="boton-crud boton-crud-eliminar p-2" type="button">
                         Eliminar Mi Cuenta
-                      </button>
+                      </router-link>
                   </div>
                   <span class="cerrar-sesion" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="m-1 boton-cerrar-sesion bi bi-x-circle-fill" viewBox="0 0 16 16">
@@ -89,16 +89,18 @@
                 </nav>
             </div>
             <div class="fondo-claro col-8 d-flex">
-                <div class="m-3 card flex-row">
+                <div class="m-3 card flex-row w-100">
         <div class="">
-                <div class="card-body">
-                        <div>
-                        <tr v-show="emprendedor" :key="emprendedor._id">
-                    <div>{{ emprendedor.name }}</div>
-                    <div>{{ emprendedor.email }}</div>
-                    <div>{{ emprendedor.phone }}</div>
-                        </tr>
-                    </div>
+          
+                <div class="card-body m-3 ver-perfil-caja">
+                        
+                        <vcontainer v-show="emprendedor" :key="emprendedor._id" >
+                    <div><h4 class="ver-perfil">Nombre Completo: </h4><h1><b>{{ emprendedor.name }} {{ emprendedor.apellido}}</b></h1></div>
+                    <span><h4 class="ver-perfil">E-mail: </h4><h3><b>{{ emprendedor.email }}</b></h3></span>
+                    <span><h4 class="ver-perfil">Celular: </h4><h3><b>{{ emprendedor.phone }}</b></h3></span>
+                    <div><h4 class="ver-perfil">Ciudad de Residencia: </h4><h3><b>{{ emprendedor.ciudad }}</b></h3></div>
+                        </vcontainer>
+                    
                         </div>
                     </div>
                 </div>

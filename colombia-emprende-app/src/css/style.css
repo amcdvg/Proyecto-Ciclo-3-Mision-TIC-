@@ -15,6 +15,16 @@ height: 70px;
 .modulo-usuario{
 margin: 15px 50px 15px 0px;
 }
+.modulo-usuario h3{
+  color: #155481;
+  font-size: 25px;
+  font-weight: 700;
+  }
+  .modulo-usuario h5{
+    color: #156ba8;
+    font-size: 20px;
+    font-weight: 600;
+    }
 .buscar{
 margin-top: 15px !important;
 left: 33%;
@@ -614,7 +624,7 @@ flex-direction: row;
 background-color: #ffffff !important; 
 }
 .header-admin-contenedor{
-background-color: #e5eaf0 !important; 
+background-color: #eaf0f7d5 !important; 
 display:flex;
 flex-direction: row;
 justify-content: space-between;
@@ -675,7 +685,8 @@ border-bottom: solid 2px #ffffff;
 }
 .boton-crud-eliminar{
 
-color: #ff8181;
+text-decoration: none;
+color: #ffa3a3;
 border-top: solid 2px #6cb8ff00 !important;;
 border-left: solid 2px #6cb8ff00 !important;;
 border-right: solid 2px #ffbcbc !important;
@@ -718,9 +729,11 @@ color: #accdf8;
 color: #4f9bff;
 }
 .cerrar-sesion{
-position: absolute;
-top: 520px;
+position: relative;
+top: 50px;
 left: 90px;
+padding-bottom: 60px;
+
 }
 .cerrar-sesion:hover .boton-cerrar-sesion{
 fill: #0095ff;
@@ -748,9 +761,167 @@ padding-left: 70px !important;
 }
 .nombre-emprendimiento{
   background-color: #0095ff00;
-  color: #081a36;
-  margin: 15px 0 0 10px;
-  font-size: 45px;
+  color: #164a86;
+  margin: 20px 0 0 10px;
+  font-size: 35px;
   font-weight: 700;
   text-align: left;
 }
+.logo-registro-emprendimiento {
+  background-color: #eef3f7;
+  border-bottom: solid 5px #1a3b55 !important;
+}
+.logo-registro-emprendimiento img{
+  height: 85px;
+  margin: 0px;
+}
+.titulo-formulario-registro{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-size: 24px;
+  color: #233847;
+  font-weight: 700;
+}
+.formulario-registro{
+  margin: 5px 10px;
+}
+.formulario-registro label{
+  font-size: 15px;
+  font-weight: 600;
+  color: #183349;
+  padding: 5px ;
+}
+.formulario-registro input{
+  height: 30px;
+}
+.boton-formulario-registro{
+  font-weight: 600;
+  margin: 15px 10px 0px 10px;
+  background-color: #1a3961;
+  color: #ecf1f5;
+}
+.boton-formulario-registro:hover{
+  background-color: #83c3f3;
+  color: #031022;
+}
+.titulo-formulario-registro-emprendimiento{
+  padding: 0px;
+  text-align: center;
+  font-size: 25px;
+  margin: 10px 0 -10px 0;
+  color: #233847;
+  font-weight: 700;
+}
+.formulario-registro-emprendimiento{
+  margin: 5px 10px;
+}
+.formulario-registro-emprendimiento label{
+  font-size: 15px;
+  font-weight: 650;
+  color: #1c4363;
+  padding: 5px ;
+}
+.formulario-registro-emprendimiento input{
+  height: 35px;
+}
+.boton-formulario-registro-emprendimiento{
+  font-weight: 600;
+  margin: 15px 10px 0px 10px;
+  background-color: #1a3961;
+  color: #ecf1f5;
+}
+.boton-formulario-registro-emprendimiento:hover{
+  background-color: #83c3f3;
+  color: #031022;
+}
+.descripcion-emprendimiento{
+  height: 100px;
+  margin-top: 1px;
+}
+.boton-eliminar-cuenta{
+  font-size: 25px;
+  font-weight: 600;
+  padding: 15px 25px;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+.boton-eliminar-cuenta:hover{
+  background-color: rgb(248, 0, 0);
+  color: #ffffff;
+}
+.actualizar-registro{
+  display: flex;
+  flex-direction: row;
+  
+  margin: 15px 60px;
+}
+.actualizar-registro label{
+  width: 200px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #183349;
+  padding: 5px ;
+}
+.actualizar-registro input{
+  height: 35px;
+  width: 500px;
+  
+}
+.boton-actualizar-registro{
+  font-weight: 600;
+  margin: 10px 10px 0px 10px;
+  background-color: #1a3961;
+  color: #ecf1f5;
+}
+.boton-actualizar-registro:hover{
+  background-color: #83c3f3;
+  color: #031022;
+}
+.ver-perfil{
+  color: #076fb9 !important;
+  font-size: 25px;
+  font-weight: 700;
+}
+.ver-emprendimiento{
+  color: #072338 !important;
+  margin-left: 25px;
+}
+.ver-perfil-caja{
+  color: #072338;
+}
+.ver-emprendimiento-text{
+  color: #076fb9 !important;
+  font-weight: 700;
+}
+.ver-emprendimiento-parrafo{
+  padding: 0px 20px 0px 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.boton-crud-seleccionado{
+  color: #82cbff !important;
+}
+.perfil-seleccionado{
+  color: #112236 !important;
+  background-color: #59baffc4 !important;
+}
+.boton-crud-eliminar-seleccionado{
+  color: #f8f8f2;
+  border-top: solid 2px #6cb8ff00 !important;;
+  border-left: solid 2px #6cb8ff00 !important;;
+  border-right: solid 2px #ff3636ce !important;
+  border-bottom: solid 2px #ff3636ce !important;
+  background-color: #ff3636ce !important;
+  
+  }
+  .boton-crud-eliminar-seleccionado:hover{
+
+    text-decoration: none;
+    color: #ff6b6b;
+    border-top: solid 2px #6cb8ff00 !important;;
+    border-left: solid 2px #6cb8ff00 !important;;
+    border-right: solid 2px #ff5f5f !important;
+    border-bottom: solid 2px #ff5f5f !important;
+    background-color: #ffffff18 !important;
+    }

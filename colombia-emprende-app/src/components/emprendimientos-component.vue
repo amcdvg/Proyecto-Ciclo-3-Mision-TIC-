@@ -13,27 +13,7 @@
         </form>
       </div>
       <!--Módulo Registro-IniciarSesion-->
-      <div>
-        <div class="collapse position-absolute" id="navbarToggleExternalContent1">
-          <div class="barra-emprendedores w-75">
-            <div class="row ml-2 pl-2">
-              <span class="caja-barra-emprendedores">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                </svg>
-                <router-link to="/registrarse" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none">Iniciar Sesión</router-link>
-              </span>
-              <span class="caja-barra-emprendedores">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
-                  <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
-                </svg>
-                <a class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</a>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <!--Boton-Modulo-Emprendedores-->
       <button class="emprendedores navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span>
@@ -80,48 +60,7 @@
             <!--Body del modulo Registro-->
             <div class="row justify-content-center">
                 <div class="col m-3">
-                    <h3 class="text-center">Ingresa tu Datos</h3><br>
-                    <form @submit.prevent="handleSubmitForm">
-                        <div class="form-group">
-                            <label>Nombre</label>
-                            <input
-                            type="text"
-                            class="form-control"
-                            v-model="emprendedor.name"
-                            required
-                            />
-                        </div>
-                        <div class="form-group">
-                        <label>E-mail</label>
-                            <input
-                            type="email"
-                            class="form-control"
-                            v-model="emprendedor.email"
-                            required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label>Contraseña</label>
-                            <input
-                            type="text"
-                            class="form-control"
-                            v-model="emprendedor.password"
-                            required
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label>Celular</label>
-                            <input
-                            type="text"
-                            class="form-control"
-                            v-model="emprendedor.phone"
-                            required
-                            />
-                        </div>
-                        <div class="form-group d-flex justify-content-end">
-                            <button class="btn btn-primary btn-block m-2">Registrarse</button>
-                        </div>
-                    </form>
+         
                 </div>
             </div>
         </div>
@@ -168,89 +107,17 @@
     <!--Inicio de Main--> 
     <main>
         <div class="d-flex">
-            <div class="barra-tienda">
-                <nav class="navbar navbar-light">
-                    <div class="container-fluid m-2 p-1">
-                        <button class="boton-tienda navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent4" aria-controls="navbarToggleExternalContent4" aria-expanded="false" aria-label="Toggle navigation">
-                        Categorias
-                        </button>
-                    </div>
-                    <div class="collapse" id="navbarToggleExternalContent4">
-                        <div>
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Active</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Disabled</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="container-fluid m-2 p-1">
-                        <button class="boton-tienda navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent2" aria-controls="navbarToggleExternalContent2" aria-expanded="false" aria-label="Toggle navigation">
-                            Ciudad
-                        </button>
-                    </div>
-                    <div class="collapse" id="navbarToggleExternalContent2">
-                        <div class="">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Active</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Disabled</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="container-fluid m-2 p-1">
-                        <button class="boton-tienda navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3" aria-expanded="false" aria-label="Toggle navigation">
-                            Ofertas
-                        </button>
-                    </div>
-                    <div class="collapse" id="navbarToggleExternalContent3">
-                        <div class="">
-                            <ul class="nav flex-column">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Active</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Disabled</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <div class="fondo-claro w-100 p-2">
-                <div class="tienda card mb-3 w-100 m-2 p-2 col">
+            
+            <div class="fondo-claro w-100 p-2" v-for="emprendedor in Emprendedores" :key="emprendedor._id">
+                <div v-for="emprendedor in Emprendedores" :key="emprendedor._id" class="tienda card mb-3 w-100 m-2 p-2 col">
                     <div class="row g-0">
                         <div class="col-3">
                             <img src="banner.jpg" class="img-fluid rounded-start" alt="...">
                         </div>  
                         <div class="col-9">
                             <div class="card-body">
-                                <h5 class="card-title">Nombre Tienda</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h5 class="card-title">{{emprendedor.emprendimientoName}}</h5>
+                                <p class="card-text">{{emprendedor.emprendimientoEmail}}</p>
                                 <p class="card-text">
                                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#tienda-modulos1" aria-expanded="false" aria-controls="tienda-modulos1">
                                         Ver más...
@@ -261,69 +128,11 @@
                     </div>  
                     <div class="collapse" id="tienda-modulos">
                         <div class="card card-body">
-                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                           <p> {{emprendedor.emprendimientoDireccion}}</p>
+                           <p> {{emprendedor.emprendimientoCiudad}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="tienda card mb-3 w-100 m-2 p-2 col">
-                    <div class="row g-0">
-                        <div class="col-3">
-                            <img src="banner1.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-9">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#tienda-modulos1" aria-expanded="false" aria-controls="tienda-modulos1">
-                                        Ver más...
-                                    </button>
-                                </p>
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="collapse" id="tienda-modulos1">
-                        <div class="card card-body">
-                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                        </div>
-                    </div>
-                </div>
-                <div class="tienda card mb-3 w-100 m-2 p-2 col">
-                    <div class="row g-0">
-                        <div class="col-3">
-                            <img src="banner2.jpg" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-9">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
-                                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#tienda-modulos2" aria-expanded="false" aria-controls="tienda-modulos2">
-                                        Ver más...
-                                    </button>
-                                </p>
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="collapse" id="tienda-modulos2">
-                        <div class="card card-body">
-                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-                        </div>
-                    </div>
-                </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-end">
-                        <li class="page-item disabled">
-                            <a class="page-link">Previous</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </main>  
@@ -512,6 +321,44 @@
 </div>    
 </template>
 <script>
+import axios from "axios";
+export default {
+ data() {
+ return {
+ Emprendedores: [],
+ };
+ },
+ created() {
+ let apiURL = "http://localhost:4000/api";
+ axios
+ .get(apiURL)
+ .then((res) => {
+ this.Emprendedores = res.data;
+ })
+ .catch((error) => {
+ console.log(error);
+ });
+ },
+ methods: {
+            handleSubmitForm() {
+                let apiURL = "http://localhost:4000/api/registro-emprendedor";
+                axios
+                .post(apiURL, this.emprendedor)
+                .then( ()=> {
+                      this.$router.push("/registrar-emrepndedor/$``");
+  
+  })
+                
+                
+                .catch((error) => {
+                    console.log(error);
+                
+                });
+            },
+        },
+};
+</script>
+<script>
     import axios from "axios";
     export default {
         data() {
@@ -529,22 +376,18 @@
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
-                .then(() => {
-                    this.$router.push("/");
-                    this.emprendedor = {
-                        name: "",
-                        email: "",
-                        password: "",
-                        phone: "",
-                    };
-                })
+                .then( ()=> {
+                      this.$router.push("/registrar-emrepndedor/$``");
+  
+  })
+                
+                
                 .catch((error) => {
                     console.log(error);
+                
                 });
             },
         },
     };
 </script>
-
-
 

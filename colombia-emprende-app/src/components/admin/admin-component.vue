@@ -10,7 +10,7 @@
           {{emprendedor.emprendimientoName}}
         </div>
           <div class="modulo-usuario text-end">
-            <h3>{{emprendedor.name}}</h3>
+            <h3>{{emprendedor.name}} {{emprendedor.apellido}}</h3>
             <h5>{{emprendedor.email}}</h5>
           </div>
         </div>
@@ -90,14 +90,14 @@
                 </nav>
             </div>
             <div class="fondo-claro col-8 d-flex">
-                <div class="m-3 card flex-row">
+                <div class="m-3 card flex-row w-100">
         <div class="">
                 <div class="card-body text-center">
-                        <h5 class="card-title">!Hola {{emprendedor.name}}¡</h5>
-                        <p class="card-text">Bienvenido a tu menu administrador. Desde aqui podras ver, editar o eliminar
-                            lo datos registrados en Colombia Emprende.
-                        </p>
-                        <h2>Colombia Emprende Te Apoya</h2>
+                        <h2 class="card-title">¡Bienvenido {{emprendedor.name}}!</h2>
+                        <h6 class="card-text text-center m-4">Bienvenido a tu menu administrador. Desde aqui podras ver, editar o eliminar
+                            lo datos registrados de Tu Usuario y Tu Emprendimiento en la Web de Colombia Emprende.
+                        </h6>
+                        <h3>Colombia Emprende Te Apoya</h3>
                         </div>
                     </div>
                 </div>

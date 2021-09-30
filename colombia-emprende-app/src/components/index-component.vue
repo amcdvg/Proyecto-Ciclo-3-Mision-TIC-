@@ -1,6 +1,7 @@
 <template>
-<div><div>
-        <header>
+<div>
+  <div>
+    <header>
       <!--Logo Colombia Emprende-->
       <div class="logo">
         <img src="img/logo-colombia.png" alt="Logo Colombia Emprende">
@@ -28,7 +29,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
                   <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
                 </svg>
-                <a class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</a>
+                <router-link to="/registrarse" class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</router-link>
               </span>
             </div>
           </div>
@@ -76,61 +77,77 @@
         <div class="offcanvas-header">
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body p-0">
           <!--Body del modulo Registro-->
           <div class="row justify-content-center">
- <div class="col m-3">
- <h3 class="text-center">Ingresa tu Datos</h3><br>
- <form @submit.prevent="handleSubmitForm">
- <div class="form-group">
- <label>Nombre</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.name"
- required
- />
- </div>
- <div class="form-group">
- <label>E-mail</label>
- <input
- type="email"
- class="form-control"
- v-model="emprendedor.email"
- required
- />
- </div>
- <div class="form-group">
- <label>Contraseña</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.password"
- required
- />
- </div>
- <div class="form-group">
- <label>Celular</label>
- <input
- type="text"
- class="form-control"
- v-model="emprendedor.phone"
- required
- />
- </div>
- <div class="form-group d-flex justify-content-end">
- <button class="btn btn-primary btn-block m-2">Registrarse</button>
- </div>
- </form>
- </div>
- </div>
- 
-
-
+            <div class="col-10 m-3">
+              <h4 class="titulo-formulario-registro">Ingresa tu Datos</h4>
+              <form @submit.prevent="handleSubmitForm" class="p-3">
+                <div class="form-group formulario-registro">
+                  <label>Nombre</label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.name"
+                  required
+                  />
+                </div>
+                <div class="form-group formulario-registro">
+                  <label>Apellido</label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.apellido"
+                  required
+                  />
+                </div>
+                <div class="form-group formulario-registro">
+                  <label>E-mail</label>
+                  <input
+                  type="email"
+                  class="form-control"
+                  v-model="emprendedor.email"
+                  required
+                  />
+                </div>
+                <div class="form-group formulario-registro">
+                  <label>Contraseña</label>
+                  <input
+                  type="password"
+                  class="form-control"
+                  v-model="emprendedor.password"
+                  required
+                  />
+                </div>
+              
+                <div class="form-group formulario-registro">
+                  <label>Ciudad de Residencia</label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.ciudad"
+                  required
+                  />
+                </div>
+                <div class="form-group formulario-registro">
+                  <label>Celular</label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  v-model="emprendedor.phone"
+                  required
+                  />
+                </div>
+                <div class="form-group d-flex justify-content-end">
+                  <button class="btn boton-formulario-registro btn-block">Registrarse</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-        </header> 
-    </div>
+    </header> 
+  </div>
             <!--Inicio de Barra de Navegación--> 
     <nav class="barra-navegacion position-relative navbar navbar-dark">
       <ul class="nav nav-pills">
@@ -199,9 +216,9 @@
             </button>
         </div>
         <!--Inicio de Galeria de Categorias--> 
-        <div class="gallery">
-            <div class="gallery-container">
-                <div class="gallery-item gallery-item-1">
+        <div class="gallery" id="galeria">
+            <div class="gallery-container" id="galeria-contenedor">
+                <div class="gallery-item gallery-item-1 " id="galeria-item-1">
                     <div class="row">
                         <div class="caja-imagen-categorias">
                             <img class="imagen-categorias card-img" src="img/moda.jpeg" data-index="1">
@@ -314,6 +331,7 @@
             </div>             
             <h1 class="categorias-titulo">CATEGORIAS</h1>
             <div class="gallery-controls"></div>
+            
         </div>
         
         <br>
@@ -595,20 +613,12 @@
         </div>
     
     </footer>
-</div>    
+</div>   
+
 </template>
 <script>
     import axios from "axios";
     export default {
-  mounted() {
-    const plugin = document.createElement("script");
-    plugin.setAttribute(
-      "src",
-      "../assets/js/scripts.js"
-    );
-    plugin.async = true;
-    document.body.appendChild(plugin);
-  },
         data() {
             return {
                 emprendedor: {
@@ -616,6 +626,8 @@
                 email: "",
                 password: "",
                 phone: "",
+                apellido: "",
+                ciudad: "",
                 },
             };
         },
@@ -624,16 +636,14 @@
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
-                .then(() => {
-                    this.emprendedor = {
-                        name: "",
-                        email: "",
-                        password: "",
-                        phone: "",
-                    };
-                })
+                .then( ()=> {
+                      this.$router.push("/validar");
+  
+  })
+        
                 .catch((error) => {
                     console.log(error);
+                
                 });
             },
         },

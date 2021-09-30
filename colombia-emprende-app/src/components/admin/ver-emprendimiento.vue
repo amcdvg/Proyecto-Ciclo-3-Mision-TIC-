@@ -4,12 +4,12 @@
         <div class="logo-admin">
           <img src="../../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
         </div>
-        <div class="header-admin-contenedor w-100">
+         <div class="header-admin-contenedor w-100">
           <div class="nombre-emprendimiento">
           {{emprendedor.emprendimientoName}}
         </div>
           <div class="modulo-usuario text-end">
-            <h3>{{emprendedor.name}}</h3>
+            <h3>{{emprendedor.name}} {{emprendedor.apellido}}</h3>
             <h5>{{emprendedor.email}}</h5>
           </div>
         </div>
@@ -50,35 +50,35 @@
                         <div class="sub-navegacion-crud">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link >
+                                    <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Perfil</router-link >
+                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Perfil</router-link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="">
-                        <button class="boton-crud navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mi-emprendimiento" aria-controls="mi-emprendimiento" aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="boton-crud-seleccionado boton-crud  navbar-toggler p-2" type="button" data-bs-toggle="collapse" data-bs-target="#mi-emprendimiento" aria-controls="mi-emprendimiento" aria-expanded="false" aria-label="Toggle navigation">
                           Mi Emprendimiento
                         </button>
                     </div>
                     <div class="collapse" id="mi-emprendimiento">
                         <div class="sub-navegacion-crud">
                             <ul class="nav flex-column">
-                                <li class="nav-item active">
-                                    <router-link :to="{ name: 'ver-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Mi Emprendimiento</router-link>
+                                <li class="nav-item">
+                                    <router-link :to="{ name: 'ver-emprendimiento', params: { id: emprendedor._id } }" class="perfil-seleccionado perfil nav-link active" aria-current="page" href="#">Ver Mi Emprendimiento</router-link>
                                 </li>
                                 <li class="nav-item">
                                     <router-link :to="{ name: 'editar-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Mi Emprendimiento</router-link>
-                                </li>  
+                                </li> 
                             </ul>
                         </div>
                     </div>
                     <div class="">
-                      <button class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <router-link :to="{ name: 'eliminar-cuenta', params: { id: emprendedor._id } }" class="boton-crud boton-crud-eliminar p-2" type="button">
                         Eliminar Mi Cuenta
-                      </button>
+                      </router-link>
                   </div>
                   <span class="cerrar-sesion" type="button">
                     <svg xmlns="http://www.w3.org/2000/svg" class="m-1 boton-cerrar-sesion bi bi-x-circle-fill" viewBox="0 0 16 16">
@@ -89,17 +89,22 @@
                 </nav>
             </div>
             <div class="fondo-claro col-8 d-flex">
-                <div class="m-3 card flex-row">
+                <div class="m-3 card flex-row w-100">
         <div class="">
-                <div class="card-body">
+                <div class="card-body ver-emprendimiento">
                         <div>
-                        <tr v-show="emprendedor" :key="emprendedor._id">
-                    <div>{{ emprendedor.emprendimientoName }}</div>
-                     <div>{{ emprendedor.emprendimientoEmail }}</div>
-                     <div>{{ emprendedor.emprendimientoPhone }}</div>
-                     <div>{{ emprendedor.emprendimientoCiudad }}</div>
-                     <div>{{ emprendedor.emprendimientoDireccion }}</div>
-                        </tr>
+                        <vcontainer v-show="emprendedor" :key="emprendedor._id">
+                    <div><h2><b>{{ emprendedor.emprendimientoName }}</b></h2></div>
+                     <div><h3><b class="ver-emprendimiento-text">E-mail: </b>{{ emprendedor.emprendimientoEmail }}</h3></div>
+                     <div><h4><b class="ver-emprendimiento-text">Celular: </b>{{ emprendedor.emprendimientoPhone }}</h4></div>
+                     <div><h4><b class="ver-emprendimiento-text">Dirección: </b>{{ emprendedor.emprendimientoDireccion }}</h4></div>
+                     <div><h4><b class="ver-emprendimiento-text">Ciudad: </b>{{ emprendedor.emprendimientoCiudad }}</h4></div>
+                     <div><h4><b class="ver-emprendimiento-text">Facebook: </b>{{ emprendedor.emprendimientoRedesSocial }}</h4></div>
+                     <h5><b class="ver-emprendimiento-text">Descripción:</b></h5>
+                     <div><p class="ver-emprendimiento-parrafo">{{ emprendedor.emprendimientoDescription }}</p></div>
+                     <h6><b class="ver-emprendimiento-text">Tags:</b></h6>
+                     <div><b>{{ emprendedor.emprendimientoTags }}</b></div>
+                        </vcontainer>
                     </div>
                         </div>
                     </div>
