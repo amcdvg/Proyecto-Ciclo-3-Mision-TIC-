@@ -4,15 +4,15 @@
     <header>
       <!--Logo Colombia Emprende-->
       <div class="logo">
-        <img src="img/logo-colombia.png" alt="Logo Colombia Emprende">
+        <img src="../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
       <!--Barra de Busqueda-->
-      <div class="position-relative">
+     <div class="position-relative">
         <form class="buscar d-flex position-relative top-0 m-1">
           <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
           <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
         </form>
-      </div>
+      </div> 
       <!--Módulo Registro-IniciarSesion-->
       <div>
         <div class="collapse position-absolute" id="navbarToggleExternalContent1">
@@ -41,7 +41,7 @@
           <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
           </svg>
-          <img class="modulo-emprendedores" src="img/modulo-emprendedores.png" alt="">
+          <img class="modulo-emprendedores" src="../assets/img/modulo-emprendedores.png" alt="">
         </span>
       </button>
       <!-- Modulo de Iniciar Sesión-->
@@ -53,17 +53,29 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form class="col-12 p-2">
-                <div class="form-group m-2" id="user-group">
-                  <input type="text" class="form-control"  id="user-group" placeholder="Usuario">
-                </div>
-                <div class="form-group m-2" id="contraseña-group">
-                  <input type="password" class="form-control" placeholder="contraseña">
-                </div>
-                <div class="col-12 forgot mt-2">
-                  <a href="a"> Recordar contraseña</a>
-                </div>
-              </form>
+              <form v-on:submit.prevent="onSubmit">
+   <br>
+ <div class="form-group">
+ <label>Confirma tu Correo</label>
+ <input
+ type="text"
+ class="form-control"
+ v-model="emprendedor.email"
+ required
+ />
+ </div><br>
+ <div class="form-group">
+ <label>Confirma tu Contraseña</label>
+ <input
+ type="text"
+ class="form-control"
+ v-model="emprendedor.password"
+ />
+ </div><br>
+ <div class="form-group d-flex justify-content-end">
+ <button type="submit" class="btn btn-primary btn-block m-2">Confirmar</button>
+ </div>
+ </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -82,7 +94,7 @@
           <div class="row justify-content-center">
             <div class="col-10 m-3">
               <h4 class="titulo-formulario-registro">Ingresa tu Datos</h4>
-              <form @submit.prevent="handleSubmitForm" class="p-3">
+              <form v-on:submit.prevent="registrarse" class="p-3">
                 <div class="form-group formulario-registro">
                   <label>Nombre</label>
                   <input
@@ -197,13 +209,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="banner-inicio" src="img/banner1.jpg" alt="...">
+                    <img class="banner-inicio" src="../assets/img/banner1.jpg" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img class="banner-inicio" src="img/banner5.jpg" alt="...">
+                    <img class="banner-inicio" src="../assets/img/banner5.jpg" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img class="banner-inicio" src="img/banner3.jpg" alt="...">
+                    <img class="banner-inicio" src="../assets/img/banner3.jpg" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndex" data-bs-slide="prev">
@@ -339,7 +351,7 @@
         <div class="row m-3 justify-content-center p-3">
             <div class="col-7">
                 <div class="tarjeta-registro card col-12 ">
-                    <img src="img/publicidad.jpeg" class="tarjeta-emprendedor-imagen card-img" alt="...">
+                    <img src="../assets/img/publicidad.jpeg" class="tarjeta-emprendedor-imagen card-img" alt="...">
                     <div class="tarjeta-emprendedor card-img-overlay">
                         ¿Eres un Emprendedor Colombiano?
                     </div>
@@ -352,7 +364,7 @@
                 </div> 
             </div>    
             <div class="seccion-noticias card col-3 p-3">
-                <img src="img/ley.png" class="imagen-seccion-noticias card-img-top" alt="...">
+                <img src="../assets/img/ley.png" class="imagen-seccion-noticias card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Noticias</h5>
                     <p class="card-text">Conoce la nueva <b>Ley de Emprendimiento 2020</b> creada para ayudar a los emprendedores colombianos.</p>
@@ -372,19 +384,19 @@
                 <div class="related-pages p-2">
                     <div class="row m-2 justify-content-center p-1">
                         <div class="col-2 m-2 text-center justify-content-center">
-                            <a target="_blank" href="https://artesaniasdecolombia.com.co/PortalAC/General/template_index.jsf"><img src="img/artesanias-de-colombia.png" class="aliados card-img-top" alt="..."></a>
+                            <a target="_blank" href="https://artesaniasdecolombia.com.co/PortalAC/General/template_index.jsf"><img src="../assets/img/artesanias-de-colombia.png" class="aliados card-img-top" alt="..."></a>
                         </div>
                         <div class="col-2 m-2 text-center justify-content-center">
-                            <a target="_blank" href="https://compralonuestro.co/"><img src="img/compra-lo-nuestro.jpg" class="aliados card-img-top" alt="..."></a>
+                            <a target="_blank" href="https://compralonuestro.co/"><img src="../assets/img/compra-lo-nuestro.jpg" class="aliados card-img-top" alt="..."></a>
                         </div>
                         <div class="col-2 m-2 text-center justify-content-center">
-                            <a target="_blank" href="https://innpulsacolombia.com/"><img src="img/impulsa.jpg" class="aliados card-img-top" alt="..."></a>
+                            <a target="_blank" href="https://innpulsacolombia.com/"><img src="../assets/img/impulsa.jpg" class="aliados card-img-top" alt="..."></a>
                         </div>
                         <div class="col-2 m-2 text-center justify-content-center">
-                            <a target="_blank" href="https://www.colombiaproductiva.com/"><img src="img/colombia-productiva.png" class="aliados card-img-top" alt="..."></a>
+                            <a target="_blank" href="https://www.colombiaproductiva.com/"><img src="../assets/img/colombia-productiva.png" class="aliados card-img-top" alt="..."></a>
                         </div>
                         <div class="col-2 m-2 text-center justify-content-center">
-                            <a target="_blank" href="https://www.fondoemprender.com//SitePages/Home.aspx#"><img src="img/fondo-emprender.png" class="aliados card-img-top" alt="..."></a>
+                            <a target="_blank" href="https://www.fondoemprender.com//SitePages/Home.aspx#"><img src="../assets/img/fondo-emprender.png" class="aliados card-img-top" alt="..."></a>
                         </div>
                     </div>
                 </div>
@@ -396,9 +408,9 @@
         <div class="col-4 m-2 p-3">
           <h5>En colaboración con:</h5>
           <span>
-            <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="img/logo-mintic.png" alt=""></a>
-            <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="img/logo-mision.png" alt=""></a>
-            <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="img/logo-utp.png" alt=""></a>
+            <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mintic.png" alt=""></a>
+            <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mision.png" alt=""></a>
+            <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="../assets/img/logo-utp.png" alt=""></a>
           </span> 
         </div>
         <div class="col-3 m-2 p-3">
@@ -429,8 +441,8 @@
         <div class="col-3 m-2 p-3">
           <h5>Acerca de:</h5>
           <span>
-            <a href="html/acerca.html" target="_blank"><img class="logo-footer-acerca" src="img/logo-colombia-emprende.png" alt=""></a>
-            <a href="html/halma.html" target="_blank"><img class="logo-footer-acerca" src="img/logo-halma.png" alt=""></a>
+            <a href="html/acerca.html" target="_blank"><img class="logo-footer-acerca" src="../assets/img/logo-colombia-emprende.png" alt=""></a>
+            <a href="html/halma.html" target="_blank"><img class="logo-footer-acerca" src="../assets/img/logo-halma.png" alt=""></a>
           </span> 
         </div>   
       </div>
@@ -621,31 +633,42 @@
     export default {
         data() {
             return {
-                emprendedor: {
-                name: "",
-                email: "",
-                password: "",
-                phone: "",
-                apellido: "",
-                ciudad: "",
-                },
+              categoria: "",
+                emprendedor: {},
+                user: {},
             };
         },
+        
         methods: {
-            handleSubmitForm() {
+          categorias(){
+           
+        },
+          onSubmit() {  
+            axios
+            .post(`http://localhost:4000/api/login`, this.emprendedor)
+            .then((res) => {
+              this.user = res.data;
+              this.$router.push(`/admin/${this.user._id}`);
+              })
+            .catch(e => {
+              console.log(e);
+              this.errors.push(e);
+            });
+        },
+            registrarse() {
+              
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
-                .then( ()=> {
-                      this.$router.push("/validar");
-  
-  })
-        
+                .then( 
+                      this.$router.push("/validar")
+                )
                 .catch((error) => {
                     console.log(error);
-                
                 });
-            },
+            }
+            
         },
+        
     };
 </script>

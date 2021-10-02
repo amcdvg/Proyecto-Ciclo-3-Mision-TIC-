@@ -2,28 +2,17 @@ const express = require("express");
 const emprendedorRoute = express.Router();
 // Emprendedor model
 let EmprendedorModel = require("../models/Emprendedor");
-emprendedorRoute.route("/").get((req, res) => {
+
+emprendedorRoute.route("/listar").get((req, res) => {
     EmprendedorModel.find((error, data1, next) => {
         if (error) {
             return next(error);
         } else {
-            console.log(error);
             res.json(data1);
         }
     });
 });
-emprendedorRoute.route("/11").post((req, res, next) => {
-    EmprendedorModel.create(req.body, (error, data) => {
-        if (error) {
-            return next(error);
-        } else {
-            console.log(data);
-            res.json(data);
-        }
-    });
-});
-
-emprendedorRoute.route("/registro-emprendedor").post(function(req, res, next) {
+emprendedorRoute.route("/registro-emprendedor").post(function(req, res) {
     if (!req.body.email || !req.body.password) {
       res.json({ success: false, msg: "Por favor Ingrese Usuario y Contraseña" });
     } else {
@@ -37,9 +26,9 @@ emprendedorRoute.route("/registro-emprendedor").post(function(req, res, next) {
       });
       newEmprendedorModel.save(function(err) {
         if (err) {
-            return res.json({ success: false, msg: "Username already exists." });
+          return res.json({ success: false, msg: "E-mail already exists." });
           }
-          res.json({ success: true, msg: "Successful created new user." });
+          console.log("Usuario Creado con Exito");
       });
     }
   });
@@ -52,18 +41,6 @@ emprendedorRoute.route("/buscar-emprendedor/:id").get((req, res) => {
         } else {
             res.json(data);
         }
-    });
-});
-emprendedorRoute.route("/buscar-ultimo").get((res) => {
-    EmprendedorModel.find({}, (error, data) => {
-        if (error) {
-            console.log(error);
-            return next(error);
-        } else {
-            res.json(data);
-            console.log(data.name);
-        }
-        
     });
 });
 // Update student
@@ -98,13 +75,13 @@ emprendedorRoute.route("/eliminar-emprendedor/:id").delete((req, res, next) => {
 emprendedorRoute.route("/login").post(function(req, res) {
     EmprendedorModel.findOne(
       {
-        email: req.body.email
+        email: req.body.email,
       },
       function(err, user) {
         if (err) throw err;
   
         if (!user) {
-            console.log("Error, no registrado")
+            console.log("Error, e-mail no registrado")
           res.status(401).send({
             success: false,
             msg: "Fallo la Autenticación. E-mail no Registrado."
@@ -114,9 +91,9 @@ emprendedorRoute.route("/login").post(function(req, res) {
           // check if password matches
           user.comparePassword(req.body.password, function(err, isMatch) {
             if (isMatch && !err) {
-              console.log("Correcto. Ese es el password");
-              res.json(req.body.password)
-            } else {
+              res.json(user);
+            } 
+            else {
                 console.log("Error, contraseña erronea")
               res.status(401).send({
                 success: false,
@@ -128,7 +105,16 @@ emprendedorRoute.route("/login").post(function(req, res) {
       }
     );
   });
-
+  emprendedorRoute.route("/buscar-categoria/Comida").get((req, res) => {
+    EmprendedorModel.find({ emprendimientoCategoria: req.body.categoria}, (error, data, next) => {
+        if (error) {
+            console.log(error);
+            return next(error);
+        } else {
+            res.json(data);
+        }
+    });
+  });
 
 
 module.exports = emprendedorRoute;

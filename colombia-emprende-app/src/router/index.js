@@ -18,20 +18,20 @@ const routes = [
         name: "validar",
         component: () => import("../components/validar"),
      },
-     {
-        path: "/registrarse",
-        name: "registrarse",
-        component: () => import("../components/modulo-registro"),
-     },
     {
         path: "/registro-emprendimiento/:id",
         name: "registro-emprendimiento",
         component: () => import("../components/registro-emprendimiento"),
     },
     {
-        path: "/emprendimientos-1",
-        name: "emprendimientos-1",
+        path: "/emprendimientos/categorias",
+        name: "emprendimientos/categorias",
         component: () => import("../components/emprendimientos-component"),
+    },  
+    {
+        path: "/emprendimientos/categorias/comida",
+        name: "emprendimientos/categorias/comida",
+        component: () => import("../components/categorias"),
     },  
     {
         path: "/acerca-de",

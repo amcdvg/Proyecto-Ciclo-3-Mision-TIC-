@@ -9,7 +9,7 @@
           <div class="row justify-content-center">
  <div class="text-center col-4"><br>
  <h3 class="text-center">Confirmacion de datos</h3><br>
- <form @submit="onSubmit">
+ <form v-on:submit.prevent="onSubmit">
    <br>
  <div class="form-group">
  <label>Confirma tu Correo</label>
@@ -29,7 +29,7 @@
  />
  </div><br>
  <div class="form-group d-flex justify-content-end">
- <button type="submit" class="btn btn-primary btn-block m-2">Confirmar</button>
+ <button class="btn btn-primary btn-block m-2">Confirmar</button>
  </div>
  </form>
  </div>
@@ -223,25 +223,24 @@
 </template>
 <script>
 import axios from "axios";
-
 export default {
   data() {
     return {
+      user: {},
       emprendedor: {},
       errors: []
     };
   },
   methods: {
-    onSubmit(evt) {
-      evt.preventDefault();
+    onSubmit() {
       axios
         .post(`http://localhost:4000/api/login`, this.emprendedor)
-        .then(
-          
-        )
+        .then((res) => {
+          this.user = res.data;
+          this.$router.push(`/registro-emprendimiento/${this.user._id}`);
+          })
         .catch(e => {
           console.log(e);
-          this.errors.push(e);
         });
     },
   }

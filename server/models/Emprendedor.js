@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-var bcrypt = require("bcrypt-nodejs");
+const bcrypt = require("bcrypt-nodejs");
 let emprendedorSchema = new Schema({
     name: {
         type: String,
@@ -56,7 +56,7 @@ let emprendedorSchema = new Schema({
 }
 );
 emprendedorSchema.pre("save", function(next) {
-    var user = this;
+    let user = this;
     if (this.isModified("password") || this.isNew) {
       bcrypt.genSalt(10, function(err, salt) {
         if (err) {
