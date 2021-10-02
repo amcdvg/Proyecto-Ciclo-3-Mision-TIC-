@@ -169,17 +169,17 @@
         <li class="nav-item dropdown">
           <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
           <ul class="desplegable dropdown-menu">
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="categorias-navegacion dropdown-item">Moda</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="categorias-navegacion dropdown-item">Artesanias</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.tecnologia } }" class="categorias-navegacion dropdown-item" >Tecnología</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.comida } }" class="categorias-navegacion dropdown-item" >Comida</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.belleza} }" class="categorias-navegacion dropdown-item" >Belleza</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.salud } }" class="categorias-navegacion dropdown-item" >Salud y Bienestar</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.niños } }" class="categorias-navegacion dropdown-item" >Niños y Bebes</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.deportes } }" class="categorias-navegacion dropdown-item" >Deportes</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.hogar } }" class="categorias-navegacion dropdown-item" >Hogar</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.servicios } }" class="categorias-navegacion dropdown-item" >Servicios</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="categorias-navegacion dropdown-item" >Otros...</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Moda</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Artesanias</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.tecnologia } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Tecnología</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.comida } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Comida</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.belleza} }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Belleza</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.salud } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Salud y Bienestar</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.niños } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Niños y Bebes</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.deportes } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Deportes</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.hogar } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Hogar</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.servicios } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Servicios</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Otros...</router-link></li>
           </ul>
         </li>
         <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
@@ -198,17 +198,17 @@
  <div class="row">
    <div class="col-3">
      <ul class="navegacion-categorias nav">
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="nav-link" reload>Moda</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="nav-link" replace>Artesanias</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.tecnologia } }" class="nav-link" replace>Tecnología</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.comida } }" class="nav-link" replace>Comida</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.belleza} }" class="nav-link" replace>Belleza</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.salud } }" class="nav-link" replace>Salud y Bienestar</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.niños } }" class="nav-link" replace>Niños y Bebes</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.deportes } }" class="nav-link" replace>Deportes</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.hogar } }" class="nav-link" replace>Hogar</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.servicios } }" class="nav-link" replace>Servicios</router-link></li>
-            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="nav-link" replace>Otros...</router-link></li>
+            <li><router-link  :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="nav-link" onclick="location.reload()">Moda</router-link></li>
+            <li><router-link  :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="nav-link" onclick="location.reload()">Artesanias</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.tecnologia } }" class="nav-link" onclick="location.reload()">Tecnología</router-link></li>
+            <li><router-link  :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.comida } }" class="nav-link" onclick="location.reload()">Comida</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.belleza} }" class="nav-link" onclick="location.reload()">Belleza</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.salud } }" class="nav-link" onclick="location.reload()">Salud y Bienestar</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.niños } }" class="nav-link" onclick="location.reload()">Niños y Bebes</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.deportes } }" class="nav-link" onclick="location.reload()">Deportes</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.hogar } }" class="nav-link" onclick="location.reload()">Hogar</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.servicios } }" class="nav-link" onclick="location.reload()">Servicios</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="nav-link" onclick="location.reload()">Otros...</router-link></li>
           </ul>
    </div>
  <div class="col-9">
@@ -499,6 +499,18 @@ export default {
  });
  },
  methods: {
+   
+   creado() {
+ let apiURL = `http://localhost:4000/api/buscar-categoria/${this.$route.params.categoria}`;
+ axios
+ .get(apiURL)
+ .then((res) => {
+ this.Emprendedores = res.data;
+ })
+ .catch((error) => {
+ console.log(error);
+ });
+ },
             handleSubmitForm() {
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
