@@ -920,3 +920,13 @@ padding-left: 70px !important;
     border-bottom: solid 2px #ff5f5f !important;
     background-color: #ffffff18 !important;
     }
+  .navegacion-categorias{
+    display: block;
+    margin: 30px 50px;
+  }
+  .navegacion-categorias li{
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 600;
+  }

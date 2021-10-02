@@ -105,8 +105,8 @@ emprendedorRoute.route("/login").post(function(req, res) {
       }
     );
   });
-  emprendedorRoute.route("/buscar-categoria/Comida").get((req, res) => {
-    EmprendedorModel.find({ emprendimientoCategoria: req.body.categoria}, (error, data, next) => {
+  emprendedorRoute.route("/buscar-categoria/:categoria").get((req, res) => {
+    EmprendedorModel.find({ emprendimientoCategoria: req.params.categoria}, (error, data, next) => {
         if (error) {
             console.log(error);
             return next(error);

@@ -172,17 +172,17 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
           <ul class="desplegable dropdown-menu">
-            <li><a class="categorias-navegacion dropdown-item" href="#">Moda</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Artesanias</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Tecnología</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Comida</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Belleza</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Salud y Bienestar</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Niños y Bebes</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Deportes</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Hogar</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Servicios</a></li>
-            <li><a class="categorias-navegacion dropdown-item" href="#">Otros...</a></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="categorias-navegacion dropdown-item">Moda</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="categorias-navegacion dropdown-item">Artesanias</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.tecnologia } }" class="categorias-navegacion dropdown-item" >Tecnología</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.comida } }" class="categorias-navegacion dropdown-item" >Comida</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.belleza} }" class="categorias-navegacion dropdown-item" >Belleza</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.salud } }" class="categorias-navegacion dropdown-item" >Salud y Bienestar</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.niños } }" class="categorias-navegacion dropdown-item" >Niños y Bebes</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.deportes } }" class="categorias-navegacion dropdown-item" >Deportes</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.hogar } }" class="categorias-navegacion dropdown-item" >Hogar</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.servicios } }" class="categorias-navegacion dropdown-item" >Servicios</router-link></li>
+            <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="categorias-navegacion dropdown-item" >Otros...</router-link></li>
           </ul>
         </li>
         <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
@@ -633,16 +633,25 @@
     export default {
         data() {
             return {
-              categoria: "",
+              categorias:{
+              moda : "Moda",
+              artesanias : "Artesanias",
+              tecnologia : "Tecnologia",
+              comida : "Comida",
+              belleza : "Belleza",
+              salud : "Salud y Bienestar",
+              niños : "Niños y Bebes",
+              deportes : "Deportes",
+              hogar : "Hogar",
+              servicios : "Servicios",
+              otros : "Otros...",
+              },
                 emprendedor: {},
                 user: {},
             };
         },
         
         methods: {
-          categorias(){
-           
-        },
           onSubmit() {  
             axios
             .post(`http://localhost:4000/api/login`, this.emprendedor)

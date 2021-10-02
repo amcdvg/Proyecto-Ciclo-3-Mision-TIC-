@@ -11,7 +11,7 @@ const routes = [
     {
         path: "/emprendimientos",
         name: "emprendimientos",
-        component: () => import("../components/list-component"),
+        component: () => import("../components/emprendimientos"),
      },
      {
         path: "/validar",
@@ -24,15 +24,10 @@ const routes = [
         component: () => import("../components/registro-emprendimiento"),
     },
     {
-        path: "/emprendimientos/categorias",
+        path: "/emprendimientos/categorias/:categoria",
         name: "emprendimientos/categorias",
-        component: () => import("../components/emprendimientos-component"),
-    },  
-    {
-        path: "/emprendimientos/categorias/comida",
-        name: "emprendimientos/categorias/comida",
         component: () => import("../components/categorias"),
-    },  
+    },   
     {
         path: "/acerca-de",
         name: "acerca-de",
