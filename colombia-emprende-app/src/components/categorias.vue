@@ -211,13 +211,14 @@
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="nav-link" onclick="location.reload()">Otros...</router-link></li>
           </ul>
    </div>
- <div class="col-9">
+ <div class="col-9"><h1>{{this.$route.params.categoria}}</h1>
  <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._Id" class="tienda card mb-3 w-100 m-4 p-4 col">
         <div class="row">
                 <div class="col">
                     <div class="card-body row">
                       <div class="row">
                         <div class="col-7">
+                          
                         <h1 class="card-title m-2"><b>{{emprendimiento.emprendimientoName}}</b></h1>
                             <span class="d-flex flex-row"><h3 class="m-2"><b>E-mail:</b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoEmail}}</h3></span>
                             <span class="d-flex flex-row"><h3 class="m-2"><b>Celular: </b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoPhone}}</h3></span>

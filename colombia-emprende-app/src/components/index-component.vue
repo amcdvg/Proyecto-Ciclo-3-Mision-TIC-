@@ -72,14 +72,15 @@
  v-model="emprendedor.password"
  />
  </div><br>
- <div class="form-group d-flex justify-content-end">
- <button type="submit" class="btn btn-primary btn-block m-2">Confirmar</button>
+ <div class="modal-footer form-group d-flex justify-content-end">
+ <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
+ <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
  </div>
  </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Acceder</button>
+            
+            
+              
+              
             </div>
           </div>
         </div>
@@ -660,7 +661,6 @@
               this.$router.push(`/admin/${this.user._id}`);
               })
             .catch(e => {
-              console.log(e);
               this.errors.push(e);
             });
         },
