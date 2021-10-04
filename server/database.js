@@ -1,3 +1,3 @@
 module.exports = {
-    db: "mongodb://localhost:27017/colombia-emprende-app",
+    db: "mongodb+srv://AlexanderMorenoC:HALMATEAM@proyecto.j3ruz.mongodb.net/ColombiaEmprendeApp?retryWrites=true&w=majority",
    };
