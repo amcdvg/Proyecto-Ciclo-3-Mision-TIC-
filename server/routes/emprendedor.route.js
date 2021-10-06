@@ -1,4 +1,10 @@
 const express = require("express");
+var mongoose = require("mongoose");
+var passport = require("passport");
+var settings = require("../config/settings");
+require("../config/passport")(passport);
+var jwt = require("jsonwebtoken");
+
 const emprendedorRoute = express.Router();
 // Emprendedor model
 let EmprendedorModel = require("../models/Emprendedor");
@@ -116,7 +122,8 @@ emprendedorRoute.route("/login").post(function(req, res) {
           // check if password matches
           user.comparePassword(req.body.password, function(err, isMatch) {
             if (isMatch && !err) {
-              res.json(user);
+              let token = jwt.sign(user.toJSON(), settings.secret);
+              res.json({ success: true, token: "JWT " + token, id: user._id });
             } 
             else {
                 console.log("Error, contraseña erronea")

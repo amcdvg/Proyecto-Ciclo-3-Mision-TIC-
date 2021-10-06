@@ -682,8 +682,8 @@
             axios
             .post(`http://localhost:4000/api/login`, this.emprendedor)
             .then((res) => {
-              this.user = res.data;
-              this.$router.push(`/admin/${this.user._id}`);
+              localStorage.setItem("jwtToken", res.data.token);
+              this.$router.push(`/admin/${res.data.id}`);
               })
             .catch(e => {
               this.errors.push(e);
