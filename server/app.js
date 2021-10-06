@@ -1,5 +1,5 @@
-let express = require("express"),
-
+let express = require("express");
+var logger = require("morgan");
 cors = require("cors"),
 mongoose = require("mongoose"),
 database = require("./database"),
@@ -27,6 +27,7 @@ app.use(
     extended: false,
     })
 );
+app.use(logger("dev"));
 app.use(cors());
 // API
 app.use("/api", emprendedorAPI);

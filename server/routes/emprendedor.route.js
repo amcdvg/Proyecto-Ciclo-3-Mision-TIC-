@@ -39,15 +39,21 @@ emprendedorRoute.route("/registro-emprendedor").post(function(req, res) {
     }
   });
 
-emprendedorRoute.route("/buscar-emprendedor/:id").get((req, res) => {
+emprendedorRoute.get("/buscar-emprendedor/:id",passport.authenticate("jwt", { session: false }), function(
+  req,
+  res
+) {
+  var token = getToken(req.headers);
+  if (token) {
     EmprendedorModel.findById(req.params.id, (error, data, next) => {
-        if (error) {
+      if (error) {
             console.log(error);
             return next(error);
         } else {
             res.json(data);
         }
-    });
+      });
+  }
 });
 // Update student
 emprendedorRoute.route("/editar-emprendedor/:id").put((req, res, next) => {
@@ -148,5 +154,17 @@ emprendedorRoute.route("/login").post(function(req, res) {
     });
   });
 
-
+  getToken = function(headers) {
+    if (headers && headers.authorization) {
+      var parted = headers.authorization.split(" ");
+      if (parted.length === 2) {
+        return parted[1];
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
+  };
+  
 module.exports = emprendedorRoute;

@@ -256,6 +256,9 @@ export default {
  };
  },
  created() {
+   axios.defaults.headers.common["Authorization"] = localStorage.getItem(
+      "jwtToken"
+    );
  let apiURL = `http://localhost:4000/api/buscar-emprendedor/${this.$route.params.id}`;
  axios
  .get(apiURL)
