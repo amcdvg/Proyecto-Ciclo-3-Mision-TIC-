@@ -517,12 +517,12 @@ background-color: #acd0ff !important;
 .tarjeta-registro-footer a{
 font-size: 30px;
 font-weight: 650;
-text-decoration: none;
-color: #c50202;
+text-decoration: none !important;
+color: #c50202 !important;
 }
 .tarjeta-registro-footer a:hover{
-color: #2a3eb1;
-font-weight: 750;
+color: #2a3eb1 !important;
+font-weight: 750 !important;
 }
 .imagen-seccion-noticias{
 height: 125px;
@@ -930,3 +930,48 @@ padding-left: 70px !important;
     font-size: 20px;
     font-weight: 600;
   }
+  .mapa-de-sitio{
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    color: #0a2649 !important;
+    text-decoration: none !important;
+    padding: 5px;
+    border-radius: 15px;
+    margin: 0px;
+  }
+  .mapa-categorias{
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #1d4270 !important;
+    text-decoration: none !important;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px;
+  }
+  .baseDerechos a{
+    color: #71c4ff !important;
+text-decoration: none !important;
+  }
+  .baseDerechos a:hover{
+    color: #008cff !important;
+
+  }
+  .barra-admin:active{
+    color: #ff0000 !important;
+  }
+  .modal-politicas{
+    max-width: 900px !important;
+  }
+  
+.password-icon {
+  float: right;
+  position: relative;
+  margin: -25px 10px 0 0;
+  cursor: pointer;
+}
+.password-icon {
+  float: right;
+  position: relative;
+  margin: -25px 10px 0 0;
+  cursor: pointer;
+}

@@ -60,6 +60,31 @@ emprendedorRoute.route("/editar-emprendedor/:id").put((req, res, next) => {
         }
     });
 });
+// Update student
+emprendedorRoute.route("/editar-password/:id").post((req, res, next) => {
+  EmprendedorModel.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+        },
+      (error, data) => {
+      if (error) {
+          console.log(error);
+          return next(error);
+      } else {
+         data.password.save(function(error) {
+            if (error) {
+                console.log("error")
+              }
+                console.log("Usuario Creado con Exito");
+                res.json(data);
+                console.log(data);
+                console.log("Contraseña actualizada!");
+              });
+            }
+      },
+      );
+      });
 // Delete Emprendedor
 emprendedorRoute.route("/eliminar-emprendedor/:id").delete((req, res, next) => {
     EmprendedorModel.findByIdAndRemove(req.params.id, (error, data) => {

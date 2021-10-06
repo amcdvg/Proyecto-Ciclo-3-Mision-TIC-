@@ -23,13 +23,13 @@
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                 </svg>
-                <router-link to="/registrarse" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none">Iniciar Sesión</router-link>
+                <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none">Iniciar Sesión</a>
               </span>
               <span class="caja-barra-emprendedores">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
                   <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
                 </svg>
-                <router-link to="/registrarse" class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</router-link>
+                <a class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</a>
               </span>
             </div>
           </div>
@@ -59,6 +59,7 @@
  <label>Confirma tu Correo</label>
  <input
  type="text"
+  placeholder="Ingrese tu E-mail"
  class="form-control"
  v-model="emprendedor.email"
  required
@@ -67,16 +68,19 @@
  <div class="form-group">
  <label>Confirma tu Contraseña</label>
  <input
- type="text"
- class="form-control"
+ type="password"
+ placeholder="Ingrese tu contraseña"
+ class="form-control password1"
  v-model="emprendedor.password"
- />
+  required
+ /><span class="fa fa-fw fa-eye password-icon show-password"></span>
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
  <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
  </div>
  </form>
+            
             
             
               
@@ -119,6 +123,7 @@
                   <input
                   type="email"
                   class="form-control"
+                  
                   v-model="emprendedor.email"
                   required
                   />
@@ -127,10 +132,12 @@
                   <label>Contraseña</label>
                   <input
                   type="password"
-                  class="form-control"
+                  
+                  class="form-control password1"
                   v-model="emprendedor.password"
                   required
-                  />
+                  />    
+      <span class="fa fa-fw fa-eye password-icon show-password"></span>
                 </div>
               
                 <div class="form-group formulario-registro">
@@ -189,7 +196,7 @@
         <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
           <div class="barra-oculta bg-dark">
             <span>
-              <router-link class="d-inline-block nav-link text-decoration-none" to="/registrarse">Acerca de</router-link>
+              <router-link class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Acerca de</router-link>
               <router-link class="d-inline-block nav-link text-decoration-none" to="/mapa">Mapa del sitio</router-link>
             </span>
           </div>
@@ -361,7 +368,7 @@
                     </div>
                 </div>
                 <div class="tarjeta-registro-footer card col-12">
-                    <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Registrate Aqui</a>
+                    <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registrate Aqui</a>
                 </div> 
             </div>    
             <div class="seccion-noticias card col-3 p-3">
@@ -447,9 +454,9 @@
           </span> 
         </div>   
       </div>
-      <div class=baseDerechos>
+      <div class="baseDerechos">
         <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
-          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
+          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Política de Tratamiento de Datos Personales</a>
         </div>
       </div>
       <div class="modal fade" id="modal-politicas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -631,6 +638,8 @@
 </template>
 <script>
     import axios from "axios";
+    
+
     export default {
         data() {
             return {
@@ -650,8 +659,24 @@
                 emprendedor: {},
                 user: {},
             };
+            
         },
         
+   created(){
+     let options = {
+  url: 'https://google-search3.p.rapidapi.com/api/v1/search/q=elon+musk&num=100',
+  headers: {
+    'x-user-agent': 'desktop',
+    'x-rapidapi-host': 'google-search3.p.rapidapi.com',
+    'x-rapidapi-key': '608e467a32mshcf939131fa6ffb9p177830jsnc39cdd0e5522'
+  }
+};
+  axios.request(options).then(function (response) {
+	console.log(response.data);
+}).catch(function (error) {
+	console.error(error);
+})
+},     
         methods: {
           onSubmit() {  
             axios
@@ -679,5 +704,27 @@
             
         },
         
+        
     };
+    window.addEventListener("load", function() {
+ 
+    // icono para poder interaccionar con el elemento
+    let showPassword = document.querySelector('.show-password');
+    showPassword.addEventListener('click', () => {
+ 
+      // elementos input de tipo password
+      let password1 = document.querySelector('.password1');
+      
+ 
+      if ( password1.type === "text" ) {
+        password1.type = "password"
+        
+        showPassword.classList.remove('fa-eye-slash');
+      } else {
+        password1.type = "text"
+        
+        showPassword.classList.toggle("fa-eye-slash");
+      }
+  })
+});
 </script>
