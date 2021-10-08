@@ -6,12 +6,7 @@
         <img src="../../src/assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
       <!--Barra de Busqueda-->
-      <div class="position-relative">
-        <form class="buscar d-flex position-relative top-0 m-1">
-          <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-      </div> 
+      
       <!--Módulo Registro-IniciarSesion-->
       <div>
         <div class="collapse position-absolute" id="navbarToggleExternalContent1">
@@ -22,13 +17,13 @@
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                   <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                 </svg>
-                <router-link to="/registrarse" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none">Iniciar Sesión</router-link>
+                <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none">Iniciar Sesión</a>
               </span>
               <span class="caja-barra-emprendedores">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightbulb" viewBox="0 0 16 16">
                   <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
                 </svg>
-                <router-link to="/registrarse" class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</router-link>
+                <a class="text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Registra tu Emprendimiento</a>
               </span>
             </div>
           </div>
@@ -40,7 +35,7 @@
           <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
           </svg>
-          <img class="modulo-emprendedores" src="../../src/assets/img/modulo-emprendedores.png" alt="">
+          <img class="modulo-emprendedores" src="../assets/img/modulo-emprendedores.png" alt="">
         </span>
       </button>
       <!-- Modulo de Iniciar Sesión-->
@@ -63,22 +58,26 @@
  required
  />
  </div><br>
- <div class="form-group">
+<div class="form-group">
  <label>Confirma tu Contraseña</label>
  <input
- type="text"
+ type="password"
+ placeholder="Ingrese tu contraseña"
  class="form-control"
  v-model="emprendedor.password"
+  required
  />
  </div><br>
- <div class="form-group d-flex justify-content-end">
- <button type="submit" class="btn btn-primary btn-block m-2">Confirmar</button>
+ <div class="modal-footer form-group d-flex justify-content-end">
+ <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
+ <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
  </div>
  </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button type="button" class="btn btn-primary">Acceder</button>
+            
+            
+            
+              
+              
             </div>
           </div>
         </div>
@@ -125,10 +124,12 @@
                   <label>Contraseña</label>
                   <input
                   type="password"
+                  
                   class="form-control"
+                
                   v-model="emprendedor.password"
                   required
-                  />
+                  />    
                 </div>
               
                 <div class="form-group formulario-registro">
@@ -149,6 +150,11 @@
                   required
                   />
                 </div>
+                <div class="form-check aceptar-politicas">
+    <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
+    <label class="form-check-label aceptar" for="exampleCheck1"><a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica">
+      <span class="acepto-las">Acepto las </span>Políticas de Privacidad y Tratamiento de Datos</a></label>
+  </div>
                 <div class="form-group d-flex justify-content-end">
                   <button class="btn boton-formulario-registro btn-block">Registrarse</button>
                 </div>
@@ -157,7 +163,7 @@
           </div>
         </div>
       </div>
-    </header>
+    </header> 
  <nav class="barra-navegacion position-relative navbar navbar-dark">
       <ul class="nav nav-pills">
         <li class="nav-item">
@@ -185,7 +191,7 @@
         <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
           <div class="barra-oculta bg-dark">
             <span>
-              <router-link class="d-inline-block nav-link text-decoration-none" to="/registrarse">Acerca de</router-link>
+              <router-link class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Acerca de</router-link>
               <router-link class="d-inline-block nav-link text-decoration-none" to="/mapa">Mapa del sitio</router-link>
             </span>
           </div>
@@ -195,8 +201,8 @@
         </button>
       </ul>
     </nav> 
- <div class="row">
-   <div class="col-3">
+ <div class="row justify-content-evenly">
+   <div class="col-3 navegacion-categorias1">
      <ul class="navegacion-categorias nav">
             <li><router-link  :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="nav-link" onclick="location.reload()">Moda</router-link></li>
             <li><router-link  :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="nav-link" onclick="location.reload()">Artesanias</router-link></li>
@@ -211,33 +217,41 @@
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="nav-link" onclick="location.reload()">Otros...</router-link></li>
           </ul>
    </div>
- <div class="col-9"><h1>{{this.$route.params.categoria}}</h1>
- <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._Id" class="tienda card mb-3 w-100 m-4 p-4 col">
-        <div class="row">
+   <div class="col-8">
+   <div class="col"><br><h1 class="titulo-listar-categorias"><b>{{this.$route.params.categoria}}</b></h1></div>
+ <div class="col scroll-emprendimientos">
+ <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="tienda card m-3 p-3 col">
+   <div class="row">
                 <div class="col">
                     <div class="card-body row">
-                      <div class="row">
-                        <div class="col-7">
-                          
-                        <h1 class="card-title m-2"><b>{{emprendimiento.emprendimientoName}}</b></h1>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>E-mail:</b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoEmail}}</h3></span>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>Celular: </b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoPhone}}</h3></span>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>Dirección: </b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoDireccion}}</h3></span>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>Ciudad: </b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoCiudad}}</h3></span>
+                      <div class="row justify-content-evenly lista-emprendimientos">
+                        
+                         <h1 class="card-title m-2"><b>{{emprendimiento.emprendimientoName}}</b></h1>
+                        <p class="m-2">{{emprendimiento.emprendimientoDescription}}</p>
+                        <div class="col-6">
+                          <br>
+                            <h6 class=""><b>E-mail:</b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoEmail}}</h5>
+                            
+                            <h6><b>Dirección: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoDireccion}}</h5>
+                            <h6><b>Ciudad: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoCiudad}}</h5>
+                            
                             </div>
-                            <div class="col-5">
-                            <h5><b>Redes Sociales: </b></h5><h4>{{emprendimiento.emprendimientoRedesSocial}}</h4>
-                            <h5><b>Categoria: </b></h5><h4>{{emprendimiento.emprendimientoCategoria}}</h4>
-                            <h6><b>Descripción: </b></h6><p>{{emprendimiento.emprendimientoDescription}}</p>
-                            <h6><b>Tags: </b></h6><h6>{{emprendimiento.emprendimientoTags}}</h6>
+                            <div class="col-5"><br>
+                            <h6 ><b>Celular: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoPhone}}</h5>  
+                            
+                            <h6><b>Categoria: </b></h6><h5>{{emprendimiento.emprendimientoCategoria}}</h5>
+                            <h6><b>Redes Sociales: </b></h6><h5>{{emprendimiento.emprendimientoRedesSocial}}</h5>
+                            
                             </div>
-                       </div>     
+                            <h6 class="text-center"><b><br>Tags:</b> {{emprendimiento.emprendimientoTags}}</h6>
+                            </div>
+                           
                         </div>
                     </div>  
-                </div>
+                </div></div>
  </div>
  </div> </div>
- <footer>
+ <footer class="margin-footer">
       <div class="cajas-footer d-flex flex-row">
         <div class="col-4 m-2 p-3">
           <h5>En colaboración con:</h5>
@@ -499,34 +513,32 @@ export default {
  console.log(error);
  });
  },
- methods: {
-   
-   creado() {
- let apiURL = `http://localhost:4000/api/buscar-categoria/${this.$route.params.categoria}`;
- axios
- .get(apiURL)
- .then((res) => {
- this.Emprendedores = res.data;
- })
- .catch((error) => {
- console.log(error);
- });
- },
-            handleSubmitForm() {
+  methods: {
+          onSubmit() {  
+            axios
+            .post(`http://localhost:4000/api/login`, this.emprendedor)
+            .then((res) => {
+              this.user = res.data;
+              this.$router.push(`/admin/${this.user._id}`);
+              })
+            .catch(e => {
+              this.errors.push(e);
+            });
+        },
+            registrarse() {
+              
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
-                .then( ()=> {
-                      this.$router.push("/validar");
-  
-  })
-                
-                
+                .then( 
+                      this.$router.push("/validar")
+                )
                 .catch((error) => {
                     console.log(error);
-                
                 });
-            },
+            }
+            
         },
     };
+
 </script>

@@ -24,8 +24,8 @@
           <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
             <div class="barra-oculta-admin bg-dark">
               <span>
-                <a class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Salir e Ir a Inicio</a>
-                <a class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Salir e Ir a Emprendimientos</a>
+                <router-link :to="{ name: 'index' }" target="_blank" class="d-inline-block nav-link text-decoration-none barra-admin" >Ir a Inicio</router-link>
+                <router-link :to="{ name: 'emprendimientos' }" target="_blank" class="d-inline-block nav-link text-decoration-none barra-admin" >Ir a Emprendimientos</router-link>
               </span>
             </div>
           </div>
@@ -51,10 +51,10 @@
                         <div class="sub-navegacion-crud">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
+                                    <router-link :to="{ name: 'ver-perfil', params: emprendedor._id }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Perfil</router-link>
+                                    <router-link :to="{ name: 'editar-perfil', params: emprendedor._id }" class="perfil nav-link" href="#">Editar Perfil</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -68,16 +68,16 @@
                         <div class="sub-navegacion-crud">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ver-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Mi Emprendimiento</router-link>
+                                    <router-link :to="{ name: 'ver-emprendimiento', params: emprendedor._id }" class="perfil nav-link" aria-current="page" href="#">Ver Mi Emprendimiento</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'editar-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Mi Emprendimiento</router-link>
+                                    <router-link :to="{ name: 'editar-emprendimiento', params: emprendedor._id }" class="perfil nav-link" href="#">Editar Mi Emprendimiento</router-link>
                                 </li> 
                             </ul>
                         </div>
                     </div>
                     <div class="">
-                      <router-link :to="{ name: 'eliminar-cuenta', params: { id: emprendedor._id } }" class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <router-link :to="{ name: 'eliminar-cuenta', params: emprendedor._id}" class="boton-crud boton-crud-eliminar p-2" type="button">
                         Eliminar Mi Cuenta
                       </router-link>
                   </div>
@@ -85,19 +85,19 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="m-1 boton-cerrar-sesion bi bi-x-circle-fill" viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                     </svg>
-                    <a class="m-1 cerrar">Cerrar Sesión</a>
+                     <router-link :to="{ name: 'index' }" class="m-1 cerrar">Cerrar Sesión</router-link>
                   </span>
                 </nav>
             </div>
             <div class="fondo-claro col-8 d-flex">
                 <div class="m-3 card flex-row w-100">
         <div class="">
-                <div class="card-body text-center">
-                        <h2 class="card-title">¡Bienvenido {{emprendedor.name}}!</h2>
-                        <h6 class="card-text text-center m-4">Bienvenido a tu menu administrador. Desde aqui podras ver, editar o eliminar
+                <div class="card-body text-center"><br>
+                        <h1 class="card-title">¡Bienvenido {{emprendedor.name}} {{emprendedor.apellido}}!</h1>
+                        <h5 class="card-text text-center m-4">Bienvenido a tu menu administrador. Desde aqui podras ver, editar o eliminar
                             lo datos registrados de Tu Usuario y Tu Emprendimiento en la Web de Colombia Emprende.
-                        </h6>
-                        <h3>Colombia Emprende Te Apoya</h3>
+                        </h5>
+                        <h2>Colombia Emprende Te Apoya</h2>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
     </div>
     
       <footer>
-        <div class="baseDerechos-admin">
+        <div class="baseDerechos baseDerechos-admin">
           <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
             <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
           </div>
@@ -256,6 +256,9 @@ export default {
  };
  },
  created() {
+   axios.defaults.headers.common["Authorization"] = localStorage.getItem(
+      "jwtToken"
+    );
  let apiURL = `http://localhost:4000/api/buscar-emprendedor/${this.$route.params.id}`;
  axios
  .get(apiURL)

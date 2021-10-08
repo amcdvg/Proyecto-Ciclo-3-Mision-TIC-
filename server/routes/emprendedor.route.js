@@ -1,4 +1,10 @@
 const express = require("express");
+var mongoose = require("mongoose");
+var passport = require("passport");
+var settings = require("../config/settings");
+require("../config/passport")(passport);
+var jwt = require("jsonwebtoken");
+
 const emprendedorRoute = express.Router();
 // Emprendedor model
 let EmprendedorModel = require("../models/Emprendedor");
@@ -33,15 +39,18 @@ emprendedorRoute.route("/registro-emprendedor").post(function(req, res) {
     }
   });
 
-emprendedorRoute.route("/buscar-emprendedor/:id").get((req, res) => {
+emprendedorRoute.get("/buscar-emprendedor/:id", function(
+  req,
+  res
+) {
     EmprendedorModel.findById(req.params.id, (error, data, next) => {
-        if (error) {
+      if (error) {
             console.log(error);
             return next(error);
         } else {
             res.json(data);
         }
-    });
+      });
 });
 // Update student
 emprendedorRoute.route("/editar-emprendedor/:id").put((req, res, next) => {
@@ -60,6 +69,31 @@ emprendedorRoute.route("/editar-emprendedor/:id").put((req, res, next) => {
         }
     });
 });
+// Update student
+emprendedorRoute.route("/editar-password/:id").post((req, res, next) => {
+  EmprendedorModel.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+        },
+      (error, data) => {
+      if (error) {
+          console.log(error);
+          return next(error);
+      } else {
+         data.password.save(function(error) {
+            if (error) {
+                console.log("error")
+              }
+                console.log("Usuario Creado con Exito");
+                res.json(data);
+                console.log(data);
+                console.log("Contraseña actualizada!");
+              });
+            }
+      },
+      );
+      });
 // Delete Emprendedor
 emprendedorRoute.route("/eliminar-emprendedor/:id").delete((req, res, next) => {
     EmprendedorModel.findByIdAndRemove(req.params.id, (error, data) => {
@@ -91,7 +125,8 @@ emprendedorRoute.route("/login").post(function(req, res) {
           // check if password matches
           user.comparePassword(req.body.password, function(err, isMatch) {
             if (isMatch && !err) {
-              res.json(user);
+              let token = jwt.sign(user.toJSON(), settings.secret);
+              res.json({ success: true, token: "JWT " + token, id: user._id });
             } 
             else {
                 console.log("Error, contraseña erronea")
@@ -116,5 +151,17 @@ emprendedorRoute.route("/login").post(function(req, res) {
     });
   });
 
-
+  getToken = function(headers) {
+    if (headers && headers.authorization) {
+      var parted = headers.authorization.split(" ");
+      if (parted.length === 2) {
+        return parted[1];
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
+  };
+  
 module.exports = emprendedorRoute;

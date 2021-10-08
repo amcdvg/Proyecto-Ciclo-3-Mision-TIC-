@@ -24,8 +24,8 @@
           <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
             <div class="barra-oculta-admin bg-dark">
               <span>
-                <a class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Salir e Ir a Inicio</a>
-                <a class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Salir e Ir a Emprendimientos</a>
+                <router-link :to="{ name: 'index' }" target="_blank" class="d-inline-block nav-link text-decoration-none" >Ir a Inicio</router-link>
+                <router-link :to="{ name: 'emprendimientos' }" target="_blank" class="d-inline-block nav-link text-decoration-none" >Ir a Emprendimientos</router-link>
               </span>
             </div>
           </div>
@@ -51,10 +51,10 @@
                         <div class="sub-navegacion-crud">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ver-perfil', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
+                                    <router-link :to="{ name: 'ver-perfil', params: emprendedor._id }" class="perfil nav-link" aria-current="page" href="#">Ver Perfil</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'editar-perfil', params: { id: emprendedor._id } }" class="perfil-seleccionado perfil nav-link active" href="#">Editar Perfil</router-link>
+                                    <router-link :to="{ name: 'editar-perfil', params: emprendedor._id }" class="perfil-seleccionado perfil nav-link active" href="#">Editar Perfil</router-link>
                                 </li>
                             </ul>
                         </div>
@@ -68,16 +68,16 @@
                         <div class="sub-navegacion-crud">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'ver-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" aria-current="page" href="#">Ver Mi Emprendimiento</router-link>
+                                    <router-link :to="{ name: 'ver-emprendimiento', params: emprendedor._id }" class="perfil nav-link" aria-current="page" href="#">Ver Mi Emprendimiento</router-link>
                                 </li>
                                 <li class="nav-item">
-                                    <router-link :to="{ name: 'editar-emprendimiento', params: { id: emprendedor._id } }" class="perfil nav-link" href="#">Editar Mi Emprendimiento</router-link>
+                                    <router-link :to="{ name: 'editar-emprendimiento', params: emprendedor._id }" class="perfil nav-link" href="#">Editar Mi Emprendimiento</router-link>
                                 </li> 
                             </ul>
                         </div>
                     </div>
                     <div class="">
-                      <router-link :to="{ name: 'eliminar-cuenta', params: { id: emprendedor._id } }" class="boton-crud boton-crud-eliminar p-2" type="button">
+                      <router-link :to="{ name: 'eliminar-cuenta', params: emprendedor._id }" class="boton-crud boton-crud-eliminar p-2" type="button">
                         Eliminar Mi Cuenta
                       </router-link>
                   </div>
@@ -85,7 +85,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="m-1 boton-cerrar-sesion bi bi-x-circle-fill" viewBox="0 0 16 16">
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
                     </svg>
-                    <a class="m-1 cerrar">Cerrar Sesión</a>
+                     <router-link :to="{ name: 'index' }" class="m-1 cerrar">Cerrar Sesión</router-link>
                   </span>
                 </nav>
             </div>
@@ -121,15 +121,7 @@
                   required
                   />
                 </div>
-                <div class="form-group actualizar-registro">
-                  <label>Contraseña: </label>
-                  <input
-                  type="password"
-                  class="form-control"
-                  v-model="emprendedor.password"
-                  required
-                  />
-                </div>
+                
               
                 <div class="form-group actualizar-registro">
                   <label>Ciudad de Residencia: </label>
@@ -149,11 +141,48 @@
                   required
                   />
                 </div>
+                <div class="form-group actualizar-registro">
+                  <label>Actualizar Contraseña: </label>
+                  <a type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="text-decoration-none">Cambiar</a>
+                </div>
+                
  <div class="form-group d-flex justify-content-center m-2 p-2">
  <button class="btn boton-actualizar-registro btn-block">Guardar Cambios</button>
  </div>
  </form>
  </div>
+ <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">Iniciar Sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form v-on:submit.prevent="cambiarPassword">
+   <br>
+ <div class="form-group">
+ <label>Nueva Contraseña</label>
+ <input
+ type="text"
+ class="form-control"
+ v-model="emprendedor.password"
+ />
+ </div><br>
+ <div class="modal-footer form-group d-flex justify-content-end">
+ <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
+ <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+ </div>
+ </form>
+            
+            
+            
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
                 
             </div>
         </div>
@@ -329,7 +358,20 @@ handleUpdateForm() {
  console.log(error);
  });
  },
+ cambiarPassword() {
+ let apiURL = `http://localhost:4000/api/editar-password/${this.$route.params.id}`;
+ axios
+ .post(apiURL, this.emprendedor.password)
+ .then((res) => {
+ console.log(res);
+ this.$router.push(`/admin/ver-perfil/${this.$route.params.id}`);
+ })
+ .catch((error) => {
+ console.log(error);
+ });
  },
+ },
+ 
 };
 </script>
 

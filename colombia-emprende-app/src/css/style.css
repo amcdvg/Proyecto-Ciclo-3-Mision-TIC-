@@ -235,13 +235,6 @@ vertical-align: middle;
 background: #273b47;
 padding: 10px 0 10px 0;
 }
-.baseDerechos a{
-text-decoration: none;
-color: #accdf8;
-}
-.baseDerechos a:hover{
-color: #4f9bff;
-}
 .cajas-footer{
 justify-content: center;
 }
@@ -517,12 +510,12 @@ background-color: #acd0ff !important;
 .tarjeta-registro-footer a{
 font-size: 30px;
 font-weight: 650;
-text-decoration: none;
-color: #c50202;
+text-decoration: none !important;
+color: #c50202 !important;
 }
 .tarjeta-registro-footer a:hover{
-color: #2a3eb1;
-font-weight: 750;
+color: #2a3eb1 !important;
+font-weight: 750 !important;
 }
 .imagen-seccion-noticias{
 height: 125px;
@@ -583,10 +576,21 @@ border-radius: 35px;
 box-shadow: 0px 3px 3px 0px rgba(23, 73, 121, 0.219);
 }
 .acerca-de h1{
+  font-size: 30px;
+  color: #0c2b66;
 text-align: center;
+font-weight: 700;
+margin: 20px;
 }
 .acerca-de{
 margin: 15px 60px;
+}
+.acerca-de p{
+  font-size: 18px;
+  color: #03122e;
+text-align: center;
+font-weight: 400;
+padding: 5px 40px 5px 40px ;
 }
 /*Estilo Pestaña Politicas*/
 .politicas{
@@ -715,13 +719,6 @@ vertical-align: middle;
 background: #273b47;
 padding: 10px 0 10px 0;
 margin-top: 10px;
-}
-.baseDerechos a{
-text-decoration: none;
-color: #accdf8;
-}
-.baseDerechos a:hover{
-color: #4f9bff;
 }
 .cerrar-sesion{
 position: relative;
@@ -925,8 +922,110 @@ padding-left: 70px !important;
     margin: 30px 50px;
   }
   .navegacion-categorias li{
-    margin: 0px;
+    margin: 0px 10px;
     padding: 0px;
     font-size: 20px;
     font-weight: 600;
   }
+  .navegacion-categorias a{
+    color: #11233b !important;
+  }
+  .navegacion-categorias a:hover{
+    font-size: 18px;
+    color: #0a6be9 !important;
+    font-weight: 700;
+  }
+  .mapa-de-sitio{
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    color: #0a2649 !important;
+    text-decoration: none !important;
+    padding: 5px;
+    border-radius: 15px;
+    margin: 0px;
+  }
+  .mapa-categorias{
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    color: #1d4270 !important;
+    text-decoration: none !important;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0px;
+  }
+  .baseDerechos a{
+    color: #71c4ff !important;
+text-decoration: none !important;
+  }
+  .baseDerechos a:hover{
+    color: #008cff !important;
+
+  }
+  .baseDerechos-admin a{
+    color: #71c4ff !important;
+text-decoration: none !important;
+    }
+  .baseDerechos-admin a:hover{
+    color: #008cff !important;
+    }
+    
+  .barra-admin:active{
+    color: #ff0000 !important;
+  }
+  .modal-politicas{
+    max-width: 900px !important;
+  }
+  
+.password-icon {
+  float: right;
+  position: relative;
+  margin: -25px 10px 0 0;
+  cursor: pointer;
+}
+.password-icon {
+  float: right;
+  position: relative;
+  margin: -25px 10px 0 0;
+  cursor: pointer;
+}
+.navegacion-categorias1{
+  background-color: #eef0f5;
+}
+.scroll-emprendimientos{
+  max-height: 600px;
+  overflow: auto;
+}
+.margin-footer{
+  margin-top: 0px;
+}
+.lista-emprendimientos h6{
+  color: #2c6fa7 !important;
+}
+.lista-emprendimientos h1{
+  font-size: 60px !important;
+  font-weight: 700;
+
+  color: #1068af !important;
+}
+.titulo-listar-categorias{
+  color: #1d2933;
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+.aceptar{
+  font-size: 13px !important;
+  color: #566fa7;
+}
+.aceptar:hover{
+  color: #000fdf;
+}
+.aceptar-politicas{
+  margin: 15px 0px 0px 10px;
+}
+.acepto-las{
+  color: #010914 !important;
+}
+.acepto-las:hover{
+  color: #010914 !important;
+}
