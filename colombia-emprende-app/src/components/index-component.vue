@@ -7,12 +7,7 @@
         <img src="../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
       <!--Barra de Busqueda-->
-     <div class="position-relative">
-        <form class="buscar d-flex position-relative top-0 m-1">
-          <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-      </div> 
+      
       <!--Módulo Registro-IniciarSesion-->
       <div>
         <div class="collapse position-absolute" id="navbarToggleExternalContent1">
@@ -70,10 +65,10 @@
  <input
  type="password"
  placeholder="Ingrese tu contraseña"
- class="form-control password1"
+ class="password1 form-control"
  v-model="emprendedor.password"
   required
- /><span class="fa fa-fw fa-eye password-icon show-password"></span>
+ />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
  <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
@@ -132,12 +127,10 @@
                   <label>Contraseña</label>
                   <input
                   type="password"
-                  
                   class="form-control password1"
                   v-model="emprendedor.password"
                   required
-                  />    
-      <span class="fa fa-fw fa-eye password-icon show-password"></span>
+                  />
                 </div>
               
                 <div class="form-group formulario-registro">
@@ -158,6 +151,12 @@
                   required
                   />
                 </div>
+                <div class="form-check aceptar-politicas">
+    <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1" required
+                  />
+    <label class="form-check-label aceptar" for="exampleCheck1"><a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica">
+      <span class="acepto-las">Acepto las </span> Políticas de Privacidad y Tratamiento de Datos</a></label>
+  </div>
                 <div class="form-group d-flex justify-content-end">
                   <button class="btn boton-formulario-registro btn-block">Registrarse</button>
                 </div>
@@ -456,7 +455,7 @@
       </div>
       <div class="baseDerechos">
         <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
-          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Política de Tratamiento de Datos Personales</a>
+          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Políticas de Privacidad y Tratamiento de Datos</a>
         </div>
       </div>
       <div class="modal fade" id="modal-politicas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -634,12 +633,9 @@
     
     </footer>
 </div>   
-
 </template>
 <script>
     import axios from "axios";
-    
-
     export default {
         data() {
             return {
@@ -661,23 +657,9 @@
             };
             
         },
-        
-   created(){
-     let options = {
-  url: 'https://google-search3.p.rapidapi.com/api/v1/search/q=elon+musk&num=100',
-  headers: {
-    'x-user-agent': 'desktop',
-    'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-    'x-rapidapi-key': '608e467a32mshcf939131fa6ffb9p177830jsnc39cdd0e5522'
-  }
-};
-  axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
-})
-},     
+            
         methods: {
+          
           onSubmit() {  
             axios
             .post(`http://localhost:4000/api/login`, this.emprendedor)
@@ -690,7 +672,6 @@
             });
         },
             registrarse() {
-              
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
@@ -705,26 +686,7 @@
         },
         
         
+        
     };
-    window.addEventListener("load", function() {
- 
-    // icono para poder interaccionar con el elemento
-    let showPassword = document.querySelector('.show-password');
-    showPassword.addEventListener('click', () => {
- 
-      // elementos input de tipo password
-      let password1 = document.querySelector('.password1');
-      
- 
-      if ( password1.type === "text" ) {
-        password1.type = "password"
-        
-        showPassword.classList.remove('fa-eye-slash');
-      } else {
-        password1.type = "text"
-        
-        showPassword.classList.toggle("fa-eye-slash");
-      }
-  })
-});
+    
 </script>

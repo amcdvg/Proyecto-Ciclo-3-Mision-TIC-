@@ -5,13 +5,7 @@
       <div class="logo">
         <img src="img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
-      <!--Barra de Busqueda-->
-      <div class="position-relative">
-        <form class="buscar d-flex position-relative top-0 m-1">
-          <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-      </div>
+      
       <!--Módulo Registro-IniciarSesion-->
       <div>
         <div class="collapse position-absolute" id="navbarToggleExternalContent1">
@@ -68,10 +62,10 @@
  <input
  type="password"
  placeholder="Ingrese tu contraseña"
- class="form-control password1"
+ class="form-control"
  v-model="emprendedor.password"
   required
- /><span class="fa fa-fw fa-eye password-icon show-password"></span>
+ />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
  <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
@@ -130,12 +124,11 @@
                   <input
                   type="password"
                   
-                  class="form-control password1"
+                  class="form-control"
                   
                   v-model="emprendedor.password"
                   required
                   />    
-      <span class="fa fa-fw fa-eye password-icon show-password"></span>
                 </div>
               
                 <div class="form-group formulario-registro">
@@ -156,6 +149,11 @@
                   required
                   />
                 </div>
+                <div class="form-check aceptar-politicas">
+    <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
+    <label class="form-check-label aceptar" for="exampleCheck1"><a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica">
+      <span class="acepto-las">Acepto las </span>Políticas de Privacidad y Tratamiento de Datos</a></label>
+  </div>
                 <div class="form-group d-flex justify-content-end">
                   <button class="btn boton-formulario-registro btn-block">Registrarse</button>
                 </div>
@@ -202,8 +200,8 @@
         </button>
       </ul>
     </nav> 
- <div class="row">
-   <div class="col-3">
+ <div class="row justify-content-evenly">
+   <div class="col-3 navegacion-categorias1">
      <ul class="navegacion-categorias nav">
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="nav-link">Moda</router-link></li>
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="nav-link">Artesanias</router-link></li>
@@ -218,32 +216,39 @@
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="nav-link" >Otros...</router-link></li>
           </ul>
    </div>
- <div class="col-9">
- <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="tienda card mb-3 w-100 m-4 p-4 col">
+ <div class="col-8 scroll-emprendimientos">
+ <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="tienda card m-3 p-3 col">
         <div class="row">
-                <div class="col">
+                <div class="col ">
                     <div class="card-body row">
-                      <div class="row">
-                        <div class="col-7">
+                      <div class="row justify-content-evenly lista-emprendimientos">
                         <h1 class="card-title m-2"><b>{{emprendimiento.emprendimientoName}}</b></h1>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>E-mail:</b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoEmail}}</h3></span>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>Celular: </b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoPhone}}</h3></span>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>Dirección: </b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoDireccion}}</h3></span>
-                            <span class="d-flex flex-row"><h3 class="m-2"><b>Ciudad: </b></h3><h3 class="mt-2">{{emprendimiento.emprendimientoCiudad}}</h3></span>
+                        <p class="m-2">{{emprendimiento.emprendimientoDescription}}</p>
+                        <div class="col-6">
+                          <br>
+                            <h6 class=""><b>E-mail:</b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoEmail}}</h5>
+                            
+                            <h6><b>Dirección: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoDireccion}}</h5>
+                            <h6><b>Ciudad: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoCiudad}}</h5>
+                            
                             </div>
-                            <div class="col-5">
-                            <h5><b>Redes Sociales: </b></h5><h4>{{emprendimiento.emprendimientoRedesSocial}}</h4>
-                            <h5><b>Categoria: </b></h5><h4>{{emprendimiento.emprendimientoCategoria}}</h4>
-                            <h6><b>Descripción: </b></h6><p>{{emprendimiento.emprendimientoDescription}}</p>
-                            <h6><b>Tags: </b></h6><h6>{{emprendimiento.emprendimientoTags}}</h6>
+                            <div class="col-5"><br>
+                            <h6 ><b>Celular: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoPhone}}</h5>  
+                            
+                            <h6><b>Categoria: </b></h6><h5>{{emprendimiento.emprendimientoCategoria}}</h5>
+                            <h6><b>Redes Sociales: </b></h6><h5>{{emprendimiento.emprendimientoRedesSocial}}</h5>
+                            
                             </div>
-                       </div>     
+                            <h6 class="text-center"><b><br>Tags:</b> {{emprendimiento.emprendimientoTags}}</h6>
+                            
+                            </div>
+                           
                         </div>
                     </div>  
                 </div>
  </div>
  </div> </div>
- <footer>
+ <footer class="margin-footer">
       <div class="cajas-footer d-flex flex-row">
         <div class="col-4 m-2 p-3">
           <h5>En colaboración con:</h5>
@@ -532,26 +537,5 @@ export default {
             
         },
     };
-    window.addEventListener("load", function() {
- 
-    // icono para poder interaccionar con el elemento
-    let showPassword = document.querySelector('.show-password');
-    showPassword.addEventListener('click', () => {
- 
-      // elementos input de tipo password
-      let password1 = document.querySelector('.password1');
-      
- 
-      if ( password1.type === "text" ) {
-        password1.type = "password"
-        
-        showPassword.classList.remove('fa-eye-slash');
-      } else {
-        password1.type = "text"
-        
-        showPassword.classList.toggle("fa-eye-slash");
-      }
-  })
-});
 </script>
 

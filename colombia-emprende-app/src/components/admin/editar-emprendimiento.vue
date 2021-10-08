@@ -110,6 +110,7 @@
                     type="text"
                     class="form-control"
                     v-model="emprendedor.emprendimientoDireccion"
+                    required
                     />
                   </div>
                   

@@ -6,12 +6,7 @@
         <img src="img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
       <!--Barra de Busqueda-->
-      <div class="position-relative">
-        <form class="buscar d-flex position-relative top-0 m-1">
-          <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-      </div>
+      
       <!--Módulo Registro-IniciarSesion-->
        <div>
         <div class="collapse position-absolute" id="navbarToggleExternalContent1">
@@ -68,10 +63,10 @@
  <input
  type="password"
  placeholder="Ingrese tu contraseña"
- class="form-control password1"
+ class="form-control"
  v-model="emprendedor.password"
   required
- /><span class="fa fa-fw fa-eye password-icon show-password"></span>
+ />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
  <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
@@ -130,12 +125,11 @@
                   <input
                   type="password"
                   
-                  class="form-control password1"
+                  class="form-control"
                   
                   v-model="emprendedor.password"
                   required
                   />    
-      <span class="fa fa-fw fa-eye password-icon show-password"></span>
                 </div>
               
                 <div class="form-group formulario-registro">
@@ -156,6 +150,11 @@
                   required
                   />
                 </div>
+                <div class="form-check aceptar-politicas">
+    <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
+    <label class="form-check-label aceptar" for="exampleCheck1"><a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica">
+      <span class="acepto-las">Acepto las </span>Políticas de Privacidad y Tratamiento de Datos</a></label>
+  </div>
                 <div class="form-group d-flex justify-content-end">
                   <button class="btn boton-formulario-registro btn-block">Registrarse</button>
                 </div>
@@ -171,7 +170,7 @@
           <router-link to="/" class="nav-link" aria-current="page">Inicio</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link active" to="/emprendimientos">Emprendimientos</router-link>
+          <router-link class="nav-link" to="/emprendimientos">Emprendimientos</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
@@ -192,7 +191,7 @@
         <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
           <div class="barra-oculta bg-dark">
             <span>
-              <router-link class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Acerca de</router-link>
+              <router-link class="d-inline-block nav-link text-decoration-none active" to="/acerca-de">Acerca de</router-link>
               <router-link class="d-inline-block nav-link text-decoration-none" to="/mapa">Mapa del sitio</router-link>
             </span>
           </div>
@@ -211,25 +210,16 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="banner-acerca " src="banner1.jpg" alt="...">
-          <div class="caja-banner carousel-caption d-none d-md-block">
-            <h5>¡Yo Apoyo Colombia Emprende!</h5>
-            <p>¡Porque yo invierto en mi gente!</p>
-          </div>
+          <img class="banner-acerca " src="../assets/img/banner-acerca1.jpg" alt="...">
+          
         </div>
         <div class="carousel-item">
-          <img class="banner-acerca d-block" src="banner3.jpg" alt="...">
-          <div class="caja-banner carousel-caption d-none d-md-block">
-            <h5>100% Colombiano</h5>
-            <p>Conoce los mejores emprendientos que se producen en Colombia</p>
-          </div>
+          <img class="banner-acerca d-block" src="../assets/img/banner-acerca2.jpg" alt="...">
+          
         </div>
         <div class="carousel-item">
-          <img class="banner-acerca d-block" src="banner5.jpg" alt="...">
-          <div class="caja-banner carousel-caption d-none d-md-block">
-            <h5>Compra Colombiano</h5>
-            <p>Buscando en esta página apoyaras a los emprendedores Colombianos</p>
-          </div>
+          <img class="banner-acerca d-block" src="../assets/img/banner-acerca3.jpg" alt="...">
+          
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
@@ -242,14 +232,22 @@
       </button>
     </div>
     <div class="acerca-de">
-      <h1>Sobre Nosotros</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. <span> <a href="mailto:info@somedomain.com">info@somedomain.com</a></span>
+      <h1>Acerca de Colombia Emprende</h1>
+      <p>Colombia emprede se dedica a promover el comercio entre emprendedores y clientes. Colombia emprende ayudará 
+        a fortalecer su emprendimiento, ofreciendo acceso a clientes de Colombia y el mundo. Bienvenido y conoce nuestra página.
       </p>
+      <p>Puedes contactarnos en: <span> <a href="colombia0emprende@gmail.com">colombia0emprende@gmail.com</a></span>
+      </p>
+    </div>
+    <div class="acerca-de">
+      <h1>Quienes Somos</h1>
+      <p>Somos un grupo de desarrolladores aprendices que estamos siendo formados en el programa Mision TIC 2022.
+        Colombia Emprende es un proyecto academico propuesto para el desarrollo del tercer ciclo del programa.
+        Los desarrolladores pertenecemos al grupo 20 y llamamos al grupo HALMA TEAM, tomando las iniciales de cada uno
+        de los integrantes del grupo.
+      </p>
+      <span><p>Puedes visitarnos aqui para conocer mas sobre:  <a href="#">HALMA TEAM</a></p></span>
+      
     </div>
     <br>
   </main>
@@ -479,6 +477,8 @@
 </template>
 <script>
     import axios from "axios";
+    
+
     export default {
         data() {
             return {
@@ -498,22 +498,22 @@
                 emprendedor: {},
                 user: {},
             };
+            
         },
-        
+             
         methods: {
           onSubmit() {  
             axios
             .post(`http://localhost:4000/api/login`, this.emprendedor)
             .then((res) => {
-              this.user = res.data;
-              this.$router.push(`/admin/${this.user._id}`);
+              localStorage.setItem("jwtToken", res.data.token);
+              this.$router.push(`/admin/${res.data.id}`);
               })
             .catch(e => {
               this.errors.push(e);
             });
         },
             registrarse() {
-              
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
@@ -527,26 +527,7 @@
             
         },
         
+        
     };
-    window.addEventListener("load", function() {
- 
-    // icono para poder interaccionar con el elemento
-    let showPassword = document.querySelector('.show-password');
-    showPassword.addEventListener('click', () => {
- 
-      // elementos input de tipo password
-      let password1 = document.querySelector('.password1');
-      
- 
-      if ( password1.type === "text" ) {
-        password1.type = "password"
-        
-        showPassword.classList.remove('fa-eye-slash');
-      } else {
-        password1.type = "text"
-        
-        showPassword.classList.toggle("fa-eye-slash");
-      }
-  })
-});
+    
 </script>

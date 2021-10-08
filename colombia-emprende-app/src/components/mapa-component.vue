@@ -6,15 +6,10 @@
         <img src="img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
       <!--Barra de Busqueda-->
-      <div class="position-relative">
-        <form class="buscar d-flex position-relative top-0 m-1">
-          <input class="buscar-formulario form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="buscar-boton btn btn-outline-success" type="submit">Buscar</button>
-        </form>
-      </div>
+      
       <!--Módulo Registro-IniciarSesion-->
       
-        <div>
+      <div>
         <div class="collapse position-absolute" id="navbarToggleExternalContent1">
           <div class="barra-emprendedores w-75">
             <div class="row ml-2 pl-2">
@@ -69,10 +64,10 @@
  <input
  type="password"
  placeholder="Ingrese tu contraseña"
- class="form-control password1"
+ class="form-control"
  v-model="emprendedor.password"
   required
- /><span class="fa fa-fw fa-eye password-icon show-password"></span>
+ />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
  <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
@@ -130,15 +125,11 @@
                   <label>Contraseña</label>
                   <input
                   type="password"
-                  
-                  class="form-control password1"
-              
+                  class="form-control"
                   v-model="emprendedor.password"
                   required
                   />    
-      <span class="fa fa-fw fa-eye password-icon show-password"></span>
                 </div>
-              
                 <div class="form-group formulario-registro">
                   <label>Ciudad de Residencia</label>
                   <input
@@ -157,6 +148,11 @@
                   required
                   />
                 </div>
+                <div class="form-check aceptar-politicas">
+    <input type="checkbox" class="form-check-input mt-2" id="exampleCheck1">
+    <label class="form-check-label aceptar" for="exampleCheck1"><a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica">
+      <span class="acepto-las">Acepto las </span>Políticas de Privacidad y Tratamiento de Datos</a></label>
+  </div>
                 <div class="form-group d-flex justify-content-end">
                   <button class="btn boton-formulario-registro btn-block">Registrarse</button>
                 </div>
@@ -194,7 +190,7 @@
           <div class="barra-oculta bg-dark">
             <span>
               <router-link class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Acerca de</router-link>
-              <router-link class="d-inline-block nav-link text-decoration-none" to="/mapa">Mapa del sitio</router-link>
+              <router-link class="d-inline-block nav-link text-decoration-none active" to="/mapa">Mapa del sitio</router-link>
             </span>
           </div>
         </div>
@@ -484,6 +480,8 @@
 </template>
 <script>
     import axios from "axios";
+    
+
     export default {
         data() {
             return {
@@ -503,22 +501,22 @@
                 emprendedor: {},
                 user: {},
             };
+            
         },
-        
+             
         methods: {
           onSubmit() {  
             axios
             .post(`http://localhost:4000/api/login`, this.emprendedor)
             .then((res) => {
-              this.user = res.data;
-              this.$router.push(`/admin/${this.user._id}`);
+              localStorage.setItem("jwtToken", res.data.token);
+              this.$router.push(`/admin/${res.data.id}`);
               })
             .catch(e => {
               this.errors.push(e);
             });
         },
             registrarse() {
-              
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
@@ -532,30 +530,10 @@
             
         },
         
+        
     };
-    window.addEventListener("load", function() {
- 
-    // icono para poder interaccionar con el elemento
-    let showPassword = document.querySelector('.show-password');
-    showPassword.addEventListener('click', () => {
- 
-      // elementos input de tipo password
-      let password1 = document.querySelector('.password1');
-      
- 
-      if ( password1.type === "text" ) {
-        password1.type = "password"
-        
-        showPassword.classList.remove('fa-eye-slash');
-      } else {
-        password1.type = "text"
-        
-        showPassword.classList.toggle("fa-eye-slash");
-      }
-  })
-});
-</script>
 
+</script>
 
 
 

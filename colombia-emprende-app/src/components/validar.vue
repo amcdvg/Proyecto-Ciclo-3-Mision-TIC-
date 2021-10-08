@@ -28,7 +28,7 @@
  class="form-control password1"
  v-model="emprendedor.password"
   required
- /><span class="fa fa-fw fa-eye password-icon show-password"></span>
+ /><span class="fa fa-fw fa-eye password-icon show-password" @click="pass"></span>
  </div><br>
  <div class="form-group d-flex justify-content-end">
  <button class="btn btn-primary btn-block m-2">Confirmar</button>
@@ -238,15 +238,15 @@ export default {
       axios
         .post(`http://localhost:4000/api/login`, this.emprendedor)
         .then((res) => {
-          this.user = res.data;
-          this.$router.push(`/registro-emprendimiento/${this.user._id}`);
+          localStorage.setItem("jwtToken", res.data.token);
+              this.$router.push(`/registro-emprendimiento/${res.data.id}`);
           })
         .catch(e => {
           console.log(e);
         });
     },
-  }
-};
+  },
+  pass(){
 window.addEventListener("load", function() {
  
     // icono para poder interaccionar con el elemento
@@ -268,4 +268,19 @@ window.addEventListener("load", function() {
       }
   })
 });
+  },
+};
+  window.addEventListener("load", function() {  
+    let showPassword = document.querySelector('.show-password');
+    showPassword.addEventListener('click', () => {
+      let password1 = document.querySelector('.password1');
+      if ( password1.type === "text" ) {
+        password1.type = "password"
+        showPassword.classList.remove('fa-eye-slash');
+      } else {
+        password1.type = "text"
+        showPassword.classList.toggle("fa-eye-slash");
+      }
+    })
+  });
 </script>
