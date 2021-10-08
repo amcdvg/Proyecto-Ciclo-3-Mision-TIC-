@@ -236,7 +236,7 @@
       <p>Colombia emprede se dedica a promover el comercio entre emprendedores y clientes. Colombia emprende ayudará 
         a fortalecer su emprendimiento, ofreciendo acceso a clientes de Colombia y el mundo. Bienvenido y conoce nuestra página.
       </p>
-      <p>Puedes contactarnos en: <span> <a href="colombia0emprende@gmail.com">colombia0emprende@gmail.com</a></span>
+      <p>Puedes contactarnos en: <span> <a href="colombia0emprende@gmail.com">colombia.emprende@gmail.com</a></span>
       </p>
     </div>
     <div class="acerca-de">
@@ -295,7 +295,7 @@
         </div>   
       </div>
       <div class=baseDerechos>
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
+        <div>Copyright &copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
         </div>
       </div>
