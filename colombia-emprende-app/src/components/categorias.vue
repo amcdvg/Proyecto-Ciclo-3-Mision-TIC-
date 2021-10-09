@@ -3,7 +3,7 @@
     <header>
       <!--Logo Colombia Emprende-->
       <div class="logo">
-        <img src="../../src/assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
+        <img src="../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
      
       <!--Módulo Registro-IniciarSesion-->
@@ -256,9 +256,9 @@
         <div class="col-lg-4 col-md-6 m-2 p-3">
           <h5>En colaboración con:</h5>
           <span>
-            <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="../../src/assets/img/logo-mintic.png" alt=""></a>
-            <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="../../src/assets/img/logo-mision.png" alt=""></a>
-            <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="../../src/assets/img/logo-utp.png" alt=""></a>
+            <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mintic.png" alt=""></a>
+            <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mision.png" alt=""></a>
+            <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="../assets/img/logo-utp.png" alt=""></a>
           </span> 
         </div>
         <div class="col-lg-3  col-md-6 m-2 p-3">
@@ -289,8 +289,8 @@
         <div class="col-lg-3  col-md-12 m-2 p-3 modulo-emprendedores-responsive">
           <h5>Acerca de:</h5>
           <span>
-            <a href="/acerca-de" target="_blank"><img class="logo-footer-acerca" src="../../src/assets/img/logo-colombia-emprende.png" alt=""></a>
-            <a target="_blank" href="https://halmateam.000webhostapp.com"><img class="logo-footer-acerca" src="../../src/assets/img/logo-halma.png" alt=""></a>
+            <a href="/acerca-de" target="_blank"><img class="logo-footer-acerca" src="../assets/img/logo-colombia-emprende.png" alt=""></a>
+            <a target="_blank" href="https://halmateam.000webhostapp.com"><img class="logo-footer-acerca" src="../assets/img/logo-halma.png" alt=""></a>
           </span> 
         </div>   
       </div>

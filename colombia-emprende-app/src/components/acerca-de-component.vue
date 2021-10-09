@@ -47,31 +47,30 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form v-on:submit.prevent="onSubmit" class="m-3">
+              <form v-on:submit.prevent="onSubmit">
+   <br>
  <div class="form-group">
  <label>Confirma tu Correo</label>
  <input
  type="text"
-  placeholder="Ingrese tu E-mail"
  class="form-control"
  v-model="emprendedor.email"
  required
  />
  </div><br>
- <div class="form-group">
+<div class="form-group">
  <label>Confirma tu Contraseña</label>
  <input
  type="password"
  placeholder="Ingrese tu contraseña"
- class="password1 form-control"
+ class="form-control"
  v-model="emprendedor.password"
   required
  />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
-   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
- <button type="submit" class="btn btn-primary boton-formulario-registro m-2" data-bs-dismiss="modal">Confirmar</button>
- 
+ <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
+ <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
  </div>
  </form>
             
