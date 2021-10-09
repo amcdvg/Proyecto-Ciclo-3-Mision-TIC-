@@ -9,7 +9,7 @@
       <!--Barra de Busqueda-->
       
       <!--Módulo Registro-IniciarSesion-->
-      <div>
+      <div class="modulo-emprendedores-responsive">
         <div class="collapse position-absolute" id="navbarToggleExternalContent1">
           <div class="barra-emprendedores w-75">
             <div class="row ml-2 pl-2">
@@ -31,7 +31,7 @@
         </div>
       </div>
       <!--Boton-Modulo-Emprendedores-->
-      <button class="emprendedores navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="modulo-emprendedores-responsive emprendedores navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span>
           <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -40,7 +40,7 @@
         </span>
       </button>
       <!-- Modulo de Iniciar Sesión-->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modulo-emprendedores-responsive modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -85,7 +85,7 @@
         </div>
       </div>
       <!--Modulo de Registro-->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="modulo-emprendedores-responsive offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -176,7 +176,7 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/emprendimientos">Emprendimientos</router-link>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown modulo-emprendedores-responsive-navegacion">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
           <ul class="desplegable dropdown-menu">
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="categorias-navegacion dropdown-item">Moda</router-link></li>
@@ -200,13 +200,13 @@
             </span>
           </div>
         </div>
-        <button class="boton-barra navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="modulo-emprendedores-responsive boton-barra navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </ul>
     </nav>    
     <!--Inicio del Main--> 
-    <main class="fondo-claro">
+    <main class="fondo-claro mt-1">
         <!--Inicio del Carrusel Principal--> 
         <div id="carouselIndex" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -222,7 +222,7 @@
                     <img class="banner-inicio" src="../assets/img/banner5.jpg" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img class="banner-inicio" src="../assets/img/banner3.jpg" alt="...">
+                    <img class="banner-inicio banner-inicio-align" src="../assets/img/banner3.jpg" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndex" data-bs-slide="prev">
@@ -235,127 +235,34 @@
             </button>
         </div>
         <!--Inicio de Galeria de Categorias--> 
-        <div class="gallery" id="galeria">
-            <div class="gallery-container" id="galeria-contenedor">
-                <div class="gallery-item gallery-item-1 " id="galeria-item-1">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img" src="" data-index="1">
-                            <div class="texto-categorias card-img-overlay">
-                            <a href="">Moda</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item gallery-item-2">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img"  src="img/artesanias.jpeg" data-index="2">
-                            <div class="texto-categorias card-img-overlay">
-                            <a href="">Artesanias</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item gallery-item-3">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img" src="img/tecnologia.jpg" data-index="3">
-                            <div class="texto-categorias card-img-overlay">
-                            <a href="">Tecnologia</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item gallery-item-4">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img"  src="img/comida.jpg" data-index="4">
-                            <div class="texto-categorias card-img-overlay">
-                                <a href="">Comida</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>             
-                <div class="gallery-item gallery-item-5">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img" src="img/belleza.jpeg" data-index="5">
-                                <div class="texto-categorias card-img-overlay">
-                                    <a href="">Belleza</a>
-                                </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="gallery-item gallery-item-6">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img"  src="img/servicios.jpeg" data-index="6">
-                            <div class="texto-categorias card-img-overlay">
-                                <a href="">Servicios</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item gallery-item-7">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img"  src="img/salud.jpg" data-index="7">
-                            <div class="texto-categorias-largo card-img-overlay">
-                                <a href="">Salud y Bienestar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <div class="gallery-item gallery-item-8">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img"  src="img/bebe.jfif" data-index="8">
-                            <div class="texto-categorias-largo card-img-overlay">
-                                <a href="">Niños y <br> Bebes</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <div class="gallery-item gallery-item-9">
-                    <div class="row">
-                        <div class="caja-imagen-categoria">
-                            <img class="imagen-categorias card-img"  src="img/deporte.jpg" data-index="9">
-                            <div class="texto-categorias card-img-overlay">
-                                <a href="">Deportes</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <div class="gallery-item gallery-item-10">
-                    <div class="row">
-                        <div class="caja-imagen-categorias">
-                            <img class="imagen-categorias card-img"  src="img/hogar.jpg" data-index="10">
-                            <div class="texto-categorias card-img-overlay">
-                                <a href="">Hogar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                <div class="gallery-item gallery-item-11">
-                    <div class="row">
-                        <div class="caja-imagen-categorias col-sm-12">
-                            <img class="imagen-categorias card-img"  src="img/otros.jpeg" data-index="11">
-                            <div class="texto-categorias card-img-overlay">
-                                <a href="">Otros...</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-            </div>             
-            <h1 class="categorias-titulo">CATEGORIAS</h1>
-            <div class="gallery-controls"></div>
+        <h1 class="categorias-titulo mt-4">CATEGORIAS</h1>
+        <carousel-3d :controls-visible="true" :clickable="false" :autoplay="true" :autoplayTimeout="2500" :autoplayHoverPause="true" :perspective="0" class="carrusel-categorias">
+          <slide class="gallery-item" v-for="(slide, i) in slides" :key="i" :index="i">
+            <div class="row sin-margen" v-html="slide.template">
+            </div>
             
+          </slide>
+       </carousel-3d>
+        
+        <div>
+          <h1 class="categorias-titulo m-4">NUEVOS EMPRENDIMIENTOS</h1>
+          <div class="row row-col justify-content-evenly tiendas-inicio">
+  <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="col-lg-4 col-sm-11 col-md-6 mb-4">
+    <div class="card tiendas">
+      <div class="card-body">
+        <h4 class="card-title mb-3 emprendimiento-titulo">{{emprendimiento.emprendimientoName}}</h4>
+        <p class="card-text descripcion-tienda-inicio">
+          {{emprendimiento.emprendimientoDescription}}
+        </p>
+        <div class="card-footer">Celular: <h5>{{emprendimiento.emprendimientoPhone}}</h5>Email: <h5>{{emprendimiento.emprendimientoEmail}}</h5></div>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
         
-        <br>
         <!--Inicio Publicidad y Noticias--> 
-        <div class="row m-3 justify-content-center p-3">
+        <div class="row justify-content-center p-2 modulo-emprendedores-responsive">
             <div class="col-7">
                 <div class="tarjeta-registro card col-12 ">
                     <img src="../assets/img/publicidad.jpeg" class="tarjeta-emprendedor-imagen card-img" alt="...">
@@ -389,20 +296,20 @@
             <div class="related-titulo"> Páginas Relacionadas</div>
             <div class="related-pages-cajas p-2">
                 <div class="related-pages p-2">
-                    <div class="row m-2 justify-content-center p-1">
-                        <div class="col-2 m-2 text-center justify-content-center">
+                    <div class="m-2 p-1 clase-related">
+                        <div class="col-lg-2 col-md-3 text-center paginas-relacionadas-footer">
                             <a target="_blank" href="https://artesaniasdecolombia.com.co/PortalAC/General/template_index.jsf"><img src="../assets/img/artesanias-de-colombia.png" class="aliados card-img-top" alt="..."></a>
                         </div>
-                        <div class="col-2 m-2 text-center justify-content-center">
+                        <div class="col-lg-2 col-md-3 text-center paginas-relacionadas-footer">
                             <a target="_blank" href="https://compralonuestro.co/"><img src="../assets/img/compra-lo-nuestro.jpg" class="aliados card-img-top" alt="..."></a>
                         </div>
-                        <div class="col-2 m-2 text-center justify-content-center">
+                        <div class="col-lg-2 col-md-3 text-center paginas-relacionadas-footer">
                             <a target="_blank" href="https://innpulsacolombia.com/"><img src="../assets/img/impulsa.jpg" class="aliados card-img-top" alt="..."></a>
                         </div>
-                        <div class="col-2 m-2 text-center justify-content-center">
+                        <div class="col-lg-2 col-md-3 text-center paginas-relacionadas-footer">
                             <a target="_blank" href="https://www.colombiaproductiva.com/"><img src="../assets/img/colombia-productiva.png" class="aliados card-img-top" alt="..."></a>
                         </div>
-                        <div class="col-2 m-2 text-center justify-content-center">
+                        <div class="col-lg-2 col-md-3 text-center paginas-relacionadas-footer">
                             <a target="_blank" href="https://www.fondoemprender.com//SitePages/Home.aspx#"><img src="../assets/img/fondo-emprender.png" class="aliados card-img-top" alt="..."></a>
                         </div>
                     </div>
@@ -411,17 +318,17 @@
         </div>          
     </main>
     <footer>
-      <div class="cajas-footer d-flex flex-row">
-        <div class="col-4 m-2 p-3">
-          <h5>En colaboración con:</h5>
+      <div class="cajas-footer">
+        <div class="col-lg-4 col-md-6 m-2 p-3">
+          <h5 class="titulos-del-footer">En colaboración con:</h5>
           <span>
             <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mintic.png" alt=""></a>
             <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mision.png" alt=""></a>
             <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="../assets/img/logo-utp.png" alt=""></a>
           </span> 
         </div>
-        <div class="col-3 m-2 p-3">
-          <h5>Siguenos en:</h5>
+        <div class="col-lg-3  col-md-6 m-2 p-3">
+          <h5 class="titulos-del-footer">Siguenos en:</h5>
           <div class="d-flex flex-row">
             <a href="https://www.facebook.com/Colombia-Emprende-109565371475068" target="_blank">
               <svg xmlns="http://www.w3.org/2000/svg"  class="iconos-footer bi bi-facebook" viewBox="0 0 16 16">
@@ -445,20 +352,20 @@
             </a>
           </div> 
         </div>
-        <div class="col-3 m-2 p-3">
+        <div class="col-lg-3  col-md-12 m-2 p-3 modulo-emprendedores-responsive">
           <h5>Acerca de:</h5>
           <span>
-            <a href="html/acerca.html" target="_blank"><img class="logo-footer-acerca" src="../assets/img/logo-colombia-emprende.png" alt=""></a>
-            <a href="html/halma.html" target="_blank"><img class="logo-footer-acerca" src="../assets/img/logo-halma.png" alt=""></a>
+            <a href="/acerca-de" target="_blank"><img class="logo-footer-acerca" src="../assets/img/logo-colombia-emprende.png" alt=""></a>
+            <a target="_blank" href="https://halmateam.000webhostapp.com"><img class="logo-footer-acerca" src="../assets/img/logo-halma.png" alt=""></a>
           </span> 
         </div>   
       </div>
       <div class="baseDerechos">
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
-          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Políticas de Privacidad y Tratamiento de Datos</a>
+        <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a><span class="modulo-emprendedores-responsive"> | | 
+          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Políticas de Privacidad y Tratamiento de Datos</a></span>
         </div>
       </div>
-      <div class="modal fade" id="modal-politicas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade modulo-emprendedores-responsive" id="modal-politicas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-politicas modal-dialog modal-dialog-scrollable ">
           <div class="modal-content">
             <div class="modal-header">
@@ -636,7 +543,16 @@
 </template>
 <script>
     import axios from "axios";
+    import { Carousel3d, Slide } from "vue-carousel-3d";
+    
+
+
+
     export default {
+       components: {
+            Carousel3d,
+            Slide
+          },
         data() {
             return {
               categorias:{
@@ -652,26 +568,157 @@
               servicios : "Servicios",
               otros : "Otros...",
               },
+               
+
                 emprendedor: {},
                 user: {},
-            };
+                Emprendedores: [],
+                
+
+              
+              slides: [
+        { template:`
+                        
+                          
+                          
+                            <img class="imagen-categorias card-img" src="img/moda.jpeg" data-index="1">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Moda">Moda</a>
+                            </div>
+                            
+                          
+                        
+          
+                     
+       `},
+        {template: `
+                          
+                            <img class="imagen-categorias card-img" src="img/artesanias.jpeg" >
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Atesanias">Artesanías</a>
+                            </div>
+                          
+                            
+                
+          
+       `},
+        {template:`
+                         
+                            <img class="imagen-categorias card-img" src="img/tecnologia.jpg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Tecnologia">Tecnología</a>
+                            </div>
+                          
+                        
+          
+        `},
+        {template:`
+                    
+                          
+                            <img class="imagen-categorias card-img" src="img/comida.jpg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Comida">Comidas</a>
+                            </div>
+                          
+          
+        `},
+        {template:`
+                         
+                            <img class="imagen-categorias card-img" src="img/belleza.jpeg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Belleza">Belleza</a>
+                            </div>
+                          
+          
+        `},
+        {template:`
+                           
             
+                            <img class="imagen-categorias card-img" src="img/servicios.jpeg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Servicios">Servicios</a>
+                            </div>
+                         
+          
+        `},
+        {template:`
+                         
+            
+                            <img class="imagen-categorias card-img" src="img/salud.jpg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Salud y Bienestar">Salud y Bienestar</a>
+                            </div>
+                          
+         
+        `},
+        {template:`
+                          
+            
+                            <img class="imagen-categorias card-img" src="img/bebe.jfif">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Niños y Bebes">Niños y Bebes</a>
+                            </div>
+                          
+         
+        `},
+        {template:`
+                            
+                          
+                            <img class="imagen-categorias card-img" src="img/deporte.jpg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Deportes">Deportes</a>
+                            </div>
+                          
+          
+        `},
+        {template:`
+                           <img class="imagen-categorias card-img" src="img/hogar.jpg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Hogar">Hogar</a>
+                            </div>
+                          
+        `},
+        {template:`
+                            <img class="imagen-categorias card-img" src="img/otros.jpeg">
+                            <div class="texto-categorias card-img-overlay">
+                            <a href="/emprendimientos/categorias/Otros">Otros...</a>
+                            </div>
+                          
+                       
+          
+        `}
+      ]
+            }
+          
         },
-            
+        
+       
+        created() {
+ let apiURL = "http://localhost:4000/api/listar5";
+ axios
+ .get(apiURL)
+ .then((res) => {
+ this.Emprendedores = res.data;
+ })
+ .catch((error) => {
+ console.log(error);
+ });
+ },
         methods: {
           
           onSubmit() {  
             axios
             .post(`http://localhost:4000/api/login`, this.emprendedor)
             .then((res) => {
-              localStorage.setItem("jwtToken", res.data.token);
-              this.$router.push(`/admin/${res.data.id}`);
+              this.user = res.data;
+              this.$router.push(`/admin/${this.user._id}`);
               })
             .catch(e => {
               this.errors.push(e);
             });
         },
             registrarse() {
+              
                 let apiURL = "http://localhost:4000/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
@@ -684,9 +731,8 @@
             }
             
         },
-        
-        
+
+
         
     };
-    
 </script>

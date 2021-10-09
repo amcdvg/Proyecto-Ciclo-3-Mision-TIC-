@@ -5,11 +5,10 @@
       <div class="logo">
         <img src="../../src/assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
-      <!--Barra de Busqueda-->
-      
+     
       <!--Módulo Registro-IniciarSesion-->
       <div>
-        <div class="collapse position-absolute" id="navbarToggleExternalContent1">
+        <div class="collapse position-absolute modulo-emprendedores-responsive" id="navbarToggleExternalContent1">
           <div class="barra-emprendedores w-75">
             <div class="row ml-2 pl-2">
               <span class="caja-barra-emprendedores">
@@ -30,7 +29,7 @@
         </div>
       </div>
       <!--Boton-Modulo-Emprendedores-->
-      <button class="emprendedores navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="emprendedores navbar-toggler position-absolute bottom-25 end-0 modulo-emprendedores-responsive" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
         <span>
           <svg xmlns="http://www.w3.org/2000/svg"  class="emprendedores-flecha bi bi-chevron-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -39,7 +38,7 @@
         </span>
       </button>
       <!-- Modulo de Iniciar Sesión-->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade modulo-emprendedores-responsive" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -83,7 +82,7 @@
         </div>
       </div>
       <!--Modulo de Registro-->
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas offcanvas-end modulo-emprendedores-responsive" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -172,7 +171,7 @@
         <li class="nav-item">
           <router-link class="nav-link " to="/emprendimientos">Emprendimientos</router-link>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown modulo-emprendedores-responsive-navegacion">
           <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
           <ul class="desplegable dropdown-menu">
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Moda</router-link></li>
@@ -188,7 +187,7 @@
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="categorias-navegacion dropdown-item" onclick="location.reload()">Otros...</router-link></li>
           </ul>
         </li>
-        <div class="collapse position-absolute bottom-0 end-0" id="navbarToggleExternalContent">
+        <div class="collapse position-absolute bottom-0 end-0  modulo-emprendedores-responsive" id="navbarToggleExternalContent">
           <div class="barra-oculta bg-dark">
             <span>
               <router-link class="d-inline-block nav-link text-decoration-none" to="/acerca-de">Acerca de</router-link>
@@ -196,13 +195,13 @@
             </span>
           </div>
         </div>
-        <button class="boton-barra navbar-toggler position-absolute bottom-25 end-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="boton-barra navbar-toggler position-absolute bottom-25 end-0  modulo-emprendedores-responsive" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </ul>
     </nav> 
  <div class="row justify-content-evenly">
-   <div class="col-3 navegacion-categorias1">
+   <div class="col-3 navegacion-categorias1  modulo-emprendedores-responsive">
      <ul class="navegacion-categorias nav">
             <li><router-link  :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.moda } }" class="nav-link" onclick="location.reload()">Moda</router-link></li>
             <li><router-link  :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.artesanias } }" class="nav-link" onclick="location.reload()">Artesanias</router-link></li>
@@ -217,7 +216,7 @@
             <li><router-link :to="{ name: 'emprendimientos/categorias', params: { categoria:categorias.otros } }" class="nav-link" onclick="location.reload()">Otros...</router-link></li>
           </ul>
    </div>
-   <div class="col-8">
+   <div class="col-lg-8 col-sm-12 scroll-emprendimientos">
    <div class="col"><br><h1 class="titulo-listar-categorias"><b>{{this.$route.params.categoria}}</b></h1></div>
  <div class="col scroll-emprendimientos">
  <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="tienda card m-3 p-3 col">
@@ -226,9 +225,9 @@
                     <div class="card-body row">
                       <div class="row justify-content-evenly lista-emprendimientos">
                         
-                         <h1 class="card-title m-2"><b>{{emprendimiento.emprendimientoName}}</b></h1>
+                         <h1 class="card-title m-2 emprendimiento-titulo"><b>{{emprendimiento.emprendimientoName}}</b></h1>
                         <p class="m-2">{{emprendimiento.emprendimientoDescription}}</p>
-                        <div class="col-6">
+                        <div class="col-lg-6 col-sm-12 margin-responsive-categorias">
                           <br>
                             <h6 class=""><b>E-mail:</b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoEmail}}</h5>
                             
@@ -236,7 +235,7 @@
                             <h6><b>Ciudad: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoCiudad}}</h5>
                             
                             </div>
-                            <div class="col-5"><br>
+                            <div class="col-lg-5 col-sm-12 margin-responsive-categorias"><br>
                             <h6 ><b>Celular: </b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoPhone}}</h5>  
                             
                             <h6><b>Categoria: </b></h6><h5>{{emprendimiento.emprendimientoCategoria}}</h5>
@@ -252,8 +251,8 @@
  </div>
  </div> </div>
  <footer class="margin-footer">
-      <div class="cajas-footer d-flex flex-row">
-        <div class="col-4 m-2 p-3">
+      <div class="cajas-footer">
+        <div class="col-lg-4 col-md-6 m-2 p-3">
           <h5>En colaboración con:</h5>
           <span>
             <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="../../src/assets/img/logo-mintic.png" alt=""></a>
@@ -261,7 +260,7 @@
             <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="../../src/assets/img/logo-utp.png" alt=""></a>
           </span> 
         </div>
-        <div class="col-3 m-2 p-3">
+        <div class="col-lg-3  col-md-6 m-2 p-3">
           <h5>Siguenos en:</h5>
           <div class="d-flex flex-row">
             <a href="https://www.facebook.com/Colombia-Emprende-109565371475068" target="_blank">
@@ -286,17 +285,17 @@
             </a>
           </div> 
         </div>
-        <div class="col-3 m-2 p-3">
+        <div class="col-lg-3  col-md-12 m-2 p-3 modulo-emprendedores-responsive">
           <h5>Acerca de:</h5>
           <span>
-            <a href="html/acerca.html" target="_blank"><img class="logo-footer-acerca" src="../../src/assets/img/logo-colombia-emprende.png" alt=""></a>
-            <a href="html/halma.html" target="_blank"><img class="logo-footer-acerca" src="../../src/assets/img/logo-halma.png" alt=""></a>
+            <a href="/acerca-de" target="_blank"><img class="logo-footer-acerca" src="../../src/assets/img/logo-colombia-emprende.png" alt=""></a>
+            <a target="_blank" href="https://halmateam.000webhostapp.com"><img class="logo-footer-acerca" src="../../src/assets/img/logo-halma.png" alt=""></a>
           </span> 
         </div>   
       </div>
       <div class=baseDerechos>
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
-          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
+        <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a><span class="modulo-emprendedores-responsive"> | | 
+          <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Políticas de Privacidad y Tratamiento de Datos</a></span>
         </div>
       </div>
       <div class="modal fade" id="modal-politicas" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

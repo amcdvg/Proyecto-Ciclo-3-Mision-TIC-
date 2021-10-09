@@ -18,6 +18,15 @@ emprendedorRoute.route("/listar").get((req, res) => {
         }
     });
 });
+emprendedorRoute.route("/listar5").get((req, res) => {
+  EmprendedorModel.find((error, data1, next) => {
+      if (error) {
+          return next(error);
+      } else {
+          res.json(data1);
+      }
+  }).limit(6).sort({$natural:-1});
+});
 emprendedorRoute.route("/registro-emprendedor").post(function(req, res) {
     if (!req.body.email || !req.body.password) {
       res.json({ success: false, msg: "Por favor Ingrese Usuario y Contraseña" });

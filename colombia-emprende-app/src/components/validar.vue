@@ -1,6 +1,5 @@
 <template>
-
-<div>
+<div class="modulo-emprendedores-responsive">
       <!--Logo Colombia Emprende-->
       <div class="text-center logo-registro-emprendimiento">
         <img src="../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
@@ -43,7 +42,7 @@
 
     <footer>
       <div class="baseDerechos mt-2">
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
+        <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
         </div>
       </div>

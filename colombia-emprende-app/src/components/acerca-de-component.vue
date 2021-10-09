@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="modulo-emprendedores-responsive">
     <header>
       <!--Logo Colombia Emprende-->
       <div class="logo">
@@ -243,10 +243,9 @@
       <h1>Quienes Somos</h1>
       <p>Somos un grupo de desarrolladores aprendices que estamos siendo formados en el programa Mision TIC 2022.
         Colombia Emprende es un proyecto academico propuesto para el desarrollo del tercer ciclo del programa.
-        Los desarrolladores pertenecemos al grupo 20 y llamamos al grupo HALMA TEAM, tomando las iniciales de cada uno
-        de los integrantes del grupo.
+        Los desarrolladores pertenecemos al grupo 20 y llamamos al grupo HALMA TEAM, para identificarnos como equipo.
       </p>
-      <span><p>Puedes visitarnos aqui para conocer mas sobre:  <a href="#">HALMA TEAM</a></p></span>
+      <span><p>Puedes visitarnos aqui para conocer mas sobre:  <a target="_blank" href="https://halmateam.000webhostapp.com">HALMA TEAM</a></p></span>
       
     </div>
     <br>
@@ -289,13 +288,13 @@
         <div class="col-3 m-2 p-3">
           <h5>Acerca de:</h5>
           <span>
-            <a href="html/acerca.html" target="_blank"><img class="logo-footer-acerca" src="img/logo-colombia-emprende.png" alt=""></a>
-            <a href="html/halma.html" target="_blank"><img class="logo-footer-acerca" src="img/logo-halma.png" alt=""></a>
+            <a href="/acerca-de" target="_blank"><img class="logo-footer-acerca" src="img/logo-colombia-emprende.png" alt=""></a>
+            <a target="_blank" href="https://halmateam.000webhostapp.com"><img class="logo-footer-acerca" src="img/logo-halma.png" alt=""></a>
           </span> 
         </div>   
       </div>
       <div class=baseDerechos>
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
+        <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
         </div>
       </div>
