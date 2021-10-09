@@ -454,7 +454,7 @@
         </div>   
       </div>
       <div class="baseDerechos">
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
+        <div>Copyright © 2021 | Todos los derechos reservados <a href="html/halma.html">HALMA TEAM</a> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Políticas de Privacidad y Tratamiento de Datos</a>
         </div>
       </div>
