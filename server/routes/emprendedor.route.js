@@ -60,7 +60,31 @@ emprendedorRoute.get("/buscar-emprendedor/:id", function(
             res.json(data);
         }
       });
+      
 });
+
+emprendedorRoute.get("/buscar-emprendedor1/:id", function(
+  req,
+  res
+) {
+    EmprendedorModel.findByToken(token)
+    .then(user => {
+     if (user) {
+      console.log(user._id),
+      console.log(user.email);
+      return done(null, {
+       id: user.id,
+       email: user.email,
+      });
+     }
+     return done(null, false);
+    })
+    .catch(error => done(error, null));
+      
+});
+
+
+
 // Update student
 emprendedorRoute.route("/editar-emprendedor/:id").put((req, res, next) => {
     EmprendedorModel.findByIdAndUpdate(

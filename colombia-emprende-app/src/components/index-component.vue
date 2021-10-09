@@ -48,8 +48,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form v-on:submit.prevent="onSubmit">
-   <br>
+              <form v-on:submit.prevent="onSubmit" class="m-3">
  <div class="form-group">
  <label>Confirma tu Correo</label>
  <input
@@ -71,8 +70,9 @@
  />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
- <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+ <button type="submit" class="btn btn-primary boton-formulario-registro m-2" data-bs-dismiss="modal">Confirmar</button>
+ 
  </div>
  </form>
             
@@ -711,7 +711,7 @@
             .post(`http://localhost:4000/api/login`, this.emprendedor)
             .then((res) => {
               this.user = res.data;
-              this.$router.push(`/admin/${this.user._id}`);
+              this.$router.push(`/admin/${this.user.id}`);
               })
             .catch(e => {
               this.errors.push(e);

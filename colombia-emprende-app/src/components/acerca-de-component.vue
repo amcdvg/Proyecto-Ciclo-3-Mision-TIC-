@@ -47,30 +47,31 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form v-on:submit.prevent="onSubmit">
-   <br>
+              <form v-on:submit.prevent="onSubmit" class="m-3">
  <div class="form-group">
  <label>Confirma tu Correo</label>
  <input
  type="text"
+  placeholder="Ingrese tu E-mail"
  class="form-control"
  v-model="emprendedor.email"
  required
  />
  </div><br>
-<div class="form-group">
+ <div class="form-group">
  <label>Confirma tu Contraseña</label>
  <input
  type="password"
  placeholder="Ingrese tu contraseña"
- class="form-control"
+ class="password1 form-control"
  v-model="emprendedor.password"
   required
  />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
- <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+ <button type="submit" class="btn btn-primary boton-formulario-registro m-2" data-bs-dismiss="modal">Confirmar</button>
+ 
  </div>
  </form>
             
@@ -236,7 +237,7 @@
       <p>Colombia emprede se dedica a promover el comercio entre emprendedores y clientes. Colombia emprende ayudará 
         a fortalecer su emprendimiento, ofreciendo acceso a clientes de Colombia y el mundo. Bienvenido y conoce nuestra página.
       </p>
-      <p>Puedes contactarnos en: <span> <a href="colombia0emprende@gmail.com">colombia0emprende@gmail.com</a></span>
+      <p>Puedes contactarnos en: <span> <b>colombia0emprende@gmail.com</b></span>
       </p>
     </div>
     <div class="acerca-de">

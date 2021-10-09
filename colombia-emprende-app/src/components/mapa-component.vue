@@ -48,30 +48,31 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form v-on:submit.prevent="onSubmit">
-   <br>
+              <form v-on:submit.prevent="onSubmit" class="m-3">
  <div class="form-group">
  <label>Confirma tu Correo</label>
  <input
  type="text"
+  placeholder="Ingrese tu E-mail"
  class="form-control"
  v-model="emprendedor.email"
  required
  />
  </div><br>
-<div class="form-group">
+ <div class="form-group">
  <label>Confirma tu Contraseña</label>
  <input
  type="password"
  placeholder="Ingrese tu contraseña"
- class="form-control"
+ class="password1 form-control"
  v-model="emprendedor.password"
   required
  />
  </div><br>
  <div class="modal-footer form-group d-flex justify-content-end">
- <button type="submit" class="btn btn-primary m-2" data-bs-dismiss="modal">Confirmar</button>
- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+ <button type="submit" class="btn btn-primary boton-formulario-registro m-2" data-bs-dismiss="modal">Confirmar</button>
+ 
  </div>
  </form>
             
@@ -168,7 +169,7 @@
           <router-link to="/" class="nav-link" aria-current="page">Inicio</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link active" to="/emprendimientos">Emprendimientos</router-link>
+          <router-link class="nav-link" to="/emprendimientos">Emprendimientos</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Categorias</a>
