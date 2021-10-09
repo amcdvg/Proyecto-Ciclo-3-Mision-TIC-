@@ -30,7 +30,7 @@
  /><span class="fa fa-fw fa-eye password-icon show-password" @click="pass"></span>
  </div><br>
  <div class="form-group d-flex justify-content-end">
- <button class="btn btn-primary btn-block m-2">Confirmar</button>
+ <button class="btn btn-primary boton-formulario-registro btn-block m-2">Confirmar</button>
  </div>
  </form>
  </div>
