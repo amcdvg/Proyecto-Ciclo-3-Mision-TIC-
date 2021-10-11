@@ -292,7 +292,7 @@
         </div>   
       </div>
       <div class=baseDerechos>
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a><span class="modulo-emprendedores-responsive"> | | 
+        <div>Copyright © 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a><span class="modulo-emprendedores-responsive"> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"  id="politica"> Políticas de Privacidad y Tratamiento de Datos</a></span>
         </div>
       </div>
@@ -500,7 +500,7 @@ export default {
  };
  },
  created() {
- let apiURL = "http://localhost:4000/api/listar";
+ let apiURL = "https://pure-sands-18700.herokuapp.com/api/listar";
  axios
  .get(apiURL)
  .then((res) => {
@@ -513,7 +513,7 @@ export default {
  methods: {
           onSubmit() {  
             axios
-            .post(`http://localhost:4000/api/login`, this.emprendedor)
+            .post(`https://pure-sands-18700.herokuapp.com/api/login`, this.emprendedor)
             .then((res) => {
               this.user = res.data;
               this.$router.push(`/admin/${this.user._id}`);
@@ -524,7 +524,7 @@ export default {
         },
             registrarse() {
               
-                let apiURL = "http://localhost:4000/api/registro-emprendedor";
+                let apiURL = "https://pure-sands-18700.herokuapp.com/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
                 .then( 

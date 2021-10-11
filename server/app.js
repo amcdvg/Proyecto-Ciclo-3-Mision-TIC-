@@ -20,7 +20,12 @@ mongoose
         console.log("No se puede conectar a base de datos. Error: " + error);
     }
  );
-const emprendedorAPI = require("../server/routes/emprendedor.route");
+var db = mongoose.connection;
+db.once("open", () => {
+    console.log("Conectado a Base de Datos")
+
+});
+const emprendedorAPI = require("./routes/emprendedor.route");
 const app = express();
 app.use(bodyParser.json());
 app.use(
@@ -34,10 +39,14 @@ app.use(cors());
 app.use("/api", emprendedorAPI);
 
 // Create port
-const port = process.env.PORT || 4000;
+app.set("PORT", process.env.PORT || 3000);
+app.listen(app.get("PORT"), () => {
+    console.log(`Servidor iniciado en el puerto: ${app.get("PORT")}`);
+});
+/*const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
     console.log("Conectado al Puerto " + port);
-});
+});*/
 // Find 404
 app.use((req, res, next) => {
     next(createError(404));
@@ -48,5 +57,12 @@ app.use(function(err, req, res) {
     if (!err.statusCode) err.statusCode = 500;
     res.status(err.statusCode).send(err.message);
 });
-
+app.use((req, res, next)=>{
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, ContentType, Accept");
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+   });
+   
 

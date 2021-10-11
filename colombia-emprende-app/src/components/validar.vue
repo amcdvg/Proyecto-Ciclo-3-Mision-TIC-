@@ -27,7 +27,7 @@
  class="form-control password1"
  v-model="emprendedor.password"
   required
- /><span class="fa fa-fw fa-eye password-icon show-password" @click="pass"></span>
+ />
  </div><br>
  <div class="form-group d-flex justify-content-end">
  <button class="btn btn-primary boton-formulario-registro btn-block m-2">Confirmar</button>
@@ -42,7 +42,7 @@
 
     <footer>
       <div class="baseDerechos mt-2">
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
+        <div>Copyright © 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
         </div>
       </div>
@@ -235,51 +235,15 @@ export default {
   methods: {
     onSubmit() {
       axios
-        .post(`http://localhost:4000/api/login`, this.emprendedor)
+        .post(`https://pure-sands-18700.herokuapp.com/api/login`, this.emprendedor)
         .then((res) => {
           localStorage.setItem("jwtToken", res.data.token);
-              this.$router.push(`/registro-emprendimiento/${res.data.id}`);
+          this.$router.push(`/registro-emprendimiento/${this.user.id}`);
           })
         .catch(e => {
           console.log(e);
         });
     },
   },
-  pass(){
-window.addEventListener("load", function() {
- 
-    // icono para poder interaccionar con el elemento
-    let showPassword = document.querySelector('.show-password');
-    showPassword.addEventListener('click', () => {
- 
-      // elementos input de tipo password
-      let password1 = document.querySelector('.password1');
-      
- 
-      if ( password1.type === "text" ) {
-        password1.type = "password"
-        
-        showPassword.classList.remove('fa-eye-slash');
-      } else {
-        password1.type = "text"
-        
-        showPassword.classList.toggle("fa-eye-slash");
-      }
-  })
-});
-  },
 };
-  window.addEventListener("load", function() {  
-    let showPassword = document.querySelector('.show-password');
-    showPassword.addEventListener('click', () => {
-      let password1 = document.querySelector('.password1');
-      if ( password1.type === "text" ) {
-        password1.type = "password"
-        showPassword.classList.remove('fa-eye-slash');
-      } else {
-        password1.type = "text"
-        showPassword.classList.toggle("fa-eye-slash");
-      }
-    })
-  });
 </script>

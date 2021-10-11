@@ -66,7 +66,7 @@ emprendedorRoute.get("/buscar-emprendedor/:id", function(
 emprendedorRoute.get("/buscar-emprendedor1/:id", function(
   req,
   res
-) {
+) {let token
     EmprendedorModel.findByToken(token)
     .then(user => {
      if (user) {

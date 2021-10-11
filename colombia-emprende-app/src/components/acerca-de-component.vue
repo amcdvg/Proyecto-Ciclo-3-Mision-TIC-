@@ -3,7 +3,7 @@
     <header>
       <!--Logo Colombia Emprende-->
       <div class="logo">
-        <img src="img/logo-colombia.png" alt="Logo Colombia Emprende">
+        <img src="../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
       <!--Barra de Busqueda-->
       
@@ -255,9 +255,9 @@
         <div class="col-4 m-2 p-3">
           <h5>En colaboración con:</h5>
           <span>
-            <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="img/logo-mintic.png" alt=""></a>
-            <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="img/logo-mision.png" alt=""></a>
-            <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="img/logo-utp.png" alt=""></a>
+            <a href="https://mintic.gov.co/portal/inicio/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mintic.png" alt=""></a>
+            <a href="https://www.misiontic2022.gov.co/portal/" target="_blank"><img class="logos-footer" src="../assets/img/logo-mision.png" alt=""></a>
+            <a href="https://www.utp.edu.co/" target="_blank"><img class="logos-footer" src="../assets/img/logo-utp.png" alt=""></a>
           </span> 
         </div>
         <div class="col-3 m-2 p-3">
@@ -288,13 +288,13 @@
         <div class="col-3 m-2 p-3">
           <h5>Acerca de:</h5>
           <span>
-            <a href="/acerca-de" target="_blank"><img class="logo-footer-acerca" src="img/logo-colombia-emprende.png" alt=""></a>
-            <a target="_blank" href="https://halmateam.000webhostapp.com"><img class="logo-footer-acerca" src="img/logo-halma.png" alt=""></a>
+            <a href="/acerca-de" target="_blank"><img class="logo-footer-acerca" src="../assets/img/logo-colombia-emprende.png" alt=""></a>
+            <a target="_blank" href="https://halmateam.000webhostapp.com"><img class="logo-footer-acerca" src="../assets/img/logo-halma.png" alt=""></a>
           </span> 
         </div>   
       </div>
       <div class=baseDerechos>
-        <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
+        <div>Copyright © 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
           <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
         </div>
       </div>
@@ -503,17 +503,17 @@
         methods: {
           onSubmit() {  
             axios
-            .post(`http://localhost:4000/api/login`, this.emprendedor)
+            .post(`https://pure-sands-18700.herokuapp.com/api/login`, this.emprendedor)
             .then((res) => {
               localStorage.setItem("jwtToken", res.data.token);
-              this.$router.push(`/admin/${res.data.id}`);
+              this.$router.push(`/admin/${this.user.id}`);
               })
             .catch(e => {
               this.errors.push(e);
             });
         },
             registrarse() {
-                let apiURL = "http://localhost:4000/api/registro-emprendedor";
+                let apiURL = "https://pure-sands-18700.herokuapp.com/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
                 .then( 

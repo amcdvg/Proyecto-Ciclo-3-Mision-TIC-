@@ -200,7 +200,7 @@
     
       <footer>
         <div class="baseDerechos-admin">
-          <div>Copyright copy 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
+          <div>Copyright © 2021 | Todos los derechos reservados <a href="https://halmateam.000webhostapp.com/">HALMA TEAM</a> | | 
             <a type="button" data-bs-toggle="modal" data-bs-target="#modal-politicas"   id="politica"> Política de Tratamiento de Datos Personales</a>
           </div>
         </div>
@@ -350,14 +350,14 @@ emprendedor: {
  };
  },
  created() {
- let apiURL = `http://localhost:4000/api/buscar-emprendedor/${this.$route.params.id}`;
+ let apiURL = `https://pure-sands-18700.herokuapp.com/api/buscar-emprendedor/${this.$route.params.id}`;
  axios.get(apiURL).then((res) => {
  this.emprendedor = res.data;
  });
  },
  methods: {
 handleUpdateForm() {
- let apiURL = `http://localhost:4000/api/editar-emprendedor/${this.$route.params.id}`;
+ let apiURL = `https://pure-sands-18700.herokuapp.com/api/editar-emprendedor/${this.$route.params.id}`;
  axios
  .put(apiURL, this.emprendedor)
  .then((res) => {
