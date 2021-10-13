@@ -497,8 +497,9 @@
                 emprendedor: {},
                 user: {},
             };
-            
+              
         },
+             
              
         methods: {
           onSubmit() {  
@@ -506,10 +507,12 @@
             .post(`https://pure-sands-18700.herokuapp.com/api/login`, this.emprendedor)
             .then((res) => {
               localStorage.setItem("jwtToken", res.data.token);
+              this.user = res.data;
               this.$router.push(`/admin/${this.user.id}`);
               })
-            .catch(e => {
-              this.errors.push(e);
+            .catch(error => {
+              window.alert("Usuario o contraseña incorrectos");
+              console.log(error);
             });
         },
             registrarse() {
@@ -520,7 +523,9 @@
                       this.$router.push("/validar")
                 )
                 .catch((error) => {
-                    console.log(error);
+                    this.$router.push("/");
+                  window.alert("Error. Este E-mail ya se encuentra registrado.");
+                  console.log(error);
                 });
             }
             

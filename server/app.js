@@ -43,10 +43,6 @@ app.set("PORT", process.env.PORT || 3000);
 app.listen(app.get("PORT"), () => {
     console.log(`Servidor iniciado en el puerto: ${app.get("PORT")}`);
 });
-/*const port = process.env.PORT || 3000;
-const server = app.listen(port, () => {
-    console.log("Conectado al Puerto " + port);
-});*/
 // Find 404
 app.use((req, res, next) => {
     next(createError(404));

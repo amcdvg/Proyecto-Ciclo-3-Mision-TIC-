@@ -1,4 +1,12 @@
 /*Fondo para el Main*/
+.condicion{
+  border: 1px solid #a2d0ff;
+  border-radius: 15px;
+}
+.ciclo{
+  width: auto;
+  margin: 15px;
+}
 .fondo-claro{
   background-color: rgb(250, 248, 248) !important;
 }
@@ -886,9 +894,13 @@ text-decoration: none !important;
   opacity: 0.60 !important;
   
 }
+.emprendimiento-titulo1{
+  text-transform: uppercase;
+}
 .emprendimiento-titulo{
   text-transform: uppercase;
   min-height: 60px;
+  max-width: 375px;
 }
 .gallery-item{
   border-radius: 25px !important;
@@ -930,14 +942,17 @@ text-decoration: none !important;
     border-radius: 25px !important;
   }
   .tiendas-inicio{
-    margin: 10px 75px 50px 75px;
+    margin: 10px 25px 50px 25px;
   }
   .tiendas{
     border-radius: 15px;
+    max-width: 375px;
   }
   .descripcion-tienda-inicio{
-    height: 75px;
+    min-height: 75px;
+    max-height: 75px;
     overflow: auto;
+    max-width: 375px;
   }
   .tiendas h4{
     color: rgb(19, 33, 82) !important;
@@ -971,6 +986,23 @@ margin: .5rem !important;
     margin-top: 20px;
   }
 @media only screen and (min-device-width : 240px) and (max-device-width : 639px){
+  .tiendas{
+    min-width: 100%;
+  }
+  .emprendimiento-titulo{
+    max-width: 100%;
+    max-height: 60px;
+    min-height: 30px;
+  }
+  .descripcion-tienda-inicio{
+    max-height: 75px;
+    min-height: 30px;
+    max-width: 100%;
+    }
+  .ciclo{
+    width: 100%;
+    justify-content: center;
+  }
     .modulo-emprendedores-responsive{
       display: none;
     }
@@ -1068,10 +1100,6 @@ margin: .5rem !important;
   .tiendas{
     border-radius: 10px;
   }
-  .descripcion-tienda-inicio{
-    height: 75px;
-    overflow: auto;
-  }
   .tiendas h4{
     font-size: 20px;
     color: rgb(19, 33, 82) !important;
@@ -1141,6 +1169,23 @@ margin: .5rem !important;
     }
   }
   @media only screen and (min-device-width : 900px) and (max-device-width : 1024px){
+    .tiendas{
+      min-width: 100%;
+    }
+    .emprendimiento-titulo{
+      max-width: 100%;
+      max-height: 60px;
+      min-height: 30px;
+    }
+    .descripcion-tienda-inicio{
+      max-height: 75px;
+      min-height: 30px;
+      max-width: 100%;
+      }
+    .ciclo{
+      width: 100%;
+      justify-content: center;
+    }
     .barra-emprendedores {
       left: 0px !important;
       
@@ -1165,6 +1210,23 @@ margin: .5rem !important;
 }
   }
   @media only screen and (min-device-width : 768px) and (max-device-width : 899px){
+    .tiendas{
+      min-width: 100%;
+    }
+    .emprendimiento-titulo{
+      max-width: 100%;
+      max-height: 60px;
+      min-height: 30px;
+    }
+    .descripcion-tienda-inicio{
+      max-height: 75px;
+      min-height: 30px;
+      max-width: 100%;
+      }
+    .ciclo{
+      width: 100%;
+      justify-content: center;
+    }
     .modulo-emprendedores-responsive{
       display: none;
     }
@@ -1259,10 +1321,6 @@ margin: .5rem !important;
           
   .tiendas{
     border-radius: 10px;
-  }
-  .descripcion-tienda-inicio{
-    height: 75px;
-    overflow: auto;
   }
   .tiendas h4{
     font-size: 20px;
@@ -1333,6 +1391,23 @@ margin: .5rem !important;
     }
   }
   @media only screen and (min-device-width : 640px) and (max-device-width : 767px){
+    .tiendas{
+      min-width: 100%;
+    }
+    .emprendimiento-titulo{
+      max-width: 100%;
+      max-height: 60px;
+      min-height: 30px;
+    }
+    .descripcion-tienda-inicio{
+      max-height: 75px;
+      min-height: 30px;
+      max-width: 100%;
+      }
+    .ciclo{
+      width: 100%;
+      justify-content: center;
+    }
     .modulo-emprendedores-responsive{
       display: none;
     }
@@ -1427,10 +1502,6 @@ margin: .5rem !important;
           
   .tiendas{
     border-radius: 10px;
-  }
-  .descripcion-tienda-inicio{
-    height: 75px;
-    overflow: auto;
   }
   .tiendas h4{
     font-size: 20px;

@@ -1,13 +1,12 @@
-const express = require("express");
 var mongoose = require("mongoose");
 var passport = require("passport");
 var settings = require("../config/settings");
 require("../config/passport")(passport);
+var express = require("express");
 var jwt = require("jsonwebtoken");
+var emprendedorRoute = express.Router();
+var EmprendedorModel = require("../models/Emprendedor");
 
-const emprendedorRoute = express.Router();
-// Emprendedor model
-let EmprendedorModel = require("../models/Emprendedor");
 
 emprendedorRoute.route("/listar").get((req, res) => {
     EmprendedorModel.find((error, data1, next) => {
@@ -31,6 +30,7 @@ emprendedorRoute.route("/registro-emprendedor").post(function(req, res) {
     if (!req.body.email || !req.body.password) {
       res.json({ success: false, msg: "Por favor Ingrese Usuario y Contraseña" });
     } else {
+      
       let newEmprendedorModel = new EmprendedorModel({
         email: req.body.email,
         password: req.body.password,
@@ -41,11 +41,15 @@ emprendedorRoute.route("/registro-emprendedor").post(function(req, res) {
       });
       newEmprendedorModel.save(function(err) {
         if (err) {
-          return res.json({ success: false, msg: "E-mail already exists." });
-          }
-          console.log("Usuario Creado con Exito");
+          return res.status(401).send({ error: 'Email already exists!' })
+          
+        
+        }
+        res.json({ success: true, msg: "Successful created new user." });
+        
       });
     }
+
   });
 
 emprendedorRoute.get("/buscar-emprendedor/:id", function(
@@ -62,7 +66,6 @@ emprendedorRoute.get("/buscar-emprendedor/:id", function(
       });
       
 });
-
 emprendedorRoute.get("/buscar-emprendedor1/:id", function(
   req,
   res
@@ -82,10 +85,6 @@ emprendedorRoute.get("/buscar-emprendedor1/:id", function(
     .catch(error => done(error, null));
       
 });
-
-
-
-// Update student
 emprendedorRoute.route("/editar-emprendedor/:id").put((req, res, next) => {
     EmprendedorModel.findByIdAndUpdate(
         req.params.id,
@@ -102,32 +101,6 @@ emprendedorRoute.route("/editar-emprendedor/:id").put((req, res, next) => {
         }
     });
 });
-// Update student
-emprendedorRoute.route("/editar-password/:id").post((req, res, next) => {
-  EmprendedorModel.findByIdAndUpdate(
-      req.params.id,
-      {
-        $set: req.body,
-        },
-      (error, data) => {
-      if (error) {
-          console.log(error);
-          return next(error);
-      } else {
-         data.password.save(function(error) {
-            if (error) {
-                console.log("error")
-              }
-                console.log("Usuario Creado con Exito");
-                res.json(data);
-                console.log(data);
-                console.log("Contraseña actualizada!");
-              });
-            }
-      },
-      );
-      });
-// Delete Emprendedor
 emprendedorRoute.route("/eliminar-emprendedor/:id").delete((req, res, next) => {
     EmprendedorModel.findByIdAndRemove(req.params.id, (error, data) => {
         if (error) {
@@ -155,7 +128,6 @@ emprendedorRoute.route("/login").post(function(req, res) {
             
           });
         } else {
-          // check if password matches
           user.comparePassword(req.body.password, function(err, isMatch) {
             if (isMatch && !err) {
               let token = jwt.sign(user.toJSON(), settings.secret);

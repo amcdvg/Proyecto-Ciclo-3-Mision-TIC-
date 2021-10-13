@@ -218,12 +218,12 @@
           </ul>
    </div>
  <div class="col-lg-8 col-sm-12 scroll-emprendimientos">
- <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="tienda card m-3 p-3 col">
-        <div class="row">
+ <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="tienda col">
+        <div v-if="emprendimiento.emprendimientoName != ciclo" class="row p-3 m-3 condicion">
                 <div class="col ">
                     <div class="card-body row">
                       <div class="row justify-content-evenly lista-emprendimientos">
-                        <h1 class="card-title m-2 emprendimiento-titulo"><b>{{emprendimiento.emprendimientoName}}</b></h1>
+                        <h1 class="card-title m-2 emprendimiento-titulo1"><b>{{emprendimiento.emprendimientoName}}</b></h1>
                         <p class="m-2">{{emprendimiento.emprendimientoDescription}}</p>
                         <div class="col-lg-6 col-sm-12 margin-responsive-categorias">
                             <h6 class=""><b>E-mail:</b></h6><h5 class="mt-2">{{emprendimiento.emprendimientoEmail}}</h5>
@@ -477,6 +477,7 @@ import axios from "axios";
 export default {
  data() {
  return {
+   ciclo : this.$0,
  Emprendedores: [],
  emprendedor: {
                 name: "",
@@ -515,11 +516,13 @@ export default {
             axios
             .post(`https://pure-sands-18700.herokuapp.com/api/login`, this.emprendedor)
             .then((res) => {
+              localStorage.setItem("jwtToken", res.data.token);
               this.user = res.data;
-              this.$router.push(`/admin/${this.user._id}`);
+              this.$router.push(`/admin/${this.user.id}`);
               })
-            .catch(e => {
-              this.errors.push(e);
+            .catch(error => {
+              window.alert("Usuario o contraseña incorrectos");
+              console.log(error);
             });
         },
             registrarse() {
@@ -531,7 +534,9 @@ export default {
                       this.$router.push("/validar")
                 )
                 .catch((error) => {
-                    console.log(error);
+                    this.$router.push("/");
+                  window.alert("Error. Este E-mail ya se encuentra registrado.");
+                  console.log(error);
                 });
             }
             

@@ -5,7 +5,7 @@
         <img src="../assets/img/logo-colombia.png" alt="Logo Colombia Emprende">
       </div>
           <!--Body del modulo Registro-->
-          <div class="row justify-content-center">
+          <div class="row justify-content-center" id="fomulario-validar">
  <div class="text-center col-4"><br>
  <h3 class="text-center">Confirmacion de datos</h3><br>
  <form v-on:submit.prevent="onSubmit">
@@ -238,10 +238,12 @@ export default {
         .post(`https://pure-sands-18700.herokuapp.com/api/login`, this.emprendedor)
         .then((res) => {
           localStorage.setItem("jwtToken", res.data.token);
+          this.user = res.data;
           this.$router.push(`/registro-emprendimiento/${this.user.id}`);
           })
-        .catch(e => {
-          console.log(e);
+        .catch(error => {
+          window.alert("Usuario o contraseña incorrectos");
+              console.log(error);
         });
     },
   },

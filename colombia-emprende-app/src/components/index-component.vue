@@ -158,7 +158,7 @@
       <span class="acepto-las">Acepto las </span> Políticas de Privacidad y Tratamiento de Datos</a></label>
   </div>
                 <div class="form-group d-flex justify-content-end">
-                  <button class="btn boton-formulario-registro btn-block">Registrarse</button>
+                  <button class="btn boton-formulario-registro btn-block" data-bs-dismiss="offcanvas">Registrarse</button>
                 </div>
               </form>
             </div>
@@ -246,9 +246,10 @@
         
         <div>
           <h1 class="categorias-titulo m-4">NUEVOS EMPRENDIMIENTOS</h1>
-          <div class="row row-col justify-content-evenly tiendas-inicio">
-  <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="col-lg-4 col-sm-11 col-md-6 mb-4">
-    <div class="card tiendas">
+          <div class="row justify-content-evenly tiendas-inicio">
+            
+  <div v-for="emprendimiento in Emprendedores" :key="emprendimiento._id" class="ciclo" >
+    <div v-if="emprendimiento.emprendimientoName != ciclo" class="card tiendas condicion">
       <div class="card-body">
         <h4 class="card-title mb-3 emprendimiento-titulo">{{emprendimiento.emprendimientoName}}</h4>
         <p class="card-text descripcion-tienda-inicio">
@@ -544,10 +545,6 @@
 <script>
     import axios from "axios";
     import { Carousel3d, Slide } from "vue-carousel-3d";
-    
-
-
-
     export default {
        components: {
             Carousel3d,
@@ -555,6 +552,7 @@
           },
         data() {
             return {
+              ciclo : this.$0,
               categorias:{
               moda : "Moda",
               artesanias : "Artesanias",
@@ -710,24 +708,30 @@
             axios
             .post(`https://pure-sands-18700.herokuapp.com/api/login`, this.emprendedor)
             .then((res) => {
+              localStorage.setItem("jwtToken", res.data.token);
               this.user = res.data;
               this.$router.push(`/admin/${this.user.id}`);
               })
-            .catch(e => {
-              this.errors.push(e);
+            .catch(error => {
+              window.alert("Usuario o contraseña incorrectos");
+              console.log(error);
             });
         },
-            registrarse() {
-              
+            registrarse(evt) {
+              evt.preventDefault();
                 let apiURL = "https://pure-sands-18700.herokuapp.com/api/registro-emprendedor";
                 axios
                 .post(apiURL, this.emprendedor)
+                
                 .then( 
-                      this.$router.push("/validar")
-                )
-                .catch((error) => {
-                    console.log(error);
-                });
+                  this.$router.push("/validar")) 
+                .catch((err) => {
+                  this.$router.push({
+                    name: "index"
+                   });
+                  window.alert("Error. Este E-mail ya se encuentra registrado.");
+                  console.log(err);
+                });    
             }
             
         },
