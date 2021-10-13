@@ -8,5 +8,5 @@ Para el desarrollo de la infraestructura web de este proyecto se hizo uso del st
 MongoDB, Express y NodeJS para el lado del servidor y se encuentra en la carpeta server.
 ```
 ```
-Vue para el lado del cliente y se encuentra en la carpeta colombia-emprende-app.
+VueJS para el lado del cliente y se encuentra en la carpeta colombia-emprende-app.
 ```
